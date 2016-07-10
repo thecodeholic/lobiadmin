@@ -1,0 +1,165 @@
+/*Author      : @arboshiki*/
+.lobicheck{
+    position: relative;
+    cursor: pointer;
+    font-weight: normal;
+    margin-top: 5px;
+    i{
+        position: absolute;
+        left: 0;
+        outline: 0;
+        display: block;
+        border-style: solid;
+        top: $checkbox-base-top;
+        background: $checkbox-bg;
+        border-color: $checkbox-border-color;
+        @include transition(all $checkbox-transition-duration);
+    }
+    input[type=checkbox]{
+        position: absolute;
+        left: -10000px;
+        &:checked{
+            &+i{
+                &:after{
+                    left: 0;
+                    position: absolute;
+                    font-style: normal;
+                    text-align: center;
+                    font-weight: 400;
+                    content: $checkbox-icon-checked;
+                    font-size: $checkbox-icon-font-size;
+                    font-family: $checkbox-icon-font-family;
+                    line-height: $checkbox-icon-line-height;
+                }
+            }
+        }
+    }
+    @include checkbox-variant($checkbox-primary-color);
+    @include checkbox-size($checkbox-base-border-width, $checkbox-base-size, $checkbox-base-margin-bottom, $checkbox-icon-font-size, $checkbox-base-top, $checkbox-base-check-top);
+    &:hover{
+        i{
+            @include box-shadow($checkbox-hover-box-shadow);
+        }
+    }
+    &:active{
+        i{
+            @include box-shadow($checkbox-active-box-shadow);
+            background-color: $checkbox-active-bg;
+        }
+    }
+}
+.lobicheck-warning{
+    @include checkbox-variant($checkbox-warning-color);
+}
+.lobicheck-success{
+    @include checkbox-variant($checkbox-success-color);
+}
+.lobicheck-danger{
+    @include checkbox-variant($checkbox-danger-color);
+}
+.lobicheck-info{
+    @include checkbox-variant($checkbox-info-color);
+}
+.lobicheck-inverse{
+    @include checkbox-variant($checkbox-inverse-color);
+}
+.lobicheck-lg{ 
+    @include checkbox-size($checkbox-lg-border-width, $checkbox-lg-icon-size, $checkbox-lg-margin-bottom, $checkbox-lg-icon-font-size, $checkbox-lg-top, $checkbox-lg-check-top);
+}
+
+.form-horizontal{
+    .lobicheck{
+        i{
+            margin-top: $padding-base-vertical;
+        }
+    }
+}
+
+fieldset[disabled]{
+    .lobicheck{
+        @include checkbox-disabled-variant($checkbox-primary-disabled-color);
+        &.lobicheck-warning{
+            @include checkbox-disabled-variant($checkbox-warning-disabled-color);
+        }
+        &.lobicheck-danger{
+            @include checkbox-disabled-variant($checkbox-danger-disabled-color);
+        }
+        &.lobicheck-success{
+            @include checkbox-disabled-variant($checkbox-success-disabled-color);
+        }
+        &.lobicheck-info{
+            @include checkbox-disabled-variant($checkbox-info-disabled-color);
+        }
+        &.lobicheck-inverse{
+            @include checkbox-disabled-variant($checkbox-inverse-disabled-color);
+        }
+    }
+}
+//------------------------------------------------------------------------------
+.lobicheck input:disabled,
+.lobicheck:hover input:disabled{
+    @include checkbox-disabled-variant2($checkbox-primary-disabled-color);
+}
+.lobicheck-danger input:disabled,
+.lobicheck-danger:hover input:disabled{
+    @include checkbox-disabled-variant2($checkbox-danger-disabled-color);
+}
+.lobicheck-success input:disabled,
+.lobicheck-success:hover input:disabled{
+    @include checkbox-disabled-variant2($checkbox-success-disabled-color);
+}
+.lobicheck-warning input:disabled,
+.lobicheck-warning:hover input:disabled{
+    @include checkbox-disabled-variant2($checkbox-warning-disabled-color);
+}
+.lobicheck-info input:disabled,
+.lobicheck-info:hover input:disabled{
+    @include checkbox-disabled-variant2($checkbox-info-disabled-color);
+}
+.lobicheck-inverse input:disabled,
+.lobicheck-inverse:hover input:disabled{
+    @include checkbox-disabled-variant2($checkbox-inverse-disabled-color);
+}
+//------------------------------------------------------------------------------
+.lobicheck.lobicheck-inversed input:disabled,
+.lobicheck.lobicheck-inversed:hover input:disabled{
+    @include checkbox-disabled-variant3($checkbox-primary-disabled-color);
+}
+.lobicheck-danger.lobicheck-inversed input:disabled,
+.lobicheck-danger.lobicheck-inversed:hover input:disabled{
+    @include checkbox-disabled-variant3($checkbox-danger-disabled-color);
+}
+.lobicheck-success.lobicheck-inversed input:disabled,
+.lobicheck-success.lobicheck-inversed:hover input:disabled{
+    @include checkbox-disabled-variant3($checkbox-success-disabled-color);
+}
+.lobicheck-warning.lobicheck-inversed input:disabled,
+.lobicheck-warning.lobicheck-inversed:hover input:disabled{
+    @include checkbox-disabled-variant3($checkbox-warning-disabled-color);
+}
+.lobicheck-info.lobicheck-inversed input:disabled,
+.lobicheck-info.lobicheck-inversed:hover input:disabled{
+    @include checkbox-disabled-variant3($checkbox-info-disabled-color);
+}
+.lobicheck-inverse.lobicheck-inversed input:disabled,
+.lobicheck-inverse.lobicheck-inversed:hover input:disabled{
+    @include checkbox-disabled-variant3($checkbox-inverse-disabled-color);
+}
+
+fieldset[disabled] .lobicheck:active i,
+.lobicheck:active input:disabled+i{
+    @include box-shadow(none);
+    background-color: $checkbox-bg;
+}
+fieldset[disabled] .lobicheck:hover i,
+.lobicheck:hover input:disabled+i{
+    cursor: not-allowed;
+    @include box-shadow(none);
+    border-color: $checkbox-border-color;
+}
+
+.table tr td .lobicheck,
+.table tr th .lobicheck{
+    margin-top: 0;
+    margin-bottom: 0;
+}

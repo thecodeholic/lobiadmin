@@ -1,0 +1,27 @@
+/*Author      : @arboshiki*/
+
+.popover{
+    border-radius: 2px;
+    .popover-title{
+        @include border-top-radius(2px);
+    }
+}
+
+[data-popover-style="danger"]{
+    @include popover-variant($popover-danger-title-color, $popover-danger-title-bg, $popover-danger-border-color);
+}
+[data-popover-style="success"]{
+    @include popover-variant($popover-success-title-color, $popover-success-title-bg, $popover-success-border-color);
+}
+[data-popover-style="primary"]{
+    @include popover-variant($popover-primary-title-color, $popover-primary-title-bg, $popover-primary-border-color);
+}
+[data-popover-style="info"]{
+    @include popover-variant($popover-info-title-color, $popover-info-title-bg, $popover-info-border-color);
+}
+[data-popover-style="warning"]{
+    @include popover-variant($popover-warning-title-color, $popover-warning-title-bg, $popover-warning-border-color);
+}
+[data-popover-style="inverse"]{
+    @include popover-variant($popover-inverse-title-color, $popover-inverse-title-bg, $popover-inverse-border-color);
+}

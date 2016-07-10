@@ -1,0 +1,407 @@
+@import "../LIBRARY/bootstrap-3.3.2/less/variables.less";
+@import "../LIBRARY/bootstrap-3.3.2/less/mixins.less";
+
+.row-with-margin{
+    margin-bottom: 10px;
+}
+
+.bs-glyphicons-list{
+    padding-left: 0;
+    padding-bottom: 1px;
+    margin-bottom: 20px;
+    list-style: none;
+    overflow: hidden;
+    li{
+        float: left;
+        width: 25%;
+        height: 115px;
+        padding: 5px;
+        margin: 0 -1px -1px 0;
+        font-size: 12px;
+        line-height: 1.4;
+        text-align: center;
+        border: 1px solid #eee;
+        .glyphicon{
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .glyphicon-class{
+            display: block;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        &:hover{
+            background-color: #EEE;
+        }
+    }
+}
+@media (min-width: 768px){
+    .bs-glyphicons-list li {
+        width: 12.5%;
+        .glyphicon{
+            font-size: 24px;
+        }
+    }
+}
+.fontawesome-icon-list{
+    margin-top: 22px;
+    .fa-hover{
+        font-size: 13px;
+        color: #222222;
+        line-height: 32px;
+        padding: 5px 10px;
+        .fa{
+            font-size: 14px;
+            display: inline-block;
+            text-align: right;
+            margin-right: 10px;
+        }
+        &:hover{
+            cursor: default;
+            background-color: #eee;
+            text-decoration: none;
+            .fa{
+                font-size: 28px;
+                vertical-align: -6px;
+            }
+        }
+    }
+}
+
+#weather-icons{
+    .iconExamples{
+        .example{
+            text-align: center;
+            margin: 10px 3px;
+            .icon{
+                font-size: 28px;
+                float: left;
+                width: 35px;
+            }
+            .class{
+                text-align: center;
+                font-size: 14px;
+                float: left;
+                margin-top: 6px;
+                font-weight: 400;
+                margin-left: 10px;
+                color: #333333;
+            }
+            .clearfix();
+        }
+    }
+}
+
+.bs-example{
+    background-color: #FFF;
+    position: relative;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0;
+    -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    >.list-group{
+        max-width: 400px;
+    }
+    .modal{
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        z-index: 1;
+        display: block;
+    }
+    .modal-dialog{
+        width: auto;
+        min-width: 200px;
+        left: auto;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.bs-example-type{
+    .table {
+        tr{
+            &:first-child{
+                td{
+                    border-top: none;
+                }
+            }
+        }
+        td{
+            padding: 15px 0;
+            border-color: #eee;
+        }
+    }
+}
+
+
+@media screen and (min-width: @screen-xs-max){
+    .bs-example{
+        margin-right: 0;
+        margin-left: 0;
+        background-color: #fff;
+        border-color: #ddd;
+        border-width: 1px;
+        border-radius: 4px 4px 0 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.bs-example-modal{
+    background-color: #f5f5f5;
+}
+
+#typography{
+    .bs-example-type{
+        .table{
+            .type-info{
+                color: #999;
+                vertical-align: middle;
+            }
+        }
+    }
+    .table-text-align{
+        tr{
+            td{
+                &:first-child{
+                    >p{
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
+#helper{
+    background-color: #FFF;
+    .table{
+        td{
+            vertical-align: middle;
+        }
+    }
+    .table-borders{
+        td{
+            div{
+                border: 2px solid black;
+            }
+        }
+    }
+    .table-paddings,
+    .table-margins{
+        td{
+            >div{
+                height: 50px;
+                position: relative;
+                >div{
+                    border: 1px solid #3C3C3C;
+                }
+            }
+        }
+    }
+    .table-margins{
+        td{
+            >div{
+                >div{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+    .table-paddings{
+        td{
+            >div{
+                >div{
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+#form-plugins{
+    .highlight{
+        pre{
+            min-width: initial;
+            
+        }
+    }
+    .panel-ion-slider{
+        fieldset{
+            .control-label{
+                font-size: 85%;
+            }
+        }
+    }
+}
+#sparkline{
+    .highlight{
+        margin-bottom: 0;
+        pre{
+            width: auto;
+            min-width: initial;
+        }
+    }
+}
+
+#image-cropping{
+    .aspect-ratio{
+        /* Apply these styles only when #preview-pane has
+   been placed within the Jcrop widget */
+        #preview-pane {
+            display: block;
+            position: absolute;
+            z-index: 2000;
+            top: 10px;
+            right: -280px;
+            padding: 6px;
+            border: 1px rgba(0,0,0,.4) solid;
+            background-color: white;
+
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+
+            .box-shadow(1px 1px 5px 2px rgba(0, 0, 0, 0.2));
+        }
+
+        /* The Javascript code will set the aspect ratio of the crop
+           area based on the size of the thumbnail preview,
+           specified here */
+        #preview-pane .preview-container {
+            width: 250px;
+            height: 170px;
+            overflow: hidden;
+        }
+
+    }
+    .api-demo{
+        .optdual { position: relative; }
+        .optdual .offset { position: absolute; left: 18em; }
+        .optlist label { width: 16em; display: block; }
+        #dl_links { margin-top: .5em; }
+    }
+}
+
+.show-grid{
+    margin-bottom: 15px;
+    [class^=col-]{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #eee;
+        background-color: rgba(86,61,124,.15);
+        border: 1px solid #ddd;
+        border: 1px solid rgba(86,61,124,.2);
+    }
+}
+.responsive-utilities{
+    td{
+        &.is-visible{
+            color: #468847;
+            background-color: #dff0d8!important;
+        }
+        &.is-hidden{
+            color: #ccc;
+            background-color: #f9f9f9!important;
+        }
+    }
+}
+.responsive-utilities-test{
+    span{
+        display: block;
+        padding: 15px 10px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.1;
+        text-align: center;
+        border-radius: 4px
+    }
+    &.hidden-on .col-xs-6 .visible-lg-block, 
+    &.hidden-on .col-xs-6 .visible-md-block, 
+    &.hidden-on .col-xs-6 .visible-sm-block, 
+    &.hidden-on .col-xs-6 .visible-xs-block,
+    &.hidden-on .col-xs-6 .visible-xxs-block,
+    &.visible-on .col-xs-6 .visible-lg-block, 
+    &.visible-on .col-xs-6 .visible-md-block, 
+    &.visible-on .col-xs-6 .visible-sm-block, 
+    &.visible-on .col-xs-6 .visible-xs-block,
+    &.visible-on .col-xs-6 .visible-xxs-block{
+        color: #468847;
+        background-color: #dff0d8;
+        border: 1px solid #d6e9c6;
+    }
+    &.hidden-on .col-xs-6 .hidden-lg, 
+    &.hidden-on .col-xs-6 .hidden-md, 
+    &.hidden-on .col-xs-6 .hidden-sm, 
+    &.hidden-on .col-xs-6 .hidden-xs,
+    &.hidden-on .col-xs-6 .hidden-xxs,
+    &.visible-on .col-xs-6 .hidden-lg, 
+    &.visible-on .col-xs-6 .hidden-md, 
+    &.visible-on .col-xs-6 .hidden-sm, 
+    &.visible-on .col-xs-6 .hidden-xs,
+    &.visible-on .col-xs-6 .hidden-xxs{
+        color: #999;
+        border: 1px solid #ddd;
+    }
+    .col-xs-6{
+        margin-bottom: 10px
+    }
+}
+
+
+#dashboard,
+#chartjs,
+#morrisjs,
+#basic-tables,
+#data-tables,
+#default_elements,
+#glyphicons,
+#font-awesome,
+#weather-icons,
+#typography,
+#buttons,
+#basic_elements,
+#form-custom-elements,
+#form-plugins,
+#form-layouts,
+#form-validation,
+#wizards,
+#editor,
+#file-upload,
+#event-calendar,
+#profile,
+#treeview,
+#grid-options{
+    padding: 10px;
+}
+
+#buttons{
+    .btn{
+        margin-bottom: 5px;
+    }
+}
+#lobibox{
+    fieldset legend{
+        margin-bottom: 5px;
+        padding-bottom: 0;
+    }
+    fieldset+fieldset{
+        margin-top: 15px;
+    }
+}
+#dashboard{
+    .lobilist{
+        margin-bottom: 0;
+        width: 100%;
+    }
+}

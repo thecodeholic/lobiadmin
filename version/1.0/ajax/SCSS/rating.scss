@@ -1,0 +1,84 @@
+/*Author      : @arboshiki*/
+.lobi-rating{
+    margin-bottom: 5px;
+    line-height: $lobi-rating-label-line-height;
+    input{
+        position: absolute;
+        left: -9999px;
+    }
+    label{
+        position: relative;
+        float: right;
+        margin-right: 2px;
+        margin-bottom: 0;
+        color: $lobi-rating-color;
+        font-size: $lobi-rating-label-font-size;
+        @include transition(color $transition-duration);
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    fieldset[disabled] &,
+    &[disabled]{
+        cursor: not-allowed;
+        color: darken($lobi-rating-disabled-color, 15%);
+        label{
+            color: $lobi-rating-disabled-color;
+            &:hover{
+                &, & ~ label{
+                    cursor: not-allowed;
+                    color: $lobi-rating-disabled-color;
+                }
+            }
+        }
+    }
+    @include lobi-rating-variant($lobi-rating-checked-color, $lobi-rating-checked-disabled-color);
+    @include clearfix();
+}
+
+.lobi-rating-xs{
+    font-size: $lobi-rating-xs-font-size;
+    line-height: $lobi-rating-xs-line-height;
+    label{
+        font-size: $lobi-rating-xs-label-font-size;
+    }
+}
+
+.lobi-rating-sm{
+    font-size: $lobi-rating-sm-font-size;
+    line-height: $lobi-rating-sm-line-height;
+    label{
+        font-size: $lobi-rating-sm-label-font-size;
+    }
+}
+
+.lobi-rating-lg{
+    font-size: $lobi-rating-lg-font-size;
+    line-height: $lobi-rating-lg-line-height;
+    label{
+        font-size: $lobi-rating-lg-label-font-size;
+    }
+}
+.lobi-rating-xl{
+    font-size: $lobi-rating-xl-font-size;
+    line-height: $lobi-rating-xl-line-height;
+    label{
+        font-size: $lobi-rating-xl-label-font-size;
+    }
+}
+
+.lobi-rating-info{
+    @include lobi-rating-variant($lobi-rating-info-color, $lobi-rating-info-disabled-color);
+}
+.lobi-rating-success{
+    @include lobi-rating-variant($lobi-rating-success-color, $lobi-rating-success-disabled-color);
+}
+.lobi-rating-warning{
+    @include lobi-rating-variant($lobi-rating-warning-color, $lobi-rating-warning-disabled-color);
+}
+.lobi-rating-danger{
+    @include lobi-rating-variant($lobi-rating-danger-color, $lobi-rating-danger-disabled-color);
+}
+.lobi-rating-inverse{
+    @include lobi-rating-variant($lobi-rating-inverse-color, $lobi-rating-inverse-disabled-color);
+}

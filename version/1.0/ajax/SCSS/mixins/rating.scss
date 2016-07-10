@@ -1,0 +1,23 @@
+/*Author      : @arboshiki*/
+
+@mixin lobi-rating-variant($color, $disabled){
+    input{
+        &:checked ~ label{
+            color: $color;
+            &:hover{
+                color: darken($color, 8%);
+            }
+        }
+    }
+    label{
+        &:hover{
+            &, & ~ label{
+                color: darken($color, 8%);
+            }
+        }
+    }
+    fieldset[disabled] & input:checked ~ label,
+    &[disabled] input:checked ~ label{
+        color: $disabled
+    }
+}

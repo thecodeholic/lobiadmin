@@ -1,0 +1,30 @@
+body{
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    /*font-size: $font-size-base;*/
+}
+.highlight{
+    overflow: auto;
+    padding: 9px 14px;
+    margin-bottom: 14px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+    pre{
+        min-width: 400px;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        word-break: normal;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+        code{
+            padding: 0;
+            background-color: transparent;
+        }
+    }
+}
+.bs-example + .highlight{
+    margin-top: -16px;
+    @include border-top-radius(0);
+}

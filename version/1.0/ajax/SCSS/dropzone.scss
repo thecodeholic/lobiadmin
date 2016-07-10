@@ -1,0 +1,6 @@
+/*Author      : @arboshiki*/
+.dropzone a.dz-remove,
+.dropzone-previews a.dz-remove{
+    background-image: none;
+    @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+}

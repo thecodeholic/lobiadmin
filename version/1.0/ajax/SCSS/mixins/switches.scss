@@ -1,0 +1,57 @@
+/*Author          : @arboshiki*/
+@mixin switch-size($width, $height, $circle-size, $font-size){
+    margin-bottom: (max($height, $circle-size)/2 - 5px);
+    $offset: ($height - $circle-size) / 2;
+    input{
+        + i{
+            width: $width;
+            height: $height;
+            margin-bottom: -($height/2 - 5px);
+            &:before{
+                font-size: $font-size;
+                line-height: $height;
+                border-radius: $circle-size/2;
+                font-weight: normal;
+            }
+            &:after{
+                top: $offset;
+                left: $offset;
+                bottom: $offset;
+                width: $circle-size;
+            }
+        }
+        &:checked{
+            + i{
+                &:after{
+                    left: $width - $circle-size - $offset; 
+                }
+            }
+        }
+    }
+}
+
+@mixin switch-outline-size($width, $height, $circle-size, $font-size){
+    margin-bottom: ($height/2 - 5px);
+    input{
+        + i{
+            width: $width;
+            height: $height;
+            border-radius: $width/2;
+            margin-bottom:  -($height/2 - 5px);
+            &:before{
+                font-size: $font-size;
+                line-height: $height - 2 *$switch-outline-border-width;
+            }
+            &:after{
+                width: $circle-size;
+            }
+        }
+        &:checked{
+            +i{
+                &:after{
+                    left: $width - $circle-size - $switch-outline-circle-offset - 2 * $switch-outline-border-width;
+                }
+            }
+        }
+    }
+}

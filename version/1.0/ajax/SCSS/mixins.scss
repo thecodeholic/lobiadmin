@@ -1,0 +1,33 @@
+/*Author      : @arboshiki*/
+@import "mixins/outline.scss";
+@import "mixins/buttons.scss";
+@import "mixins/panels.scss";
+@import "mixins/switches.scss";
+@import "mixins/checkboxes.scss";
+@import "mixins/radios.scss";
+@import "mixins/dropdowns.scss";
+@import "mixins/callouts.scss";
+@import "mixins/popovers.scss";
+@import "mixins/discount-labels.scss";
+@import "mixins/tooltips.scss";
+@import "mixins/rating.scss";
+@import "mixins/tables.scss";
+@import "mixins/forms.scss";
+@import "mixins/navbar.scss";
+@import "mixins/menu.scss";
+
+
+//------------------------------------------------------------------------------
+
+@mixin nav-menu-submenu($current-level, $padding: $nav-menu-submenu-item-padding-horizontal){
+    @if $current-level <= $nav-menu-submenu-levels {
+        >ul{
+            >li{
+                >a{
+                    padding-left: $nav-menu-submenu-vertical-line-left-offset + $nav-menu-submenu-item-left-line-width + $nav-menu-submenu-padding-left-base - $nav-menu-submenu-item-padding-horizontal + $padding * ($current-level - 1);
+                }
+                @include nav-menu-submenu($current-level+1, $padding);
+            }
+        }
+    } 
+}

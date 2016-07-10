@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!--Author      : @arboshiki-->
+<html>
+    <head>
+        <title>LobiAdmin documentation - LobiMail</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="css/github.css"/>
+        <link rel="stylesheet" href="css/animate.css"/>
+        <link rel="stylesheet" href="css/select2.css"/>
+        <link rel="stylesheet" href="css/select2-bootstrap.css"/>
+        <link rel="stylesheet" href="css/summernote.css"/>
+        <link rel="stylesheet" href="css/summernote-bs3.css"/>
+        <link rel="stylesheet" href="css/lobiadmin.css"/>
+        <link rel="stylesheet" href="css/lobimail.css"/>
+        <link rel="stylesheet" href="css/demo.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="img/logo/lobiadmin-logo-text-32.png" alt="" />
+                        </a>
+                    </div>
+
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+        
+        <div class="container">
+            <div id="lobimail">
+                <h1 class="page-header-dashed">LobiMail</h1>
+                <div id="lobimail-description">
+                    <p class="lead">LobiMail is <b>email interface</b> jquery plugin exclusively written for <big>LobiAdmin</big></p>
+                </div>
+                <!--Usage-->
+                <div id="lobimail-usage">
+                    <h3>Usage</h3>
+                    <p>LobiMail contains 5 views.</p>
+                    <ul>
+                        <li>Main</li>
+                        <li>Inbox</li>
+                        <li>Sent</li>
+                        <li>Message view</li>
+                        <li>Compose view</li>
+                    </ul>
+                    <p>Put Main View html into your page or load it by ajax and call plugin</p>
+                    <div class="highlight">
+                        <pre><code>&lt;div id="mailbox" class=&quot;fadeInDown animated&quot;&gt;
+    ...
+&lt;/div>
+&lt;script>
+</code>
+
+<code>    $('#mailbox').lobiMail();        
+</code>
+<code>&lt;/script></code>
+                        </pre>
+                    </div>
+                    <div class="callout callout-info">
+                        <p>See full example bellow</p>
+                    </div>
+                    <!--Views-->
+                    <div>
+                        <!--Main view-->
+                        <div>
+                            <h3>Main view</h3>
+                            <!--Configure search-->
+                            <div class="bs-example">
+                                <h4>Configure search</h4>
+                                <div class="callout callout-warning">
+                                    <p>Plugin searches <code>&lt;form></code> inside<code>.col-search</code> so make sure you have element with <code>.col-search</code> class and <code>&lt;form></code> in it.</p>
+                                </div>
+                                <p>Whenever you submit the search form if <b>compose view</b> or <b>email view</b> 
+                                    is shown nothing will happen but if any other view is shown such as <b>inbox, sent, draft</b>, ect. The same view will be loaded but search value will be sent as search parameter.
+                                    You can easily configure back and real time search will be applied.
+                                </p>
+                                <div class="highlight">
+                                    <pre><code>&lt;div class=&quot;col-search&quot;&gt;
+    &lt;form&gt;
+        &lt;div class=&quot;input-group&quot;&gt;
+            &lt;input type=&quot;text&quot; name="search" class=&quot;form-control&quot; placeholder=&quot;Search&quot;&gt;
+            &lt;span class=&quot;input-group-btn&quot;&gt;
+                &lt;button class=&quot;btn btn-default&quot;&gt;OK&lt;/button&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;&lt;!-- /input-group --&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+                                </div>
+                            </div>
+                            <!--Configure compose button-->
+                            <div class="bs-example">
+                                <h4>Configure compose button</h4>
+                                <div class="callout callout-warning">
+                                    <p>Plugin relies on <code>.btn-compose</code> class to find compose button. DO NOT remove this class.</p>
+                                </div>
+                                <div class="highlight">
+                                    <pre><code>&lt;a href=&quot;Put compose view url here&quot; class=&quot;btn btn-info btn-block btn-lg btn-compose btn-pretty&quot;&gt;Compose&lt;/a&gt;</code></pre>
+                                </div>
+                            </div>
+                            <!--Configure menu-->
+                            <div class="bs-example">
+                                <h4>Configure Menu</h4>
+                                <div class="callout callout-warning">
+                                    <p>Plugin relies on <code>.nav-menu</code> class to find menu. DO NOT remove this class.</p>
+                                    <p>Plugin relies on <code>data-type=""</code> attribute of <code>&lt;a></code> element to load view properly, 
+                                        so please make sure you include it for every menu item.
+                                    </p>
+                                </div>
+                                <div class="highlight">
+                                    <pre><code>&lt;ul class=&quot;nav nav-stacked nav-menu&quot;&gt;
+    &lt;li class=&quot;active&quot;&gt;
+        &lt;a href=&quot;PAGES/lobimail/inbox.html&quot; data-type=&quot;inbox&quot;&gt;
+            &lt;i class=&quot;fa fa-inbox&quot;&gt;&lt;/i&gt; 
+            Inbox 
+            &lt;span class=&quot;badge bg-info pull-right badge-unread&quot;&gt;3&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;PAGES/lobimail/sent.html&quot; data-type=&quot;sent&quot;&gt;&lt;i class=&quot;fa fa-envelope&quot;&gt;&lt;/i&gt; Sent&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-file&quot; data-type=&quot;draft&quot;&gt;&lt;/i&gt; Draft&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-trash-o&quot; data-type=&quot;trash&quot;&gt;&lt;/i&gt; Spam&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-archive&quot; data-type=&quot;archive&quot;&gt;&lt;/i&gt; Archive&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="callout callout-info">
+                                <p>Any other views are loaded by ajax and put in <code>.col-content</code></p>
+                            </div>
+                            <!--Full template-->
+                            <div class="bs-example">
+                                <h4>Full template</h4>
+                                <p>Add <code>.lobimail</code> to outer most div and plugin will automatically be initiated.</p>
+                                <div class="callout callout-danger">
+                                    <p>Automatic initiation will not work if you are loading main view by ajax</p>
+                                </div>
+                                <div class="highlight">
+                                    <pre><code>&lt;div class=&quot;lobimail fadeInDown animated&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-xs-12 col-sm-4 col-md-3 col-menu-search&quot;&gt;
+            &lt;div class=&quot;col-search&quot;&gt;
+                &lt;div class=&quot;input-group&quot;&gt;
+                    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Search&quot;&gt;
+                    &lt;span class=&quot;input-group-btn&quot;&gt;
+                        &lt;button class=&quot;btn btn-default&quot; type=&quot;button&quot;&gt;OK&lt;/button&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;&lt;!-- /input-group --&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;col-menu&quot;&gt;
+                &lt;a href=&quot;PAGES/lobimail/compose.html&quot; class=&quot;btn btn-info btn-block btn-lg btn-compose btn-pretty&quot;&gt;Compose&lt;/a&gt;
+                &lt;ul class=&quot;nav nav-stacked nav-menu&quot;&gt;
+                    &lt;li class=&quot;active&quot;&gt;
+                        &lt;a href=&quot;PAGES/lobimail/inbox.html&quot; data-type=&quot;inbox&quot;&gt;
+                            &lt;i class=&quot;fa fa-inbox&quot;&gt;&lt;/i&gt; 
+                            Inbox 
+                            &lt;span class=&quot;badge bg-info pull-right&quot;&gt;3&lt;/span&gt;
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;PAGES/lobimail/sent.html&quot; data-type=&quot;sent&quot;&gt;&lt;i class=&quot;fa fa-envelope&quot;&gt;&lt;/i&gt; Sent&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-file&quot; data-type=&quot;draft&quot;&gt;&lt;/i&gt; Draft&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-trash-o&quot; data-type=&quot;trash&quot;&gt;&lt;/i&gt; Spam&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-archive&quot; data-type=&quot;archive&quot;&gt;&lt;/i&gt; Archive&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-xs-12 col-sm-8 col-md-9 col-content&quot;&gt;
+            
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;        
+</code></pre>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Inbox view-->
+                        <div>
+                            <h3>Inbox view</h3>
+                            <!--Check all checkbox-->
+                            <div class="bs-example">
+                                <div class="callout callout-warning">
+                                    <p>If you have unread emails also add <code> data-unread-emails="Number of unread emails"</code> attribute.</p>
+                                </div>
+                                <h4>"Select all" checkbox</h4>
+                                <p>In order <b>select all checkbox</b> to work properly make sure you added <code>data-action="select-all"</code> to checkbox.</p>
+                                <div class="callout callout-info">
+                                    <p>The selector <code>data-action="select-all"</code> can be changed from plugin options.</p>
+                                </div>
+                                <div class="highlight">
+                                    <pre><code>&lt;button class=&quot;btn&quot;&gt;
+    &lt;label class=&quot;checkbox-inline lobicheck&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; data-action=&quot;check-all&quot;&gt;
+        &lt;i&gt;&lt;/i&gt;
+    &lt;/label&gt;
+&lt;/button&gt;        
+</code></pre>
+                                </div>
+                            </div>
+                            <!--Check actions-->
+                            <div class="bs-example">
+                                <h4>Select actions</h4>
+                                <p>In order <b>select actions (select read, select unread, etc.)</b> to work properly use <code>.dropdown-select-type</code> class on <code>&lt;ul></code> 
+                                    and add <code>data-select=""</code> attribute (available options: <code>"all", "none", "read", "unread", "starred", "unstarred"</code>) to <code>&lt;a></code> element inside <code>&lt;li></code>
+                                </p>
+                                <div class="highlight">
+                                    <pre><code>&lt;ul class=&quot;dropdown-menu dropdown-select-type&quot; role=&quot;menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; data-select=&quot;all&quot;&gt;All&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; data-select=&quot;none&quot;&gt;None&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; data-select=&quot;read&quot;&gt;Read&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; data-select=&quot;unread&quot;&gt;Unread&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; data-select=&quot;starred&quot;&gt;Starred&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; data-select=&quot;unstarred&quot;&gt;Unstarred&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;        
+</code></pre>
+                                </div>
+                            </div>
+                            <div class="bs-example">
+                                <h4>Emails</h4>
+                                <p>For opening email you need to add <code>data-key=""</code> to every <code>&lt;tr></code> and <code>data-view-email-url=""</code> attribute to <code>&lt;table></code>.</p>
+                                <p><code>data-view-email-url=""</code> attribute may be added to outer most div <code>.lobimail</code> 
+                                    also (In this case <code>&lt;table></code>'s <code>data-view-email-url=""</code> attribute will override <code>.lobimail</code>'s <code>data-view-email-url=""</code>)
+                                    or can be set from javascript.</p>
+                                <p>On the server side use <code>key</code> variable of <code>GET</code> request for loading single email.</p>
+                                <p>Use <code>.unread</code>, <code>.starred</code> classes on <code>&lt;tr></code> to mark email as unread or starred.</p>
+                                <div class="callout callout-warning">
+                                    <p>Also you will have to change <code>fa fa-star-o</code> to <code>fa fa-star</code> if you mark the email as starred</p>
+                                </div>
+                                <p></p>
+                                <div class="highlight">
+                                    <pre><code>&lt;table class=&quot;table&quot; data-view-email-url=&quot;Single email url&quot;&gt;
+    &lt;tbody&gt;
+        &lt;tr class=&quot;unread&quot; data-key=&quot;1&quot;&gt;
+            &lt;td class=&quot;td-checkbox&quot;&gt;
+                &lt;label class=&quot;checkbox-inline lobicheck&quot;&gt;
+                    &lt;input type=&quot;checkbox&quot; name=&quot;&quot;&gt;
+                    &lt;i&gt;&lt;/i&gt;
+                &lt;/label&gt;
+            &lt;/td&gt;
+            &lt;td class=&quot;td-star&quot;&gt;&lt;i class=&quot;fa fa-star-o&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+            &lt;td class=&quot;td-sender&quot;&gt;John Doe&lt;/td&gt;
+            &lt;td class=&quot;td-message&quot;&gt;Meeting time - &lt;small&gt;Let&apos;s meet tomorrow morning at 10:00 am near the cinema&lt;/small&gt;&lt;/td&gt;
+            &lt;td class=&quot;td-attachment&quot;&gt;&lt;i class=&quot;fa fa-paperclip&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+            &lt;td class=&quot;td-time&quot;&gt;Just now&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody>
+&lt;/table>
+</code></pre>
+                                </div>
+
+                            </div>
+                            <div class="bs-example">
+                                <h4>Full example</h4>
+                                <div class="highlight">
+                                    <pre><code>&lt;div class=&quot;mailbox-table-wrapper fadeInDown animated-fast&quot; data-unread-emails=&quot;3&quot;&gt;
+    &lt;div class=&quot;row row-actions clearfix&quot;&gt;
+        &lt;div class=&quot;col-xs-12 col-md-7 col-main-actions&quot;&gt;
+            &lt;div class=&quot;btn-group btn-group-info btn-group-pretty check-actions&quot;&gt;
+                &lt;button class=&quot;btn&quot;&gt;
+                    &lt;label class=&quot;checkbox-inline lobicheck&quot;&gt;
+                        &lt;input type=&quot;checkbox&quot; name data-action=&quot;select-all&quot;&gt;
+                        &lt;i&gt;&lt;/i&gt;
+                    &lt;/label&gt;
+                &lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                    &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;sr-only&quot;&gt;Toggle Dropdown&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;ul class=&quot;dropdown-menu dropdown-select-type&quot; role=&quot;menu&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot; data-select=&quot;all&quot;&gt;All&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot; data-select=&quot;none&quot;&gt;None&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot; data-select=&quot;read&quot;&gt;Read&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot; data-select=&quot;unread&quot;&gt;Unread&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot; data-select=&quot;starred&quot;&gt;Starred&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot; data-select=&quot;unstarred&quot;&gt;Unstarred&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;btn-group btn-group-pretty btn-group-sm btn-group-info btn-group-functions&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;btn&quot; data-action=&quot;archive&quot; data-toggle=&quot;tooltip&quot; data-title=&quot;Archive&quot;&gt;&lt;i class=&quot;fa fa-archive&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;btn&quot; data-action=&quot;spam&quot; data-toggle=&quot;tooltip&quot; data-title=&quot;Report as Spam&quot;&gt;&lt;i class=&quot;fa fa-exclamation-circle&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;a href=&quot;#&quot; class=&quot;btn&quot; data-action=&quot;delete&quot; data-toggle=&quot;tooltip&quot; data-title=&quot;Delete&quot;&gt;&lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-sm btn-info btn-pretty&quot;&gt;More &lt;i class=&quot;fa fa-caret-down&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-xs-12 col-md-5 col-pager&quot;&gt;
+            &lt;div class=&quot;btn-group pull-right pager-buttons btn-group&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-sm btn-info btn-pretty&quot;&gt;&lt;i class=&quot;fa fa-chevron-left&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-sm btn-info btn-pretty&quot;&gt;&lt;i class=&quot;fa fa-chevron-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;span class=&quot;pull-right pager-info&quot;&gt;&lt;span&gt;1 - 20&lt;/span&gt; of &lt;span&gt;250&lt;/span&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-table&quot;&gt;
+        &lt;table class=&quot;table&quot; data-view-email-url=&quot;PAGES/lobimail/message_view.html&quot; data-star-email-url=&quot;&quot;&gt;
+            &lt;tbody&gt;
+                &lt;tr class=&quot;starred&quot; data-key=&quot;1&quot;&gt;
+                    &lt;td class=&quot;td-checkbox&quot;&gt;
+                        &lt;label class=&quot;checkbox-inline lobicheck&quot;&gt;
+                            &lt;input type=&quot;checkbox&quot; name=&quot;&quot;&gt;
+                            &lt;i&gt;&lt;/i&gt;
+                        &lt;/label&gt;
+                    &lt;/td&gt;
+                    &lt;td class=&quot;td-star&quot;&gt;&lt;i class=&quot;fa fa-star&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+                    &lt;td class=&quot;td-sender&quot;&gt;Jane Green&lt;/td&gt;
+                    &lt;td class=&quot;td-message&quot;&gt;Sown sing wheels - &lt;small&gt;Folly sing triumph, twirl poises girth, floor, wary isle creepeth. Sown sing wheels hush crouching hart creepeth crouches roves spy sate isle. Made baffles virtuous wary floor unto.&lt;/small&gt;&lt;/td&gt;
+                    &lt;td class=&quot;td-attachment&quot;&gt;&lt;/td&gt;
+                    &lt;td class=&quot;td-attachment&quot;&gt;01/01/2015&lt;/td&gt;
+                    &lt;td class=&quot;td-time&quot;&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                ...
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;        
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Deleting Emails-->
+                        <div id="delete-email">
+                            <h3>Deleting emails</h3>
+                            <p>For deleting emails <code>[data-action="delete"]</code> element is used. If this element contains <code>href</code> attribute 
+                                different from <code>"#"</code>delete request will be send on this url. Otherwise <code>deleteUrl</code> option will be used from 
+                                LobiMail options. If neither this url is provided pressing delete button simple will do nothing. When sending delete request 
+                                table row <code>data-key</code> attribute is used for email identification.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Examples-->
+                <div id="lobimail-example">
+                    <h3>Example</h3>
+                    <div class="well">
+                        <div class="lobimail fadeInDown animated">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-md-3 col-menu-search">
+                                    <div class="col-search">
+                                        <form>
+                                            <div class="input-group">
+                                                <input type="text" name="search" class="form-control" placeholder="Search">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default">OK</button>
+                                                </span>
+                                            </div><!-- /input-group -->
+                                        </form>
+                                    </div>
+                                    <div class="col-menu">
+                                        <a href="pages/lobimail/compose.html" class="btn btn-info btn-block btn-lg btn-compose btn-pretty">Compose</a>
+                                        <ul class="nav nav-stacked nav-menu">
+                                            <li>
+                                                <a href="pages/lobimail/inbox.html" data-type="inbox">
+                                                    <i class="fa fa-inbox"></i> 
+                                                    Inbox 
+                                                    <span class="badge bg-info pull-right badge-unread"></span>
+                                                </a>
+                                            </li>
+                                            <li><a href="pages/lobimail/sent.html" data-type="sent"><i class="fa fa-envelope"></i> Sent</a></li>
+                                            <li><a href="#"><i class="fa fa-file" data-type="draft"></i> Draft</a></li>
+                                            <li><a href="#"><i class="fa fa-trash-o" data-type="trash"></i> Spam</a></li>
+                                            <li><a href="#"><i class="fa fa-archive" data-type="archive"></i> Archive</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-8 col-md-9 col-content">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="lobimail-options">
+                    <h3>Options</h3>
+                    <div class="highlight">
+<pre><code>//Boolean. 
+enableSearch: true,
+//Boolean. Activate check all email button
+enableSelectAll: true,
+//Boolean. Show debug messages
+enableDebug: false,
+//Boolean. Enable to mark email es starred
+enableStar: true,
+//Boolean. Enable tooltips
+enableTooltips: true,
+//String. View name which will be loaded when plugin is initialized
+defaultView : 'inbox', //compose, email, inbox, sent, draft, archive, trash ...
+//Integer. This option is used if defaultView is 'email'. This integer value will be used for loading email
+defaultMessageKey: false, //Number. Key of the message you want to load by default
+//String. The url which will be used for deleting emails
+deleteUrl: '',
+//String. The url which will be used for loading single email. 
+//Outer most div (.lobimail) element data-view-email-url="" attribute will override this option 
+//if it is provided. &lt;table> data-view-email-url="" attribute will override both.
+//So you have three way to specify viewEmailUrl attribute.
+viewEmailUrl: '',
+//String. The url which will be used for marking email as starred or unstarred. 
+//On server side you get "ids[]" array (containing keys of email) and "star" (true/false) to mark emails starred or unstarred
+starEmailUrl: '',
+
+//String. Selector for go back button when email is opened
+goBackBtn: '[data-action="go-back"]',
+//String. Selector for select all button
+checkAllBtn: '[data-action="select-all"]'        
+</code></pre>
+                    </div>
+                </div>
+                <div id="lobimail-methods">
+                    <h3>Methods</h3>
+                    <div class="highlight">
+                        <pre><code>/**
+* Show compose email view
+* 
+* @returns {LobiMail}
+*/
+this.showCompose = function(){
+   ...
+};
+/**
+* Show inbox emails by triggering menu inbox click
+* 
+* @returns {LobiMail}
+*/
+this.showInbox = function(){
+   ...
+};
+/**
+* Show inbox emails by triggering menu inbox click
+* 
+* @returns {LobiMail}
+*/
+this.showSent = function(){
+   ...
+};
+/**
+* Search in active table type view (inbox, sent, draft, etc)
+* 
+* @returns {LobiMail}
+*/
+this.search = function () {
+   ...
+};
+/**
+* Return jQuery object of selected emails
+* 
+* @returns {jQuery object}
+*/
+this.getSelected = function () {
+   ...
+};
+/**
+* Get selected emails' keys
+* 
+* @returns {Array}
+*/
+this.getSelectedIds = function () {
+   ...
+};
+/**
+* Delete selected emails. Send POST request to the url of [data-action=delete] button. 
+* If such button does not exist url is taken from options object.
+* 
+* @returns {LobiMail}
+*/
+this.deleteSelected = function () {
+   ...
+};
+/**
+* Delete emails by given ids. Server must respond in the following format
+* {"success": Boolean, "msg": String}
+* 
+* @param {Array} ids REQUIRED "Array of ids of emails"
+* @returns {LobiMail}
+*/
+this.deleteEmails = function(ids){
+   ...
+};
+/**
+* Set inbox unread emails badge value
+* 
+* @param {Integer} value REQUIRED "unread badges value"
+* @returns {LobiMail}
+*/
+this.setInboxBadgeValue = function (value) {
+   ...
+};
+/**
+* Decrease inbox unread emails badge value by one
+* 
+* @returns {LobiMail}
+*/
+this.decreaseInboxBadge = function () {
+   ...
+};
+/**
+* View Email by key. View email url can be given from options by javascript of by data-view-email-url="" attribute from &lt;table>
+* 
+* @param {Mixed} key REQUIRED "Email key for opening"
+* @returns {LobiMail}
+*/
+this.viewEmail = function(key){
+   ...
+};
+/**
+* 
+* @param {Array} ids REQUIRED "Array of ids' of emails"
+* @param {Boolean} status REQUIRED "Star or unstar. true means mark as starred, false - mark as unstarred"
+* @returns {LobiMail}
+*/
+this.star = function(ids, status){
+   ...
+};
+/**
+* This method is generally called from email view. 
+* But it can be called also from compose view. It shows previously actiavted email list.
+* 
+* @returns {LobiMail}
+*/
+this.goBack = function(){
+   ...
+};
+/**
+* Set default view and email key if view type is "email".
+* Calling this method is useful before LobiMail is initialized
+* 
+* @param {String} viewType "default view type"
+* @param {Integer} defaultMessagekey "default email key for loading email"
+* @returns {LobiMail}
+*/
+this.setDefaultView = function(viewType, defaultMessagekey){
+   ...
+};
+/**
+* Show debug message
+* 
+* @returns {LobiMail}
+*/
+this.debug = function () {
+   ...
+};
+/**
+* Show error message
+* 
+* @returns {LobiMail}
+*/
+this.error = function () {
+   ...
+};        
+</code></pre>
+                    </div>
+                </div>
+                <div id="lobimail-events">
+                    <h3>Events</h3>
+                    <div class="highlight">
+<pre><code>/**
+* EVENTS
+* Using events
+* $('.lobiMail').on('eventName.lobiMail', function(event, lobiMail){
+*      
+* });
+* 
+* First parameter to every event is Event object.
+* Second parameter is LobiMail instance.
+* Additional parameters are described bellow.
+* 
+* Triggered before lobiMail is initialized
+* beforeInit
+* 
+* Triggered when lobiMail is initialized
+* init
+* 
+* Triggered before compose email view is shown
+* beforeShowCompose
+* 
+* Triggered after compose emial view is shown
+* showCompose
+* 
+* Triggered before email delete request is sent
+* @param {Array} "array of email ids"
+* beforeDelete
+* 
+* Triggered after email detele request is sent and responded with {"success": true}
+* @param {Array} "array of email ids"
+* afterDelete
+* 
+* Triggered when inbox badge is changed
+* @param {Integer} "old value of inbox badge"
+* @param {Integer} "new value of inbox badge"
+* inboxBadgeChange
+* 
+* Triggered before single email view is opened
+* @param {Integer} "id of email"
+* beforeEmailView
+* 
+* Triggered after single email view is opened
+* @param {Integer} "id of email"
+* afterEmailView
+* 
+* Triggered before emails are marked as starred or unstarred
+* @param {Array} "ids of emails"
+* @param {Boolean} "status of star. true means mark as starred, false - mark as unstarred"
+* beforeStarChange
+* 
+* Triggered after emails are marked as starred or unstarred
+* @param {Array} "ids of emails"
+* @param {Boolean} "status of star. true means mark as starred, false - mark as unstarred"
+* afterStarChange
+* 
+* Triggered before menu active item is changed
+* @param {String} "menu active item type (inbox|sent|draft|...)"
+* beforeMenuChange
+* 
+* Triggered after menu active item is change
+* @param {String} "previously active item type"
+* @param {String} "just activated item type"
+* afterMenuChange
+* 
+* 
+*/        
+</code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+        <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/plugin/highlight/highlight.pack.js"></script>
+        <script type="text/javascript" src="js/plugin/select2/select2.min.js"></script>
+        <script type="text/javascript" src="js/plugin/summernote/summernote.min.js"></script>
+        <script type="text/javascript" src="js/demo/common.js"></script>
+        <script type="text/javascript" src="js/lobi-plugins/lobimail.min.js"></script>
+    </body>
+</html>

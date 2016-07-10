@@ -1,0 +1,12 @@
+/*Author      : @arboshiki*/
+
+.tt-dropdown-menu{
+    border-radius: 0;
+    margin-top: -1px;
+    border-color: $input-border-focus;
+    .dataset-header{
+        padding-left: 20px;
+        margin-top: 10px;
+        color: $dropdown-header-color;
+    }
+}

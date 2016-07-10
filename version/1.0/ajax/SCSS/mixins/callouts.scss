@@ -1,0 +1,7 @@
+/*Author     : @arboshiki*/
+
+@mixin callout-variant($bg, $border-color){
+    border-color: $border-color;
+    background-color: $bg;
+}
+

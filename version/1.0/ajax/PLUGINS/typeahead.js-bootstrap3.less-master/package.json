@@ -1,0 +1,39 @@
+{
+  "name": "typeahead.js-bootstrap3.less",
+  "description": "Bootstrap3 style for typeahead.js using Bootstrap 3 mixins and variables",
+  "version": "0.0.0",
+  "keywords": [
+    "less",
+    "bootstrap",
+    "typeahead.js"
+  ],
+  "homepage": "http://hyspace.io/typeahead.js-bootstrap3.less/",
+  "author": "hyspace",
+  "scripts": {
+    "start": "./node_modules/.bin/gulp --require coffee-script/register",
+    "pretest": "npm start",
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyspace/typeahead.js-bootstrap3.less"
+  },
+  "bugs": {
+    "url": "https://github.com/hyspace/typeahead.js-bootstrap3.less/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "devDependencies": {
+    "karma": "~0.10.9",
+    "gulp": "~3.5.1",
+    "gulp-less": "~1.2.1",
+    "gulp-concat": "~2.1.7",
+    "coffee-script": "~1.7.1",
+    "gulp-util": "~2.2.14",
+    "gulp-replace": "~0.2.0"
+  }
+}

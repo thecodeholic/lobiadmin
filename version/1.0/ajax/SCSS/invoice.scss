@@ -1,0 +1,162 @@
+//Author      : $arboshiki
+
+.invoice{
+    position: relative;
+    background-color: #FFF;
+    min-height: $invoice-min-height;
+    padding: $invoice-padding;
+    header {
+        padding: $invoice-header-padding;
+        margin-bottom: $invoice-header-margin-bottom;
+        border-bottom: $invoice-header-border-bottom;
+    }
+    .company-details{
+        text-align: right;
+        .name{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+    .contacts{
+        margin-bottom: $invoice-contacts-margin-bottom;
+    }
+    .invoice-to{
+        text-align: left;
+        .to{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+    .invoice-details{
+        text-align: right;
+        .invoice-id{
+            margin-top: 0;
+            color: $invoice-color;
+        }
+    }
+    main{
+        padding-bottom: $invoice-main-padding-bottom;
+        .thanks{
+            margin-top: $invoice-main-thanks-margin-top ;
+            font-size: $invoice-main-thanks-font-size;
+            margin-bottom: $invoice-main-thanks-margin-bottom ;
+        }
+        .notices{
+            padding-left: $invoice-main-notices-padding-left;
+            border-left: $invoice-main-notices-border-left;  
+            .notice {
+                font-size: $invoice-main-notices-notice-font-size;
+            }
+        }
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin-bottom: $invoice-table-margin-bottom ;
+        th,
+        td{
+            padding: $invoice-table-cell-padding;
+            background: $invoice-table-cell-background;
+            border-bottom: $invoice-table-cell-border-bottom;
+        }
+        th {
+            white-space: nowrap;
+            font-weight: normal;
+            font-size: 16px;
+        }
+        td {
+            h3 {
+                margin: 0;
+                font-weight: 400;
+                color: $invoice-table-item-description-title-color;
+                font-size: $invoice-table-item-description-title-font-size;
+            }
+        }
+        .unit,
+        .qty,
+        .total {
+            text-align: right;
+            font-size: $invoice-table-td-amount-font-size;
+        }
+        .no {
+            color: $invoice-table-row-number-color;
+            font-size: $invoice-table-row-number-font-size;
+            background: $invoice-table-row-number-bg;
+        }
+        .unit {
+            background: $invoice-table-hour-price-bg;
+        }
+        .total {
+            background: $invoice-table-total-bg;
+            color: $invoice-table-total-color;
+        }
+        tbody {
+            tr:last-child {
+                td {
+                    border: none;
+                }
+            }
+        }
+        tfoot {
+            td {
+                background: transparent;
+                border-bottom: none;
+                white-space: nowrap;
+                text-align: right;
+                padding: $invoice-table-tfoot-td-padding;
+                font-size: $invoice-table-tfoot-td-font-size;
+                border-top: $invoice-table-tfoot-td-border-top;
+            }
+            tr:first-child {
+                td {
+                    border-top: none;
+                }
+            }
+            tr:last-child {
+                td {
+                    color: $invoice-table-tfoot-last-tr-color;
+                    font-size: $invoice-table-tfoot-last-tr-font-size;
+                    border-top: $invoice-table-tfoot-last-tr-border-top;
+                }
+            }
+            tr {
+                td:first-child {
+                    border: none;
+                }
+            }
+        }
+    }
+    footer {
+        width: 100%;
+        text-align: center;
+        color: $invoice-footer-color;
+        border-top: $invoice-footer-border-top;
+        padding: $invoice-footer-padding;
+    }
+}
+@media print{
+    body{
+        padding: 0 !important;
+    }
+    .menu{
+        display: none !important;
+    }
+    #main{
+        -webkit-transition: none !important;
+        transition: none !important;
+        margin-left: 0 !important;
+    }
+    .invoice{
+        font-size: 11px !important;
+        overflow: hidden !important;
+        footer{
+            position: absolute;
+            bottom: 10px;
+            page-break-after: always;
+        }
+        >div:last-child{
+            page-break-before: always;
+        }
+    }
+}

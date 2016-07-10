@@ -1,0 +1,27 @@
+//Author        : @arboshiki
+
+.clearfix-xxs{
+    @media screen and (max-width: $screen-xs-min){
+        @include clearfix();
+    }
+}
+.clearfix-xs{
+    @media screen and (max-width: $screen-xs-max){
+        @include clearfix();
+    }
+}
+.clearfix-sm{
+    @media screen and (max-width: $screen-sm-max){
+        @include clearfix();
+    }
+}
+.clearfix-md{
+    @media screen and (max-width: $screen-md-max){
+        @include clearfix();
+    }
+}
+.clearfix-lg{
+    @media screen and (min-width: $screen-lg-min){
+        @include clearfix();
+    }
+}

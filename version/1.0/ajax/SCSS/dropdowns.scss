@@ -1,0 +1,54 @@
+/*
+    Author      : @arboshiki
+*/
+.dropdown-menu {
+    border-radius: $dropdown-menu-border-radius;
+    padding: $dropdown-menu-padding;
+    .divider{
+        margin: $dropdown-devider-margin-vertical 0;
+    }
+    &.reduced-padding{
+        li{
+            a{
+                padding: $dropdown-menu-reduced-padding;
+            }
+        }
+    }
+}
+
+.dropdown-menu{
+    background-color: $dropdown-bg;
+    @include box-shadow($dropdown-menu-box-shadow);
+}
+@media screen and (max-width: $screen-xs-max){
+    .navbar-nav .open .dropdown-menu{
+        background-color: $dropdown-bg;
+        @include box-shadow($dropdown-menu-box-shadow);
+    }
+}
+
+.btn{
+    &.dropdown-toggle{
+        &.btn-primary{
+            @include dropdown-variant($dropdown-menu-item-primary-hover-color, $dropdown-menu-item-primary-hover-bg);
+        }
+        &.btn-success{
+            @include dropdown-variant($dropdown-menu-item-success-hover-color, $dropdown-menu-item-success-hover-bg);
+        }
+        &.btn-warning{
+            @include dropdown-variant($dropdown-menu-item-warning-hover-color, $dropdown-menu-item-warning-hover-bg);
+        }
+        &.btn-info{
+            @include dropdown-variant($dropdown-menu-item-info-hover-color, $dropdown-menu-item-info-hover-bg);
+        }
+        &.btn-danger{
+            @include dropdown-variant($dropdown-menu-item-danger-hover-color, $dropdown-menu-item-danger-hover-bg);
+        }
+        &.btn-default{
+            @include dropdown-variant($dropdown-menu-item-default-hover-color, $dropdown-menu-item-default-hover-bg);
+        }
+        &.btn-inverse{
+            @include dropdown-variant($dropdown-menu-item-inverse-hover-color, $dropdown-menu-item-inverse-hover-bg);
+        }
+    }
+}

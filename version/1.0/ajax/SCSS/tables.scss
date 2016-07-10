@@ -1,0 +1,23 @@
+//Author     : @arboshiki
+
+.table-condensed-xs{
+    >thead>tr>th,
+    >tbody>tr>th,
+    >tfoot>tr>th,
+    >thead>tr>td,
+    >tbody>tr>td,
+    >tfoot>tr>td{
+        padding: $table-condensed-xs-padding;
+    }
+}
+.table>thead{
+    background-color: $table-thead-bg;
+}
+.table>thead>tr>th{
+    font-size: 110%;
+    border-bottom-width: $table-thead-border-bottom-width;
+}
+@include table-row-color-variant(success, #FFF);
+@include table-row-color-variant(info, #FFF);
+@include table-row-color-variant(warning, #FFF);
+@include table-row-color-variant(danger, #FFF);

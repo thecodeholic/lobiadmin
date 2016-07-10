@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>typeahead.js</title>
+    <meta name="description" content="a fast and fully-featured autocomplete library">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="http://twitter.com/favicons/favicon.ico">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="sticky-footer-wrapper">
+      <div class="masthead">
+        <h1 class="title"><img class="twitter-logo" src="img/twitter-logo.png"> typeahead.js</h1>
+        <p class="tagline">a flexible JavaScript library that provides a strong foundation for building robust typeaheads</p>
+
+        <div class="typeahead-demo">
+          <input class="typeahead" id="main-typeahead" placeholder="open source projects by Twitter">
+          <div class="btn-demo">
+            <p class="btn-demo-text">activate typeahead.js demo</p>
+          </div>
+        </div>
+        <span class="links links-examples">
+          <a href="examples/">or see examples</a>
+        </span>
+
+        <div class="promo">
+          <a class="btn btn-download" href="releases/latest/typeahead.bundle.js"><strong>download</strong> v0.10.5</a>
+          <span class="links">
+            <a href="https://github.com/twitter/typeahead.js">project &amp; docs on GitHub</a> &middot; <a href="https://github.com/twitter/typeahead.js/blob/master/CHANGELOG.md">changelog</a>
+          </span>
+          <div class="social">
+            <span class="social-btn">
+              <iframe src="github-btn.html?user=twitter&repo=typeahead.js&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="92" height="20"></iframe>
+            </span>
+            <span class="social-btn">
+              <iframe src="github-btn.html?user=twitter&repo=typeahead.js&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+            </span>
+            <span class="social-btn">
+              <a href="https://twitter.com/typeahead" class="twitter-follow-button" data-show-count="true">Follow @typeahead</a>
+            </span>
+            <span class="social-btn">
+              <a href="https://twitter.com/share" class="twitter-share-button" data-count="true">Tweet</a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="sticky-footer-push"></div>
+    </div>
+
+    <script src="js/handlebars.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/ghostwriter.min.js"></script>
+    <script src="releases/latest/typeahead.bundle.js"></script>
+    <script src="js/main.js"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-31893438-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

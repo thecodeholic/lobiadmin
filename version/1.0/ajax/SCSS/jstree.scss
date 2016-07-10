@@ -1,0 +1,68 @@
+/*Author      : @arboshiki*/
+
+.jstree-default {
+    &.jstree-custom-checkboxes{
+        .jstree-checkbox{
+            background-image: none;
+            font-size: 20px;
+            color: $gray-light;
+            &:before{
+                content: $fa-var-square-o;
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
+                font-size: inherit; // can't have font-size inherit on line above, so need to override
+                text-rendering: auto; // optimizelegibility throws things off #1094
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+        &.jstree-checkbox-selection .jstree-clicked>.jstree-checkbox, 
+        .jstree-checked>.jstree-checkbox{
+            &:before{
+                content: $fa-var-check-square;
+            }
+        }
+        .jstree-anchor>.jstree-undetermined{
+            &:before{
+                content: $fa-var-minus-square;
+            }
+        }
+        .jstree-themeicon{
+            font-size: 18px;
+        }
+    }
+}
+
+.icon-css{
+    &:before{
+        content: "css";
+        font-style: normal;
+        border: 1px solid $gray;
+        background-color: $gray-lighter;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        padding: 0px;
+        font-size: 10px;
+    }
+}
+
+.icon-js{
+    &:before{
+        content: "js";
+        border: 1px solid $gray-dark;
+        padding: 2px;
+    }
+}
+
+.icon-html{
+    &:before{
+        content: "html";
+        font-style: normal;
+        border: 1px solid $gray-dark;
+        background-color: $gray-lighter;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        padding: 0px;
+        font-size: 10px;
+    }
+}

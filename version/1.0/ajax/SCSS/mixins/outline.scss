@@ -1,0 +1,9 @@
+/*Author      : @arboshiki*/
+@mixin outline($prop){
+    outline: $prop !important;
+    &:focus,
+    &:active,
+    &:focus:active{
+        outline: $prop !important;
+    }
+}

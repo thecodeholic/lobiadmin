@@ -1,0 +1,84 @@
+//Author      : @arboshiki
+.header-cyan{
+    .header{
+        .navbar-variant(@cyan-navbar-bg, @cyan-navbar-brand-color, @cyan-navbar-text-color);
+    }
+}
+
+.header-green{
+    .header{
+        .navbar-variant(@green-navbar-bg, @green-navbar-brand-color, @green-navbar-text-color);
+    }
+}
+.header-brown{
+    .header{
+        .navbar-variant(@brown-navbar-bg, @brown-navbar-brand-color, @brown-navbar-text-color);
+    }
+}
+.menu-gradient{
+    .menu{
+        border-right: @light-menu-border-right;
+        #gradient > .horizontal(@light-menu-gradient-start-color, @light-menu-gradient-end-color);
+        nav{
+            >ul{
+                >li{
+                    >a{
+                        color: @light-menu-item-color;
+                        #gradient > .vertical(@light-menu-item-gradient-start-color, @light-menu-item-gradient-end-color);
+                    }
+                    &>a:hover{
+                        color: @light-menu-item-color;
+                    }
+                    &.active>a{
+                        background-color: @nav-menu-item-active-bg;
+                    }
+                    ul{
+                        >li{
+                            >a{
+                                color: @light-menu-item-color;
+                                background: @light-menu-item-gradient-start-color;
+                                &:hover{
+                                    color: darken(@light-menu-item-color, 10%);
+                                    background: darken(@light-menu-item-gradient-start-color, 5%);
+                                }
+                            }
+                            &.active{
+                                >a{
+                                    background: darken(@light-menu-item-gradient-start-color, 5%);
+                                }
+                            }
+                        }
+                    }
+                    >ul{
+                        &:before,
+                        >li:before{
+                            border-color: @light-menu-item-color;
+                        }
+                    }
+                }
+            }
+        }
+        .menu-collapse-line{
+            #gradient > .vertical(@light-menu-item-gradient-start-color, @light-menu-item-gradient-end-color);
+            .menu-toggle-btn{
+                &,
+                &:hover{
+                    color: @light-menu-item-color;
+                }
+            }
+        }
+    }
+    &.menu-collapsed{
+        .menu{
+            .menu-heading .menu-header-buttons-wrapper:hover .menu-header-buttons{
+                #gradient > .horizontal(@light-menu-item-gradient-end-color, @light-menu-item-gradient-start-color);
+            }
+            nav>ul>li:hover>a{
+                text-shadow: none;
+                .inner-text{
+                    #gradient > .vertical(@light-menu-item-gradient-start-color, @light-menu-item-gradient-end-color);
+                }
+            }
+        }
+    }
+}

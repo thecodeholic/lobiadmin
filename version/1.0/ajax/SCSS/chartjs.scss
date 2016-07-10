@@ -1,0 +1,28 @@
+//Author        : @arboshiki
+
+.line-legend,
+.doughnut-legend,
+.pie-legend,
+.polararea-legend{
+    list-style: none;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    border-left: 0;
+    li{
+        display: inline-block;
+        position: relative;
+        border-radius: 5px;
+        padding-left: 22px;
+        margin: 0 10px;
+        white-space: nowrap;
+        span{
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 3px;
+            @include square(15px);
+            border-radius: 2px;
+        }
+    }
+}

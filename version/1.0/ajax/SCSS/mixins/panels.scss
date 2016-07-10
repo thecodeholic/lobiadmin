@@ -1,0 +1,13 @@
+//Author      : @arboshiki
+
+@include panel-with-tabs-variant($panel-bg){
+    .panel-heading{
+        .nav-tabs{
+            >li.active{
+                >a{
+                    color: $panel-bg;
+                }
+            }
+        }
+    }
+}

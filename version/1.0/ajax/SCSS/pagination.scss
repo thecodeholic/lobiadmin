@@ -1,0 +1,70 @@
+/*Author      : @arboshiki*/
+
+.pagination{
+    &.pagination-balls{
+        >li{
+            >a{
+                padding: 0;
+                text-align: center;
+                border-radius: 50%;
+                border-width: $pagination-balls-border-width;
+                margin-right: $pagination-balls-margin-right;
+                width: $pagination-balls-width-base;
+                line-height: $pagination-balls-line-height;
+                @include transition(all $transition-duration);
+                &:hover,
+                &:focus{
+                    background-color: $pagination-bg;
+                    border-color: $pagination-active-border;
+                }
+            }
+            &:last-child{
+                >a{
+                    margin-right: 0;
+                }
+            }
+            &.active{
+                >a{
+                    &:hover,
+                    &:focus{
+                        background-color: $pagination-active-bg;
+                        border-color: $pagination-active-border;
+                        color: $pagination-active-color;
+                    }
+                }
+            }
+            &.disabled{
+                >a{
+                    &:hover,
+                    &:focus{
+                        background-color: $pagination-bg;
+                        border-color: $pagination-border;
+                        color: $pagination-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pagination-lg{
+    &.pagination-balls{
+        >li{
+            >a{
+                line-height: $pagination-balls-line-height-lg;
+                width: $pagination-balls-width-lg;
+            }
+        }
+    }
+}
+
+.pagination-sm{
+    &.pagination-balls{
+        >li{
+            >a{
+                line-height: $pagination-balls-line-height-sm;
+                width: $pagination-balls-width-sm;
+            }
+        }
+    }
+}

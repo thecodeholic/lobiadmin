@@ -1,0 +1,116 @@
+/*Author      : @arboshiki*/
+
+.discount-label {
+    position: relative;
+    border-radius: $discount-label-border-radius;
+    background: $discount-label-bg;
+    border: 1px solid $discount-label-border-color;
+    padding: $discount-label-padding-vertical 0;
+    margin-bottom: 10px;
+    @include box-shadow($discount-label-box-shadow);
+    .brand {
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: $discount-label-brand-letter-spacing;
+        padding: $discount-label-brand-padding;
+        min-height: $discount-label-brand-min-height;
+    }
+    .discount {
+        position: relative;
+        text-align: center;
+        font-weight: bold;
+        font-size: $discount-label-percentage-font-size;
+        line-height: $discount-label-percentage-line-height;
+        padding-top: $discount-label-percentage-padding-top;
+        color: $discount-label-percentage-color;
+        .type {
+            text-transform: uppercase;
+            font-size: $discount-label-percentage-type-font-size;
+            letter-spacing: 1px;
+            margin-top: -30px;
+        }
+    }
+    .discount:after {
+        content: " ";
+        border-right: 20px solid transparent;
+        border-left: 20px solid transparent;
+        position: absolute;
+        bottom: -20px;
+        left: 20%;
+    }
+    .descr {
+        margin-top: 10px;
+        padding: $discount-label-description-padding;
+        min-height: $discount-label-description-min-height;
+        color: $discount-label-description-color;
+    }
+    .ends {
+        margin-bottom: 10px;
+        padding: 0 $discount-label-ends-padding-horizontal;
+        color: $discount-label-ends-color;
+    }
+    .coupon {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: $discount-label-coupon-font-size;
+        padding: $discount-label-coupon-padding;
+        background: $discount-label-coupon-bg;
+        a.open-code {
+            color: $discount-label-coupon-open-code-link-color;
+        }
+        .code {
+            letter-spacing: 1px;
+            margin-top: 10px;
+            border-radius: $discount-label-coupon-code-border-radius;
+            padding: $discount-label-coupon-code-padding;
+            color: $discount-label-coupon-code-color;
+            background: $discount-label-coupon-code-bg;
+        }
+    }
+    &:before {
+        content: " ";
+        height: 20px;
+        width: 20px;
+        background: #ddd;
+        border-radius: 20px;
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        margin-left: -10px;
+    }
+    @include discount-label-variant($discount-label-default-bg);
+    &.discount-label-primary{
+        @include discount-label-variant($discount-label-primary-bg );
+    }
+    &.discount-label-inverse{
+        @include discount-label-variant($discount-label-inverse-bg );
+    }
+    &.discount-label-danger{
+        @include discount-label-variant($discount-label-danger-bg );
+    }
+    &.discount-label-success{
+        @include discount-label-variant($discount-label-success-bg );
+    }
+    &.discount-label-info{
+        @include discount-label-variant($discount-label-info-bg );
+    }
+    &.discount-label-warning{
+        @include discount-label-variant($discount-label-warning-bg );
+    }
+    &.discount-label-purple{
+        @include discount-label-variant($discount-label-purple-bg );
+    }
+    &.discount-label-pink{
+        @include discount-label-variant($discount-label-pink-bg );
+    }
+    &.discount-label-cyan{
+        @include discount-label-variant($discount-label-cyan-bg );
+    }
+    &.discount-label-red{
+        @include discount-label-variant($discount-label-red-bg );
+    }
+    &.discount-label-green{
+        @include discount-label-variant($discount-label-green-bg );
+    }
+}

@@ -1,0 +1,11 @@
+/*Author      : @arboshiki*/
+.list-group-item{
+    &.active{
+        &,
+        &:hover{
+            .list-group-item-text{
+                color: darken(@list-group-item-active-text-color, 10%);
+            }
+        }
+    }
+}

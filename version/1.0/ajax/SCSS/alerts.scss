@@ -1,0 +1,10 @@
+/* 
+    Created on : Jan 2, 2015, 6:18:58 PM
+    Author     : @arboshiki
+*/
+.alert{
+    border-radius: 0;
+    h1,h2,h3,h4,h5,h6{
+        margin-top: $alert-heading-margin-top;
+    }
+}

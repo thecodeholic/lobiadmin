@@ -1,0 +1,108 @@
+//Author      $arboshiki
+
+//------------------------------------------------------------------------------
+//----------------------------OVERRIDE DEFAULT----------------------------------
+//------------------------------------------------------------------------------
+.panel{
+    border-radius: 0;
+    @include box-shadow(none);
+}
+.panel-heading{
+    border-radius: 0;
+    padding: 8px 12px;
+    h1,h2,h3,h4,h5,h6{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    @include clearfix();
+}
+.panel-footer{
+    border-radius: 0;
+}
+.panel-default{
+    border-color: $panel-default-border-color;
+}
+//------------------------------------------------------------------------------
+//----------------------------PANEL COLORS--------------------------------------
+//------------------------------------------------------------------------------
+.panel-light{
+    @include panel-variant($panel-light-border; $panel-light-text; $panel-light-heading-bg; $panel-light-border);
+    .panel-footer{
+        border-color: $panel-light-border;
+        background-color: $panel-light-heading-bg;
+    }
+}
+.panel-inverse {
+  @include panel-variant($panel-inverse-border; $panel-inverse-text; $panel-inverse-heading-bg; $panel-inverse-border);
+}
+//------------------------------------------------------------------------------
+//--------------------------PANEL WITH TABS-------------------------------------
+//------------------------------------------------------------------------------
+.panel-with-tabs{
+    border-radius: 0;
+    .panel-heading{
+        border-radius: 0;
+        padding: 0;
+        .panel-title{
+            float: left;
+            font-weight: 400;
+            padding: $nav-tabs-item-padding-vertical - 1px $nav-tabs-item-padding-horizontal;
+        }
+        .nav-tabs{
+            float: left;
+            border-bottom: none;
+            background-color: transparent;
+            background-color: rgba(0, 0, 0, 0.05);
+            >li{
+                >a{
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+                }
+            }
+            >li:not(.active){
+                >a{
+                    color: inherit;
+                }
+            }
+        }
+    }
+    .tab-content{
+        border: none;
+    }
+}
+//------------------------------------------------------------------------------
+//----------------------------PANEL GROUPS--------------------------------------
+//------------------------------------------------------------------------------
+.panel-group{
+    .panel{
+        &,
+        .panel-heading{
+            border-radius: 0;
+        }
+        +.panel{
+            margin-top: 0;
+            margin-top: -1px;
+        }
+    }
+    .panel-heading{
+        cursor: pointer;
+            .icon-collapsed,
+            .icon-expanded{
+                color: inherit;
+            }
+            .icon-collapsed{
+                display: none;
+            }
+            .icon-expanded{
+                display: inline-block;
+            }
+        &.collapsed{
+            .icon-collapsed{
+                display: inline-block;
+            }
+            .icon-expanded{
+                display: none;
+            }
+        }
+    }
+}

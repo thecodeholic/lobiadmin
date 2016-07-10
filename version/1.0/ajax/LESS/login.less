@@ -1,0 +1,80 @@
+/*Author      : @arboshiki*/
+
+@import "../BOOTSTRAP/less/variables.less";
+@import "../BOOTSTRAP/less/mixins.less";
+@import "../PLUGINS/font-awesome-4.3.0/less/variables.less";
+@import "variables.less";
+
+@import "fonts.less";
+@import "../PLUGINS/animate.css";
+
+@import "mixins.less";
+@import "buttons.less";
+@import "forms.less";
+@import "checkboxes.less";
+@import "scaffolding.less";
+
+body, html{
+    display: table;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.login-wrapper{
+    display: table-cell;
+    vertical-align: middle;
+    form{
+        .box-shadow(@login-box-shadow);
+        
+        visibility: hidden;
+        position: fixed;
+        z-index: -5;
+        border-bottom: none;
+        box-shadow: none;
+        padding: 6px;
+        background-color: #394557;
+        -moz-transform: scale(0,1) translate(-150px);
+        -webkit-transform: scale(0,1) translate(-150px);
+        -o-transform: scale(0,1) translate(-150px);
+        -ms-transform: scale(0,1) translate(-150px);
+        transform: scale(0,1) translate(-150px);
+        
+        margin: 0 auto;
+        max-width: @login-max-width;
+        background-color: @login-background;
+        border-radius: @login-border-radius;
+        .login-header{
+            font-weight: 400;
+            font-size: @login-header-font-size;
+            border-top-left-radius: @login-border-radius;
+            border-top-right-radius: @login-border-radius;
+            padding: @login-header-padding-vertical @login-header-padding-horizontal;
+            background-color: @login-header-background;
+            border-bottom: @login-header-border-width solid @login-header-border;
+            a{
+                color: @login-header-link;
+            }
+        }
+        .login-footer{
+            background-color: @login-footer-background;
+            border-top: @login-footer-border-width solid @login-footer-border;
+            padding: @login-footer-padding-vertical @login-footer-padding-horizontal;
+            .clearfix();
+        }
+        &.visible{
+            visibility: visible;
+            position: relative;
+            z-index: auto;
+            -moz-transform: scale(1,1) translate(0);
+            -webkit-transform: scale(1,1) translate(0);
+            -o-transform: scale(1,1) translate(0);
+            -ms-transform: scale(1,1) translate(0);
+            transform: scale(1,1) translate(0);
+            transition: transform .3s ease;
+            -moz-transition: -moz-transform .3s ease;
+            -webkit-transition: -webkit-transform .3s ease;
+            -o-transition: -o-transform .2s ease;
+        }
+    }
+}

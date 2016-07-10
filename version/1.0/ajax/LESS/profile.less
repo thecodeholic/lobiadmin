@@ -1,0 +1,87 @@
+
+
+.profile-page{
+    background-color: lighten(@gray-lighter, 5%);
+    .profile-header{
+        .background{
+            background-image:url('../img/demo/1024x1024-6.jpg');
+            height: @profile-profile-header-bachground-heigh;
+            background-size: cover;
+            text-align: center;
+            .btn-follow {
+                margin-top: @profile-profile-header-bachground-btn-follow-margin-top;
+                width: @profile-profile-header-bachground-btn-follow-width;
+            }
+        }
+        .avatar-image{
+            height: @profile-profile-header-avatar-image-height;
+            width: @profile-profile-header-avatar-image-width;
+            position: absolute;
+            top: @profile-profile-header-avatar-image-top;
+            left: @profile-profile-header-avatar-image-left;
+        }
+        .header-text{
+            color : @profile-profile-header-header-text-color;
+            margin-left: @profile-profile-header-header-text-margin-left;
+            margin-top: @profile-profile-header-header-text-margin-top;
+            margin-bottom: @profile-profile-header-header-text-margin-bottom;
+            ul{
+                list-style: none;
+                padding-left: 0;
+                .fa{
+                    width: @profile-profile-header-header-text-ul-fa-width;
+                    font-size: @profile-profile-header-header-text-ul-fa-font-size;
+                }
+                a{
+                    color: @brand-info;
+                }
+            }
+        }
+        .row-nav-buttons{
+            .btn{
+                border-radius: 0;
+            }
+        }
+        @media (max-width: @screen-md-max){
+            .avatar-image{
+                display: block;
+                margin: 0 auto;
+                position: static;
+                margin-top: -75px;
+            }
+            .header-text{
+                text-align: center;
+                margin-left: 0;
+                margin-top: 0;
+            }
+            .row-nav-buttons{
+                margin-top: 20px;
+            }
+        }
+    }
+    .post{
+        background-color: @profile-post-background-color;
+        margin-bottom: @profile-post-margin-bottom;
+        border: @profile-post-border;
+        .box-shadow(-2px 2px 5px rgba(0, 0, 0, 0.2));
+        .well{
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+    }
+    .col-recent-activities{
+        .profile-news{
+            .btn-group{
+                >.btn{
+                    height: @profile-col-recent-activities-profile-news-btn-group-btn-height;
+                }
+            }
+        }
+        .tab-pane-messages{
+            .media-list{
+                max-height: @profile-col-recent-activities-tab-pane-messages-media-list-max-height;
+                overflow: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+//Author      : @arboshiki
+
+@mixin navbar-variant($navbar-bg, $navbar-brand-color, $navbar-color){
+    background: $navbar-bg;
+    .navbar-brand{
+        color: $navbar-brand-color;
+    }
+    .navbar-nav{
+        >li>a{
+            color: $navbar-color;
+            &:focus,
+            &:hover{
+                color: lighten($navbar-color, 7%);
+            }
+        }
+
+        >.open{
+            >a{
+                &,
+                &:focus,
+                    &:hover{
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $screen-xs-min){
+        .navbar-items{
+            border-bottom-color: darken($navbar-bg, 5%);
+        }
+        .navbar-items-2{
+            background-color: $navbar-bg;
+        }
+    }
+}

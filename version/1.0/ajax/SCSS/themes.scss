@@ -1,0 +1,87 @@
+//Author      : @arboshiki
+.header-cyan{
+    .header{
+        @include navbar-variant($cyan-navbar-bg, $cyan-navbar-brand-color, $cyan-navbar-text-color);
+    }
+}
+
+.header-green{
+    .header{
+        @include navbar-variant($green-navbar-bg, $green-navbar-brand-color, $green-navbar-text-color);
+    }
+}
+.header-brown{
+    .header{
+        @include navbar-variant($brown-navbar-bg, $brown-navbar-brand-color, $brown-navbar-text-color);
+    }
+}
+.menu-gradient{
+    .menu{
+        border-right: $light-menu-border-right;
+        @include gradient-horizontal($light-menu-gradient-start-color, $light-menu-gradient-end-color);
+        nav{
+            >ul{
+                >li{
+                    >a{
+                        color: $light-menu-item-color;
+                        @include gradient-vertical($light-menu-item-gradient-start-color, $light-menu-item-gradient-end-color);
+                    }
+                    &>a:hover{
+                        color: $light-menu-item-color;
+                    }
+                    &.opened>a{
+                        background-color: $nav-menu-item-opened-bg;
+                    }
+                    &.active>a{
+                        background-color: $nav-menu-item-active-bg;
+                    }
+                    ul{
+                        >li{
+                            >a{
+                                color: $light-menu-item-color;
+                                background: $light-menu-item-gradient-start-color;
+                                &:hover{
+                                    color: darken($light-menu-item-color, 10%);
+                                    background: darken($light-menu-item-gradient-start-color, 5%);
+                                }
+                            }
+                            &.active{
+                                >a{
+                                    background: darken($light-menu-item-gradient-start-color, 5%);
+                                }
+                            }
+                        }
+                    }
+                    >ul{
+                        &:before,
+                        >li:before{
+                            border-color: $light-menu-item-color;
+                        }
+                    }
+                }
+            }
+        }
+        .menu-collapse-line{
+            @include gradient-vertical($light-menu-item-gradient-start-color, $light-menu-item-gradient-end-color);
+            .menu-toggle-btn{
+                &,
+                &:hover{
+                    color: $light-menu-item-color;
+                }
+            }
+        }
+    }
+    &.menu-collapsed{ 
+        .menu{
+            .menu-heading .menu-header-buttons-wrapper:hover .menu-header-buttons{
+                @include gradient-horizontal($light-menu-item-gradient-end-color, $light-menu-item-gradient-start-color);
+            }
+            nav>ul>li:hover>a{
+                text-shadow: none;
+                .inner-text{
+                    @include gradient-vertical($light-menu-item-gradient-start-color, $light-menu-item-gradient-end-color);
+                }
+            }
+        }
+    }
+}

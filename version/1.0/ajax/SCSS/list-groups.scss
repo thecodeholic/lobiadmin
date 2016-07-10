@@ -1,0 +1,8 @@
+/*Author      : @arboshiki*/
+.list-group-item{
+    &.active{
+        .list-group-item-text{
+            color: $list-group-item-active-text-color;
+        }
+    }
+}

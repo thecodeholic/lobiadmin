@@ -1,0 +1,240 @@
+/*
+    Author          : @arboshiki
+*/
+.switch, 
+.switch-inline{
+    input{
+        position: absolute;
+        margin-left: -9999px;
+        visibility: hidden;
+        + i{
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            &:before, &:after{
+                display: block;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                bottom: 0px;
+            }
+            &:before{
+                content: attr(data-switch-off);
+                right: 0px;
+                padding: 0 4px;
+                color: #FFF;
+                text-align: right;
+                background-color: $switch-off-bg;
+                font-style: normal;
+                @include transition(all $switch-transition-duration);
+            }
+            &:after{
+                content: "";
+                text-align: center;
+                border-radius: 50%;
+                background-color: $switch-circle-bg;
+                @include box-shadow($switch-box-shadow);
+                @include transition(all $switch-transition-duration);
+            }
+        }
+        &:checked{
+            + i {
+                &:before{
+                    content: attr(data-switch-on);
+                    text-align: left;
+                    background-color: $switch-on-bg;
+                }
+            }
+        }
+        &:disabled{
+            +i{
+                cursor: not-allowed;
+                &:before{
+                    background-color: $switch-disabled-off-bg;
+                }
+                &:after{
+                    @include box-shadow($switch-disabled-box-shadow);
+                }
+            }
+            &:checked{
+                +i{
+                    &:before{
+                        background-color: $switch-disabled-on-bg;
+                    }
+                }
+            }
+        }
+    }
+    @include switch-size($switch-width-base, $switch-height-base, $switch-circle-size-base, $switch-font-size-base);
+    &.switch-lg{
+        @include switch-size($switch-width-lg, $switch-height-lg, $switch-circle-size-lg, $switch-font-size-lg);
+    }
+    &.switch-sm{
+        @include switch-size($switch-width-sm, $switch-height-sm, $switch-circle-size-sm, $switch-font-size-sm);
+    }
+    &.switch-xs{
+        @include switch-size($switch-width-xs, $switch-height-xs, $switch-circle-size-xs, $switch-font-size-xs);
+    }
+}
+.switch{
+    display: block;
+}
+.switch-inline{
+    display: inline-block;
+}
+
+.switch-outline, 
+.switch-outline-inline{
+    input{
+        position: absolute;
+        margin-left: -9999px;
+        visibility: hidden;
+        +i{
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            border: $switch-outline-border-width solid $switch-outline-off-border-color;
+            background-color: $switch-outline-off-bg;
+            &:before{
+                display: block;
+                width: 100%;
+                color: $switch-outline-off-border-color;
+                content: attr(data-switch-off);
+                text-align: right;
+                padding: 0 4px;
+                font-style: normal;
+            }
+            &:after{
+                content: "";
+                display: block;
+                position: absolute;
+                border-radius: 50%;
+                text-align: right;
+                top: $switch-outline-circle-offset;
+                left: $switch-outline-circle-offset;
+                bottom: $switch-outline-circle-offset;
+                background-color: $switch-outline-circle-off-bg;
+                @include transition(all $switch-outline-transition-duration);
+            }
+        }
+        &:checked{
+            + i{
+                border-color: $switch-outline-on-border-color;
+                background-color: $switch-outline-on-bg;
+                &:before{
+                    content: attr(data-switch-on);
+                    text-align: left;
+                    font-style: normal;
+                    color: $switch-outline-on-border-color
+                }
+                &:after{
+                    background-color: $switch-outline-circle-on-bg;
+                }
+            }
+        }
+        &:disabled{
+            + i{
+                cursor: not-allowed;
+                border-color: $switch-outline-disabled-off-border-color;
+                &:before{
+                    color: $switch-outline-disabled-off-border-color;
+                }
+                &:after{
+                    background-color: $switch-outline-disabled-circle-off-bg;
+                }
+            }
+            &:checked{
+                + i{
+                    border-color: $switch-outline-disabled-on-border-color;
+                    &:before{
+                        color: $switch-outline-disabled-on-border-color;
+                    }
+                    &:after{
+                        background-color: $switch-outline-disabled-circle-on-bg;
+                    }
+                }
+            }
+        }
+    }
+    @include switch-outline-size($switch-outline-width-base, $switch-outline-height-base, $switch-outline-circle-size-base, $switch-font-size-base);
+    &.switch-lg{
+        @include switch-outline-size($switch-outline-width-lg, $switch-outline-height-lg, $switch-outline-circle-size-lg, $switch-font-size-lg);
+    }
+    &.switch-sm{
+        @include switch-outline-size($switch-outline-width-sm, $switch-outline-height-sm, $switch-outline-circle-size-sm, $switch-font-size-sm);
+    }
+    &.switch-xs{
+        @include switch-outline-size($switch-outline-width-xs, $switch-outline-height-xs, $switch-outline-circle-size-xs, $switch-font-size-xs);
+    }
+}
+.switch-outline{
+    display: block;
+}
+.switch-outline-inline{
+    display: inline-block;
+}
+
+fieldset:disabled{
+    .switch,
+    .switch-inline,
+    .switch-outline,
+    .switch-outline-inline{
+        &,
+        i{
+            cursor: not-allowed;
+        }
+    }
+    .switch,
+    .switch-inline{
+        input{
+            +i{
+                &:before{
+                    background-color: $switch-disabled-off-bg;
+                }
+                &:after{
+                    @include box-shadow($switch-disabled-box-shadow);
+                }
+            }
+            &:checked{
+                +i{
+                    &:before{
+                        background-color: $switch-disabled-on-bg;
+                    }
+                }
+            }
+        }
+    }
+    .switch-outline,
+    .switch-outline-inline{
+        input{
+            +i{
+                border-color: $switch-outline-disabled-off-border-color;
+                &:before{
+                    color: $switch-outline-disabled-off-border-color;
+                }
+                &:after{
+                    background-color: $switch-outline-disabled-circle-off-bg;
+                }
+            }
+            &:checked{
+                + i{
+                    border-color: $switch-outline-disabled-on-border-color;
+                    &:before{
+                        color: $switch-outline-disabled-on-border-color;
+                    }
+                    &:after{
+                        background-color: $switch-outline-disabled-circle-on-bg;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.table tr td .switch,
+.table tr th .switch{
+    margin-top: 0;
+    margin-bottom: 0;
+}

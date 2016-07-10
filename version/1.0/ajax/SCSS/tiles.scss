@@ -1,0 +1,53 @@
+//Author      : $arboshiki
+
+.tile{
+    margin-bottom: $tile-margin-bottom;
+    .tile-body{
+        display: table;
+        width: 100%;
+        position: relative;
+        padding: $tile-body-padding;
+        .tile-icon{
+            position: absolute;
+            top: $tile-icon-top;
+            right: $tile-icon-right;
+        }
+    }
+    .tile-footer{
+        display: block;
+        padding: $tile-footer-padding;
+        &:hover, &:focus{
+            text-decoration: none;
+        }
+    }
+}
+
+.tile-stat {
+    margin-bottom: $tile-progress-margin-bottom;
+    .tile-body{
+        display: table;
+        width: 100%;
+        padding: $tile-body-padding;
+    }
+    .tile-progressbar {
+        box-sizing: content-box;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        height: $tile-progress-bar-height;
+        background: $tile-progress-bar-wrapper-bg;
+        span {
+            display: block;
+            width: 0;
+            height: 100%;
+            background: $tile-progress-bar-bg;
+            @include transition(all 1.5s cubic-bezier(0.230,1.000,0.320,1.000));
+        }
+    }
+    .tile-footer {
+        display: table;
+        width: 100%;
+        text-align: right;
+        padding: $tile-progress-footer-padding;
+        background: $tile-progress-footer-bg;
+    }
+}

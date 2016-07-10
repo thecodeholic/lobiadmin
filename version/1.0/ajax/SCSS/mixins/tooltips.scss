@@ -1,0 +1,6 @@
+/*Author      : $arboshiki*/
+@mixin tooltip-variant($bg, $color: #FFF){
+    background-color: $bg;
+    color: $color;
+    border-color: $bg;
+}

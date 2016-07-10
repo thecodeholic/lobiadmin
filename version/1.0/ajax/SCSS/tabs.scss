@@ -1,0 +1,182 @@
+//Author      : @arboshiki
+
+.tab-content{
+    border: 1px solid $nav-tabs-border-color;
+    border-top: none;
+}
+
+.nav-tabs{
+    border-bottom-color: $nav-tabs-border-color;
+    >li{
+        margin-bottom: -1px;
+        >a{
+            margin-right: 0;
+            border-radius: 0;
+            white-space: nowrap;
+            padding: $nav-tabs-item-padding-vertical $nav-tabs-item-padding-horizontal;
+            color: $nav-tabs-item-color;
+            .badge{
+                margin: $nav-tabs-item-badge-margin;
+            }
+            
+            &:hover,
+            &:focus{
+                background-color: transparent;
+                border-color: transparent;
+            }
+        }
+        &.active{
+            >a{
+                font-weight: bold;
+                @include box-shadow(0 -1px 0 $nav-tabs-border-color);
+                &,
+                &:focus,
+                &:hover{
+                    border-color: $nav-tabs-border-color;
+                    border-bottom-color: transparent;
+                    background-color: $nav-tabs-active-item-bg;
+                }
+            }
+        }
+    }
+    &.nav-justified{
+        >li{
+            >a{
+                border-radius: 0;
+                border-bottom-color: $nav-tabs-border-color;
+            }
+            &.active{
+                >a{
+                    &,
+                    &:focus,
+                    &:hover{
+                        border-color: $nav-tabs-border-color;
+                        border-bottom-color: $nav-tabs-active-item-bg;
+                    }
+                }
+            }
+        }
+    }
+    &.nav-tabs-pull-right{
+        >li{
+            float: right;
+        }
+    }
+    .open{
+        >a{
+            &,
+            &:focus,
+                &:hover{
+                border: 1px solid $nav-tabs-border-color;
+                border-bottom: 1px solid transparent;
+            }
+        }
+    }
+}
+
+.nav-tabs-left{
+    display: table;
+    .nav-tabs,
+    .tab-content{
+        display: table-cell;
+    }
+    .nav-tabs{
+        border-bottom: none;
+        >li{
+            float: none;
+            >a{
+                border-bottom: none;
+                margin-right: -1px;
+            }
+            &.active{
+                >a{
+                    border-bottom: 1px solid $nav-tabs-border-color;
+                    border-right-color: transparent;
+                    @include box-shadow(-1px 0 0 $nav-tabs-border-color);
+                }
+            }
+        }
+    }
+}
+.nav-tabs-right{
+    display: table;
+    .nav-tabs,
+    .tab-content{
+        display: table-cell;
+    }
+    .nav-tabs{
+        border-bottom: none;
+        >li{
+            float: none;
+            >a{
+                border-bottom: none;
+                margin-left: -1px;
+            }
+            &.active{
+                >a{
+                    border-bottom: 1px solid $nav-tabs-border-color;
+                    border-left-color: transparent;
+                    @include box-shadow(1px 0 0 $nav-tabs-border-color);
+                }
+            }
+        }
+    }
+}
+
+.nav-tabs-left,
+.nav-tabs-right{
+    .tab-content{
+        width: 100%;
+        border: 1px solid $nav-tabs-border-color;
+    }
+}
+.nav-tabs-bottom{
+    .nav-tabs{
+        border-bottom: none;
+        border-top: 1px solid $nav-tabs-border-color;
+        >li{
+            margin-bottom: 0;
+            margin-top: -1px;
+            >a{
+                border-top: none;
+            }
+            &.active{
+                >a{
+                    border-top: none;
+                    border-bottom-color: $nav-tabs-border-color;
+                    @include box-shadow(0 1px 0 $nav-tabs-border-color);
+                    &,
+                    &:focus,
+                    &:hover{
+                        border-color: $nav-tabs-border-color;
+                        border-top: none;
+                        border-bottom: 1px solid $nav-tabs-border-color;
+                    }
+                }
+            }
+        }
+        &.nav-justified{
+            border-top: none;
+            >li{
+                >a{
+                    border-bottom: none;
+                    border-top: 1px solid $nav-tabs-border-color;
+                }
+                &.active{
+                    >a{
+                        &,
+                        &:focus,
+                        &:hover{
+                            border-top: 1px solid $nav-tabs-active-item-bg;
+                            border-bottom: 1px solid $nav-tabs-border-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tab-content{
+        border-bottom: none;
+        border-top: 1px solid $nav-tabs-border-color;
+    }
+}

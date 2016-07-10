@@ -1,0 +1,133 @@
+/* 
+    Created on : Jan 2, 2015, 7:56:45 PM
+    Author     : @arboshiki
+*/
+.plugin-documentation{
+    .row{
+        margin-left: 0;
+        margin-right: 0;
+        border-bottom: $plugin-doc-row-border-bottom;
+    }
+    .row-header{
+        .cell{
+            text-transform: uppercase;
+            font-size: $plugin-doc-row-header-font-size;
+            color: $plugin-doc-row-header-color;
+            background-color: $plugin-doc-row-header-bg;
+        }
+    }
+    .cell{
+        float: left;
+        font-size: $plugin-doc-cell-font-size;
+        padding: $plugin-doc-cell-padding-vertical $plugin-doc-cell-padding-horizontal;
+        width: 100%;
+        pre{
+            min-width: $plugin-doc-cell-pre;
+        }
+    }
+    .text-mobile{
+        display: none;
+    }
+    @media screen and (max-width: $screen-xs-max){
+        .row{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .row-header{
+            display: none;
+        }
+        .cell{
+            width: 100% !important;
+            padding: 0;
+            margin-bottom: 3px;
+        }
+        .text-mobile{
+            font-weight: normal;
+            display: inline;
+        }
+    }
+    &.plugin-options{
+        .cell-name{
+            width: 100% / 12 * $plugin-doc-option-name-width;
+        }
+        .cell-type{
+            width: 100% / 12 * $plugin-doc-option-type-width;
+        }
+        .cell-default{
+            width: 100% / 12 * $plugin-doc-option-default-width;
+        }
+        .cell-descr{
+            width: 100% / 12 * $plugin-doc-option-description-width;
+        }
+    }
+    &.plugin-methods{
+        .cell-name{
+            width: 100% / 12 * $plugin-doc-method-name-width;
+        }
+        .cell-params{
+            width: 100% / 12 * $plugin-doc-method-params-width;
+            >div{
+                >i{
+                    font-weight: bold;
+                }
+            }
+        }
+        .cell-return{
+            width: 100% / 12 * $plugin-doc-method-return-width;
+        }
+        .cell-descr{
+            width: 100% / 12 * $plugin-doc-method-description-width;
+        }
+    }
+    &.plugin-events{
+        .cell-name{
+            width: 100% / 12 * $plugin-doc-event-name-width;
+        }
+        .cell-params{
+            width: 100% / 12 * $plugin-doc-event-params-width;
+            >div{
+                >code{
+                    font-style: italic;
+                    font-weight: bold;
+                }
+            }
+        }
+        .cell-descr{
+            width: 100% / 12 * $plugin-doc-event-description-width;
+        }
+    }
+    @media screen and (max-width: $screen-xs-max){
+        .cell-name{
+            font-size: 102%;
+            font-weight: bold;
+        }
+        .cell-default,
+        .cell-descr,
+        .cell-params,
+        .cell-return{
+            padding-left: 30px;
+        }
+        .cell-params{
+            >div{
+                padding-left: 20px;
+            }
+        }
+        &.plugin-options{
+            .cell-type{
+                display: none;
+            }
+        }
+        &.plugin-methods{
+            .cell-params{
+                >div{
+                    >i{
+                        font-weight: bold;
+                    }
+                }
+            }
+            .cell-return{
+                display: none;
+            }
+        }
+    }
+}

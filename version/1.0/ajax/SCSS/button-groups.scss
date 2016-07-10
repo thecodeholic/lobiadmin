@@ -1,0 +1,149 @@
+/*
+    Author      : @arboshiki
+*/
+//------------------------------------------------------------------------------
+//----------------------------BUTTON GROUPS VERTICAL----------------------------
+//------------------------------------------------------------------------------
+.btn-group-vertical > .btn {
+    &:first-child:not(:last-child) {
+        border-top-right-radius: $btn-border-radius !important;
+        border-top-left-radius: $btn-border-radius !important;
+    }
+    &:last-child:not(:first-child) {
+        @include border-bottom-radius($btn-border-radius);
+    }
+}
+//------------------------------------------------------------------------------
+//----------------------BUTTON GROUP COLORS AND SIZES---------------------------
+//------------------------------------------------------------------------------
+.btn-group{
+    &.btn-group-success{
+        .btn{
+            @extend .btn-success;
+        }
+    }
+    &.btn-group-danger{
+        .btn{
+            @extend .btn-danger;
+        }
+    }
+    &.btn-group-warning{
+        .btn{
+            @extend .btn-warning;
+        }
+    }
+    &.btn-group-primary{
+        .btn{
+            @extend .btn-primary;
+        }
+    }
+    &.btn-group-info{
+        .btn{
+            @extend .btn-info;
+        }
+    }
+    &.btn-group-default{
+        .btn{
+            @extend .btn-default;
+        }
+    }
+    &.btn-group-inverse{
+        .btn{
+            @extend .btn-default;
+        }
+    }
+    &.btn-group-pretty{
+        .btn{
+            @extend .btn-pretty;
+        }
+    }
+    &.btn-group-xl{
+        .btn{
+            @extend .btn-xl;
+        }
+    }
+}
+//------------------------------------------------------------------------------
+//----------------------BUTTON GROUP--------------------------------------------
+//------------------------------------------------------------------------------
+.btn-group{
+    &.btn-group-xs >.btn.dropdown-toggle{
+        padding-left: $dropdown-toggle-xs-padding-horizontal;
+        padding-right: $dropdown-toggle-xs-padding-horizontal;
+    }
+    &.btn-group-sm >.btn.dropdown-toggle{
+        padding-left: $dropdown-toggle-sm-padding-horizontal;
+        padding-right: $dropdown-toggle-sm-padding-horizontal;
+    }
+    .dropdown-menu{
+        &.dropdown-menu-auto-width{
+            min-width: 0;
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+//----------------------BUTTON TOOLBAR COLORS AND SIZES-------------------------
+//------------------------------------------------------------------------------
+.btn-toolbar{
+    &.btn-toolbar-success{
+        .btn{
+            @extend .btn-success;
+        }
+    }
+    &.btn-toolbar-danger{
+        .btn{
+            @extend .btn-danger;
+        }
+    }
+    &.btn-toolbar-warning{
+        .btn{
+            @extend .btn-warning;
+        }
+    }
+    &.btn-toolbar-primary{
+        .btn{
+            @extend .btn-primary;
+        }
+    }
+    &.btn-toolbar-info{
+        .btn{
+            @extend .btn-info;
+        }
+    }
+    &.btn-toolbar-default{
+        .btn{
+            @extend .btn-default;
+        }
+    }
+    &.btn-toolbar-inverse{
+        .btn{
+            @extend .btn-default;
+        }
+    }
+    &.btn-toolbar-pretty{
+        .btn{
+            @extend .btn-pretty;
+        }
+    }
+    &.btn-toobar-xl{
+        .btn{
+            @extend .btn-xl;
+        }
+    }
+    &.btn-toobar-lg{
+        .btn{
+            @extend .btn-lg;
+        }
+    }
+    &.btn-toobar-sm{
+        .btn{
+            @extend .btn-sm;
+        }
+    }
+    &.btn-toobar-xs{
+        .btn{
+            @extend .btn-xs;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+/* 
+    Author     : @arboshiki
+*/
+.callout{
+    border-left: $callout-border-left-width solid black;
+    padding: $callout-padding-vertical $callout-padding-horizontal;
+    margin-bottom: 10px;
+    h1,h2,h3,h4,h5,h6{
+        margin-top: 5px;
+        font-weight: bold;
+    }
+    p{
+        margin: 5px;
+    }
+    &.callout-primary{
+        @include callout-variant($callout-primary-bg, $callout-primary-border-left-color);
+    }
+    &.callout-success{
+        @include callout-variant($callout-success-bg, $callout-success-border-left-color);
+    }
+    &.callout-danger{
+        @include callout-variant($callout-danger-bg, $callout-danger-border-left-color);
+    }
+    &.callout-warning{
+        @include callout-variant($callout-warning-bg, $callout-warning-border-left-color);
+    }
+    &.callout-info{
+        @include callout-variant($callout-info-bg, $callout-info-border-left-color);
+    }
+}

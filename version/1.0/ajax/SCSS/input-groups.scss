@@ -1,0 +1,22 @@
+/*
+    Author      : @arboshiki
+*/
+// Sizing options
+//
+// Remix the default form control sizing classes into new ones for easier
+// manipulation.
+
+.input-group-xl > .form-control,
+.input-group-xl > .input-group-addon,
+.input-group-xl > .input-group-btn > .btn {
+  @extend .input-xl;
+}
+.input-group-xs > .form-control,
+.input-group-xs > .input-group-addon,
+.input-group-xs > .input-group-btn > .btn {
+  @extend .input-xs;
+}
+
+.input-group-addon{
+    border-radius: $input-border-radius;
+}

@@ -1,0 +1,34 @@
+
+.btn-3d-variant(@bg){
+    @shadow : @btn-3d-box-shadow-common1, @btn-3d-box-shadow-prefix darken(@bg, 7%), @btn-3d-box-shadow-common2;
+    .box-shadow(@shadow);
+    &, &:hover{
+        background-color: @bg;
+    }
+    &:active{
+        @shadow : @btn-3d-box-shadow-common1, @btn-3d-active-box-shadow-prefix darken(@bg, 7%);
+        .box-shadow(@shadow);
+    }
+}
+
+.btn-circle-size(@size, @padding, @font-size){
+    .square(@size);
+    padding: @padding;
+    font-size: @font-size;
+}
+
+.btn-outline-variant(@bg){
+    border: 1px solid @bg;
+    color: @bg;
+    &:focus{
+        background-color: @bg;
+    }
+}
+
+.btn-label-size(@padding-vertical; @padding-horizontal; @width){
+    padding-left: @width + @padding-horizontal;
+    .btn-label{
+        padding: @padding-vertical @padding-horizontal;
+        width: @width;
+    }
+}

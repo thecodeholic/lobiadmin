@@ -1,0 +1,13 @@
+/*Author      : @arboshiki*/
+@mixin dropdown-variant($color, $bg){
+    &~.dropdown-menu{
+        li{
+            a{
+                &:hover{
+                    color: $color;
+                    background-color: $bg;
+                }
+            }
+        }
+    }
+}

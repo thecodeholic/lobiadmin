@@ -1,0 +1,8 @@
+DO NOT remove any images in this folder and the following folders 
+    datatables
+    jquery-ui
+    jstree
+    x-editable
+
+As these images are parts of plugins and plugins' css files refer to these images.
+You can change these image file paths from LESS/SCSS variables.

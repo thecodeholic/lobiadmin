@@ -1,0 +1,201 @@
+//Author      : @arboshiki
+
+//------------------------------------------------------------------------------
+//----------------------------OVERRIDE DEFAULT----------------------------------
+//------------------------------------------------------------------------------
+.btn{
+    @include outline(0);
+    &:active,
+        &.active{
+        @include box-shadow($btn-active-box-shadow);
+    }
+}
+.btn,
+.btn-lg,
+.btn-sm,
+.btn-xs,
+.btn-group-lg > .btn,
+.btn-group-sm > .btn,
+.btn-group-xs > .btn{
+    border-radius: $btn-border-radius;
+}
+//------------------------------------------------------------------------------
+//----------------------------BUTTON COLORS-------------------------------------
+//------------------------------------------------------------------------------
+
+.btn-light{ 
+    @include button-variant($btn-light-color, $btn-light-bg, $btn-light-border);
+}
+.btn-inverse{ 
+    @include button-variant($btn-inverse-color, $btn-inverse-bg, $btn-inverse-border);
+}
+.btn-cyan{
+    @include button-variant($btn-cyan-color, $btn-cyan-bg, $btn-cyan-border);
+}
+
+//------------------------------------------------------------------------------
+//---------------------------PRETTY BUTTONS-------------------------------------
+//------------------------------------------------------------------------------
+.btn-pretty{
+    @include box-shadow($btn-pretty-box-shadow);
+    &:active,
+    &.active{
+        position: relative;
+        top: 1px;
+        left: -1px;
+        @include box-shadow($btn-pretty-active-box-shadow);
+    }
+}
+
+//------------------------------------------------------------------------------
+//---------------------------OUTLINE BUTTONS------------------------------------
+//------------------------------------------------------------------------------
+.btn-outline {
+    background-color: transparent;
+    @include transition(all $btn-outline-transition-dur);
+    &.btn-primary{
+        @include btn-outline-variant($btn-primary-bg);
+    }
+    &.btn-info{
+        @include btn-outline-variant($btn-info-bg);
+    }
+    &.btn-warning{
+        @include btn-outline-variant($btn-warning-bg);
+    }
+    &.btn-success{
+        @include btn-outline-variant($btn-success-bg);
+    }
+    &.btn-danger{
+        @include btn-outline-variant($btn-danger-bg);
+    }
+    &.btn-inverse{
+        @include btn-outline-variant($btn-inverse-bg);
+    }
+    &:hover,
+    &:focus,
+    &:active, 
+    &:focus:active{
+        border-color: transparent;
+        color: $btn-outline-hover;
+    }
+}
+//------------------------------------------------------------------------------
+//-----------------------3D BUTTONS---------------------------------------------
+//------------------------------------------------------------------------------
+.btn-3d{
+    position: relative;
+    border: 0;
+    border-radius: $btn-3d-border-radius !important; 
+    margin-top: $btn-3d-margin-top;
+    @include transition(all 0.1s);
+    &:active,
+    &.active{
+        top: $btn-3d-margin-top;
+    }
+    &.btn-default{
+        @include btn-3d-variant($btn-default-bg); 
+    }
+    &.btn-primary{
+        @include btn-3d-variant($btn-primary-bg);
+    }
+    &.btn-danger{
+        @include btn-3d-variant($btn-danger-bg);
+    }
+    &.btn-warning{
+        @include btn-3d-variant($btn-warning-bg);
+    }
+    &.btn-info{
+        @include btn-3d-variant($btn-info-bg);
+    }
+    &.btn-success{
+        @include btn-3d-variant($btn-success-bg);
+    }
+    &.btn-outline{
+        background-color: transparent;
+    }
+}
+
+//------------------------------------------------------------------------------
+//-----------------------CIRCLE BUTTONS-----------------------------------------
+//------------------------------------------------------------------------------
+.btn-circle {
+    text-align: center;
+    border-radius: 50% !important;
+    @include square($btn-circle-base-size);
+    padding: $btn-circle-base-padding;
+    font-size: $btn-circle-base-font-size;
+    &.btn-sm{
+        @include btn-circle-size($btn-circle-sm-size, $btn-circle-sm-padding, $btn-circle-sm-font-size);
+    }
+    &.btn-lg{
+        @include btn-circle-size($btn-circle-lg-size, $btn-circle-lg-padding, $btn-circle-lg-font-size);
+    }
+    &.btn-xl{
+        @include btn-circle-size($btn-circle-xl-size, $btn-circle-xl-padding, $btn-circle-xl-font-size);
+    }
+    &.btn-xxl{
+        @include btn-circle-size($btn-circle-xxl-size, $btn-circle-xxl-padding, $btn-circle-xxl-font-size);
+    }
+}
+//------------------------------------------------------------------------------
+//-----------------------LABELED BUTTONS----------------------------------------
+//------------------------------------------------------------------------------
+.btn-labeled {
+    padding-left: $padding-base-horizontal + $btn-label-width;
+    position: relative;
+    @include btn-label-size($padding-base-vertical, $padding-base-horizontal, $btn-label-width);
+    .btn-label{
+         display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        text-align: center;
+        width: $btn-label-width;
+        background: $btn-label-bg;
+        border-radius: $btn-border-radius 0 0 $btn-border-radius;
+    }
+    &.btn-xl{
+        @include btn-label-size($padding-xl-vertical, $padding-xl-horizontal, $btn-xl-label-width);
+    }
+    &.btn-lg{
+        @include btn-label-size($padding-large-vertical, $padding-large-horizontal, $btn-lg-label-width);
+    }
+    &.btn-sm{
+        @include btn-label-size($padding-small-vertical, $padding-small-horizontal, $btn-sm-label-width);
+    }
+    &.btn-xs{
+        @include btn-label-size($padding-xs-vertical, $padding-xs-horizontal, $btn-xs-label-width);
+    }
+}
+
+//------------------------------------------------------------------------------
+//-----------------------OTHER BUTTONS------------------------------------------
+//------------------------------------------------------------------------------
+//extra large button class
+.btn-xl{
+    @include button-size($padding-xl-vertical, $padding-xl-horizontal, $btn-xl-font-size, $btn-xl-line-height, $btn-xl-border-radius);
+}
+//extra large social button
+.btn-social{
+    &.btn-xl {
+        padding-left: ($bs-height-xl + $padding-xl-horizontal);
+        :first-child {
+            line-height: $bs-height-xl;
+            width: $bs-height-xl;
+        }
+    }
+}
+//extra large social icon button
+.btn-social-icon{
+    &.btn-xl {
+        height: $bs-height-xl;
+        width: $bs-height-xl;
+        padding: 0;
+        &>*{
+            &:first-child{
+                line-height: $bs-xl-line-height;
+            }
+        }
+    }
+}

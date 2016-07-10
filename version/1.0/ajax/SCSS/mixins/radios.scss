@@ -1,0 +1,82 @@
+/*Author      : @arboshiki*/
+@mixin radio-variant($color){
+    i{
+        color: $color;
+        border-color: $color;
+    }
+    input[type=radio]{
+        &:checked{
+            &+i{
+                border-color: $color;
+                &:after{
+                    background-color: $color;
+                }
+            }
+        }
+    }
+    &:hover{
+        input[type=radio]{
+            &:checked{
+                &+i{
+                    border-color: darken($color, 10%);
+                    &:after{
+                        background-color: darken($color, 10%); 
+                    }
+                }
+            }
+        }
+        i{
+            border-color: darken($color, 10%);
+        }
+    }
+}
+
+@mixin radio-disabled-variant($color){
+    @include radio-variant($color);
+    &:hover{
+        input[type=radio]{
+            &:checked{
+                &+i{
+                    border-color: $color;
+                    &:after{
+                        background-color: $color; 
+                    }
+                }
+            }
+        }
+        i{
+            border-color: $color;
+        }
+    }
+}
+
+@mixin radio-disabled-variant2($color){
+    & + i{
+        color: $color;
+        border-color: $color;
+    }
+    &:checked + i{
+        border-color: $color;
+        &:after{
+            background-color: $color; 
+        }
+    }
+}
+
+
+@mixin radio-size($border-width, $width, $height, $margin-bottom, $top, $check-width, $check-height){
+    padding-left: $width + 2 * ($border-width) + $checkbox-label-offset-left;
+    margin-bottom: $margin-bottom;
+    i{
+        width: $width;
+        height: $height;
+        border-width: $border-width;
+        top: $top;
+        &:after{
+            top: ($height - 2 * ($border-width) - $check-height) / 2;
+            left: ($width - 2 * ($border-width) - $check-width) / 2;
+            width: $check-width;
+            height: $check-height;
+        }
+    }
+}

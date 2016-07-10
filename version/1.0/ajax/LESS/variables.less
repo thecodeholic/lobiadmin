@@ -1,0 +1,1227 @@
+//Author     : @arboshiki
+
+//Brand colors
+@brand-light                                    : darken(#fff, 1%); //#fcfcfc
+@brand-inverse                                  : #363f3f;
+@brand-success-lighter                          : lighten(@brand-success, 30%);
+@brand-success-light                            : lighten(@brand-success, 15%);
+@brand-success-dark                             : darken(@brand-success, 10%);
+@brand-success-darker                           : darken(@brand-success, 20%);
+
+@brand-info-lighter                             : lighten(@brand-info, 30%);
+@brand-info-light                               : lighten(@brand-info, 15%);
+@brand-info-dark                                : darken(@brand-info, 15%);
+@brand-info-darker                              : darken(@brand-info, 30%);
+
+@brand-warning-lighter                          : lighten(@brand-warning, 30%);
+@brand-warning-light                            : lighten(@brand-warning, 15%);
+@brand-warning-dark                             : darken(@brand-warning, 15%);
+@brand-warning-darker                           : darken(@brand-warning, 30%);
+
+@brand-primary-lighter                          : lighten(@brand-primary, 30%);
+@brand-primary-light                            : lighten(@brand-primary, 15%);
+@brand-primary-dark                             : darken(@brand-primary, 5%);
+@brand-primary-darker                           : darken(@brand-primary, 15%);
+
+@brand-danger-lighter                           : lighten(@brand-danger, 30%);
+@brand-danger-light                             : lighten(@brand-danger, 15%);
+@brand-danger-dark                              : darken(@brand-danger, 10%);
+@brand-danger-darker                            : darken(@brand-danger, 20%);
+
+@brand-green                                    : #009951;
+@brand-green-light                              : lighten(@brand-green, 10%);
+@brand-green-dark                               : darken(@brand-green, 10%);
+@brand-blue                                     : #0041a3;
+@brand-blue-light                               : lighten(@brand-blue, 30%);
+@brand-blue-dark                                : darken(@brand-blue, 10%);
+@brand-red                                      : #ce2929;
+@brand-red-light                                : lighten(@brand-red, 10%);
+@brand-red-dark                                 : darken(@brand-red, 10%);
+@brand-purple                                   : #8328b7;
+@brand-purple-light                             : lighten(@brand-purple, 10%);
+@brand-purple-dark                              : darken(@brand-purple, 10%);
+@brand-pink                                     : #d125ba;
+@brand-pink-light                               : lighten(@brand-pink, 10%);
+@brand-pink-dark                                : darken(@brand-pink, 10%);
+@brand-orange                                   : #d6972a;
+@brand-orange-light                             : lighten(@brand-orange, 10%);
+@brand-orange-dark                              : darken(@brand-orange, 10%);
+@brand-cyan                                     : #35a5ad;
+@brand-cyan-light                               : lighten(@brand-cyan, 10%);
+@brand-cyan-dark                                : darken(@brand-cyan, 10%);
+
+//Base variables
+
+@font-size-xl                                   : 28px;
+@font-size-xs                                   : 11px;
+
+@line-height-xl                                 : 1.1;
+@line-height-xs                                 : 1.8;
+
+@padding-xl-vertical                            : 10px;
+@padding-xl-horizontal                          : 20px;
+@transition-duration                            : 0.3s;
+
+//z-index variables
+@navbar-fixed-z-index                           : 910;
+@menu-z-index                                   : 800;
+@menu-fixed-z-index                             : 920;
+@dropdown-notifications-z-index                 : 940;
+@setting-box-z-index                            : 930;
+@ribbon-fixed-z-index                           : 900;
+
+//body
+@body-bg-color                                  : #f7f7f7;
+@font-size-base                                 : 13px;
+
+@menu-width                                     : 220px;
+//navbar
+@navbar-bg                                      : darken(@brand-info, 5%);
+@navbar-items-color                             : @gray-lighter;
+@navbar-items-hover-bg                          : rgba(0, 0, 0, 0.07);
+@navbar-items-hover-color                       : lighten(@navbar-items-color, 10%);
+@navbar-links-padding-horizontal                : 18px;
+@navbar-links-padding-horizontal-mobile         : 15px;
+@navbar-menu-toggle-btn-width                   : 50px;
+@navbar-brand-width                             : @menu-width - @navbar-menu-toggle-btn-width;
+@navbar-brand-width-mobile                      : 80px;
+@navbar-brand-font-size                         : 22px;
+@navbar-brand-img-source                        : url('../img/logo/lobiadmin-logo-text-white-32.png');
+@navbar-brand-img-source-mobile                 : url('../img/logo/lobiadmin-logo-48.png');
+@navbar-user-image-size                         : 40px;
+@navbar-search-input-padding-left               : 10px;
+@navbar-search-form-width                       : 380px;
+@navbar-search-full-screen-btn-size             : 30px;
+@navbar-search-full-screen-color                : @gray;
+@navbar-search-full-screen-bg                   : #FFF;
+
+
+//nav menu
+@menu-bg                                        : #FFF;
+@menu-color                                     : @gray;
+@menu-border-color                              : darken(@menu-bg, 14%);
+@menu-width-collapsed                           : 50px;
+@menu-partial-hidden-width                      : 10px;
+//@navbar-height variable is bootstrap variable
+@menu-margin-top                                : @navbar-height;
+
+@menu-header-height                             : 50px;
+@menu-header-btn-size                           : 34px;
+@menu-toggle-transition-duration                : @transition-duration;
+
+@menu-collapse-line-height                      : 32px;
+@menu-collapse-line-bg                          : lighten(@menu-bg, 10%);
+@menu-collapse-line-border-color                : @menu-border-color;
+@menu-collapse-line-border-width                : 1px;
+@menu-collapse-line-btn-color                   : @menu-color;
+@menu-collapse-line-btn-font-size               : 22px;
+@menu-collapse-line-btn-hover-color             : darken(@menu-collapse-line-btn-color, 25%);
+
+@nav-menu-item-border-color                     : lighten(@menu-border-color, 7%);
+@nav-menu-item-padding-vertical                 : 10px;
+@nav-menu-item-padding-horizontal               : 15px;
+@nav-menu-item-font-size                        : 13px;
+@nav-menu-item-line-height                      : 22px;
+@nav-menu-item-color                            : @menu-color;
+@nav-menu-item-hover-color                      : darken(@nav-menu-item-color, 35%);
+@nav-menu-item-active-color                     : @brand-info;
+@nav-menu-item-active-arrow-color               : @brand-info;
+@nav-menu-item-opened-border-right-width        : 3px;
+@nav-menu-item-opened-border-right-color        : @brand-info;
+
+@nav-menu-item-icon-font-size                   : 16px;
+@nav-menu-submenu-item-icon-font-size           : 14px;
+@nav-menu-item-icon-margin-right                : 10px;
+@nav-menu-item-bg                               : darken(@menu-bg, 3%);
+@nav-menu-item-active-bg                        : darken(@nav-menu-item-bg, 4%);
+@nav-menu-item-hover-text-shadow                : 2px 2px 5px rgba(0, 0, 0, 0.2);
+@nav-menu-item-active-text-shadow               : @nav-menu-item-hover-text-shadow;
+@nav-menu-item-opened-text-shadow               : @nav-menu-item-hover-text-shadow;
+@nav-menu-item-badge-right-offset               : 35px;
+/*@nav-menu-item-active-border-left               : 4px solid @brand-info;*/
+@nav-menu-item-transition-duration              : @transition-duration;
+//this is left offset of vertical line 
+@nav-menu-submenu-vertical-line-style           : solid;
+@nav-menu-submenu-vertical-line-left-offset     : 20px;
+@nav-menu-submenu-vertical-line-color           : fadeout(@menu-color, 50%);
+@nav-menu-submenu-item-bg                       : lighten(@nav-menu-item-bg, 5%);
+@nav-menu-submenu-item-hover-bg                 : darken(@nav-menu-submenu-item-bg, 4%);
+@nav-menu-submenu-item-opened-bg                : @nav-menu-submenu-item-hover-bg;
+@nav-menu-submenu-item-active-bg                : @nav-menu-submenu-item-hover-bg;
+@nav-menu-submenu-item-line-height              : 18px;
+@nav-menu-submenu-item-left-line-width          : 15px;
+@nav-menu-submenu-item-padding-vertical         : 10px;
+@nav-menu-submenu-item-padding-horizontal       : 10px;
+
+//This is space between small horizontal line and text for second level inner menu
+@nav-menu-submenu-padding-left-base             : 8px;
+@nav-menu-submenu-levels                        : 6;
+@nav-menu-submenu-item-font-size                : @nav-menu-item-font-size - 1px;
+
+
+
+
+
+
+@dropdown-notifications-right                   : -50px;
+@dropdown-notifications-width                   : 380px;
+@dropdown-notifications-xxs-width               : 260px;
+@dropdown-notifications-heading-font-size       : 16px;
+@dropdown-notifications-heading-padding         : 6px 9px;
+@dropdown-notifications-item-padding            : 6px;
+@dropdown-notifications-item-border-bottom      : 1px solid darken(@gray-lighter, 5%);
+@dropdown-notifications-item-bg                 : #FFF;
+@dropdown-notifications-item-heading-font-size  : 14px;
+@dropdown-notifications-item-unread-bg          : @gray-lighter;
+@dropdown-notifications-item-hover-bg           : lighten(@dropdown-notifications-item-unread-bg, 3%);
+@dropdown-notifications-item-color              : @gray-dark;
+@dropdown-notifications-item-body-color         : @text-muted-color;
+@dropdown-notifications-item-img-size           : 50px;
+@dropdown-notifications-item-icon-font-size     : 40px;
+@dropdown-notifications-item-icon-color         : @gray-light;
+@dropdown-notifications-item-icon-bg            : @gray-lighter;
+@dropdown-notifications-footer-padding          : @dropdown-notifications-heading-padding;
+
+@dropdown-notifications-messages-item-unread-heading-color  : @gray-light;
+@dropdown-notifications-messages-item-unread-hover-heading-color  : @gray-dark;
+@dropdown-notifications-messages-item-sub-heading-color     : @gray-light;
+
+@dropdown-notifications-news-item-friend-request-response-btn-margin-top        : -12px;
+
+@dropdown-notifications-tasks-item-padding-vertical     : 10px;
+@dropdown-notifications-tasks-item-body-margin-bottom   : 5px;
+@dropdown-notifications-tasks-item-progress-border      : 1px solid darken(@gray-lighter, 5%);
+
+
+//------------------------------------------------------------------------------
+//----------------------------------SETTING BOX---------------------------------
+//------------------------------------------------------------------------------
+
+@setting-box-top                                : @navbar-height + (@ribbon-height - @setting-box-btn-toggle-size) / 2;
+@setting-box-width                              : 200px;
+@setting-box-bg                                 : @gray-dark;
+@setting-box-color                              : #FFF;
+@setting-box-min-height                         : 120px;
+@setting-box-btn-toggle-size                    : 32px;
+@setting-box-btn-toggle-color                   : #FFF;
+@setting-box-btn-toggle-bg                      : @setting-box-bg;
+@setting-box-btn-toggle-font-size               : 16px;
+@setting-box-btn-toggle-border-radius           : 5px;
+@seeting-box-change-skin-size                   : 40px;
+
+//------------------------------------------------------------------------------
+@ribbon-height                                  : 50px;
+@ribbon-padding-vertical                        : 10px;
+@ribbon-padding-horizontal                      : 15px;
+@ribbon-bg                                      : lighten(@menu-bg, 15%);
+@ribbon-padding                                 : 5px 5px;
+@ribbon-border-bottom                           : 1px solid darken(@gray-lighter, 5%);
+
+@reload-btn-size                                : @ribbon-height - (2 * @ribbon-padding-vertical);
+@reload-btn-font-size                           : 16px;
+@reload-btn-color                               : @gray;
+@reload-btn-hover-border                        : 1px outset rgba(0, 0, 0, 0.2);
+@reload-btn-hover-bg                            : rgba(0, 0, 0, 0.01);
+@reload-btn-active-bg                           : rgba(0, 0, 0, 0.07);
+
+@breadcrumb-item-color                          : @gray;
+@breadcrumb-item-font-size                      : 15px;
+@breadcrumb-item-active-color                   : lighten(@breadcrumb-item-color, 10%);
+
+@content-div-padding                            : 16px;
+@content-bg                                     : transparent;
+
+
+//------------------------------------------------------------------------------
+//----------------------------------ALERTS--------------------------------------
+//------------------------------------------------------------------------------
+
+@alert-heading-margin-top                       : 0;
+
+//------------------------------------------------------------------------------
+//---------------------------BUTTON VARIABLES-----------------------------------
+//------------------------------------------------------------------------------
+
+@btn-border-darken-percent                      : 5%;
+@all-btn-default-color                          : #FFF;
+@btn-border-radius                              : 2px;
+@btn-hover-box-shadow                           : inset 0 0 0 100px rgba(0, 0, 0, 0.1);
+@btn-active-box-shadow                          : inset 3px 3px 10px rgba(0, 0, 0, 0.1);
+
+//button colors
+@btn-inverse-color                              : @all-btn-default-color;
+@btn-inverse-bg                                 : @brand-inverse;
+@btn-inverse-border                             : darken(@btn-inverse-bg, @btn-border-darken-percent);
+
+@btn-light-color                                : @gray-darker;
+@btn-light-bg                                   : @brand-light;
+@btn-light-border                               : darken(@btn-light-bg, 4%);
+
+@btn-cyan-color                                 : @gray-lighter;
+@btn-cyan-bg                                    : @brand-cyan;
+@btn-cyan-border                                : darken(@brand-cyan, 7%);
+
+
+//pretty buttons
+@btn-pretty-box-shadow1                         : inset 0 -2px 2px rgba(0, 0, 0, 0.1);
+@btn-pretty-box-shadow2                         : 1px 1px 1px rgba(0, 0, 0, 0.1);
+@btn-pretty-box-shadow                          : @btn-pretty-box-shadow1, @btn-pretty-box-shadow2;
+@btn-pretty-active-box-shadow1                  : inset 0px 0px 0 100px rgba(0, 0, 0, 0.05);
+@btn-pretty-active-box-shadow2                  : inset -5px 5px 10px rgba(0, 0, 0, 0.1);
+@btn-pretty-active-box-shadow                   : @btn-pretty-active-box-shadow1, @btn-pretty-active-box-shadow2;
+
+//outline buttons
+@btn-outline-hover                              : #fff;
+@btn-outline-transition-dur                     : @transition-duration;
+
+//3d buttons
+@btn-3d-border-radius                           : @border-radius-large;
+@btn-3d-height                                  : 6px;
+@btn-3d-active-height                           : 2px;
+@btn-3d-margin-top                              : @btn-3d-height - @btn-3d-active-height;
+
+@btn-3d-box-shadow-common1                      : 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+@btn-3d-box-shadow-common2                      : 0 @btn-3d-height 2px 1px rgba(0, 0, 0, 0.4);
+@btn-3d-active-box-shadow-common                : 0 @btn-3d-active-height 2px 1px rgba(0, 0, 0, 0.4);
+@btn-3d-box-shadow-prefix                       : 0 @btn-3d-height 0 0 ;
+@btn-3d-active-box-shadow-prefix                : 0 @btn-3d-active-height 0 0 ;
+
+//circle buttons
+@btn-circle-sm-size                             : 20px;
+@btn-circle-sm-font-size                        : 9px;
+@btn-circle-sm-padding                          : @padding-xs-vertical;
+
+@btn-circle-base-size                           : 30px;
+@btn-circle-base-font-size                      : 12px;
+@btn-circle-base-padding                        : @padding-small-vertical;
+
+@btn-circle-lg-size                             : 50px;
+@btn-circle-lg-font-size                        : @font-size-large;
+@btn-circle-lg-padding                          : @padding-base-vertical;
+
+@btn-circle-xl-size                             : 70px;
+@btn-circle-xl-font-size                        : 24px;
+@btn-circle-xl-padding                          : @padding-base-vertical;
+
+@btn-circle-xxl-size                            : 90px;
+@btn-circle-xxl-font-size                       : 30px;
+@btn-circle-xxl-padding                         : 7px;
+
+//button size variables
+@btn-xl-padding-vertical                        : 11px;
+@btn-xl-padding-horizontal                      : 22px;
+@btn-xl-font-size                               : 24px;
+@btn-xl-line-height                             : 30px;
+@btn-xl-border-radius                           : @btn-border-radius;
+
+//buttons with labels
+@btn-label-bg                                   : rgba(0, 0, 0, 0.15);
+
+@btn-label-width                                : 40px;
+@btn-xl-label-width                             : 70px;
+@btn-lg-label-width                             : 60px;
+@btn-sm-label-width                             : 30px;
+@btn-xs-label-width                             : 22px;
+
+//social button extra large variables
+@bs-height-xl                                   : 60px;
+@bs-xl-line-height                              : 60px;
+
+//------------------------------------------------------------------------------
+//---------------------------TAB VARIABLES--------------------------------------
+//------------------------------------------------------------------------------
+
+@nav-tabs-border-color                          : darken(@gray-lighter, 5%);
+
+@nav-tabs-item-color                            : @gray-dark;
+@nav-tabs-item-padding-vertical                 : 10px;
+@nav-tabs-item-padding-horizontal               : 15px;
+@nav-tabs-active-item-bg                        : #FFF;
+@nav-tabs-item-badge-margin                     : 0 5px;
+
+//------------------------------------------------------------------------------
+//---------------------------------PANELS---------------------------------------
+//------------------------------------------------------------------------------
+
+@panel-inverse-text                             : #FFF;
+@panel-inverse-border                           : @brand-inverse;
+@panel-inverse-heading-bg                       : @brand-inverse;
+
+@panel-light-text                               : @gray-light;
+@panel-light-border                             : @gray-lighter;
+@panel-light-heading-bg                         : @brand-light;
+
+@panel-default-border-color                     : darken(@gray-lighter, 13%);
+
+//------------------------------------------------------------------------------
+//----------------------------LIST GROUP ITEMS----------------------------------
+//------------------------------------------------------------------------------
+
+@list-group-item-active-text-color              : @gray-lighter;
+
+//------------------------------------------------------------------------------
+//---------------------------TABS INSIDE PANELS VARIABLES-----------------------
+//------------------------------------------------------------------------------
+
+@panel-width-tabs-title-padding                 : 6px 15px;
+@panel-with-tabs-nav-tab-item-primary-color     : @brand-primary;
+@panel-with-tabs-nav-tab-item-success-color     : darken(@brand-success, 5%);
+@panel-with-tabs-nav-tab-item-danger-color      : @brand-danger;
+@panel-with-tabs-nav-tab-item-info-color        : darken(@brand-info, 5%);
+@panel-with-tabs-nav-tab-item-warning-color     : darken(@brand-warning, 5%);
+
+//------------------------------------------------------------------------------
+//---------------------------BOOTSTRAP WIZARD VARIABLES-------------------------
+//------------------------------------------------------------------------------
+
+@wizard-tabs-border-color                               : #d4d4d4;
+@wizard-tabs-border                                     : 1px solid @wizard-tabs-border-color;
+
+@wizard-tab-content-padding                             : 10px;
+
+@wizard-tabs-arrow-item-height                          : 47px;
+@wizard-tabs-arrow-item-padding                         : 0 20px 0 30px;
+@wizard-tabs-arrow-item-font-size                       : 13px;
+@wizard-tabs-arrow-item-line-height                     : @wizard-tabs-arrow-item-height;
+@wizard-tabs-arrow-item-color                           : @gray;
+@wizard-tabs-arrow-item-bg                              : @gray-lighter;
+@wizard-tabs-arrow-item-chevron-border-left-width       : 15px;
+@wizard-tabs-arrow-item-chevron-top                     : -1px;
+@wizard-tabs-arrow-item-chevron-border-width            : (@wizard-tabs-arrow-item-height+2)/2;
+@wizard-tabs-arrow-item-badge-bg                        : #7b8a8b;
+@wizard-tabs-arrow-complete-item-color                  : @gray-lighter;
+@wizard-tabs-arrow-complete-item-bg                     : #0AA66E;
+@wizard-tabs-arrow-complete-item-border-color           : darken(@wizard-tabs-arrow-complete-item-bg, 10%);
+@wizard-tabs-arrow-complete-item-badge-bg               : #DDD;
+@wizard-tabs-arrow-complete-item-badge-color            : #616161;
+@wizard-tabs-arrow-active-item-color                    : @gray-lighter;
+@wizard-tabs-arrow-active-item-bg                       : @brand-info;
+@wizard-tabs-arrow-active-item-border-color             : darken(@wizard-tabs-arrow-active-item-bg, 10%);
+@wizard-tabs-arrow-active-item-badge-bg                 : lighten(@wizard-tabs-arrow-active-item-bg, 15%);
+@wizard-tabs-arrow-active-item-badge-color              : @gray-lighter;
+@wizard-tabs-arrow-animation-duration                   : 0.4s;
+
+@wizard-tabs-balls-padding-vertical                     : 10px;
+@wizard-tabs-balls-padding-horizontal                   : 10px;
+@wizard-tabs-ball-step-font-size                        : 22px;
+@wizard-tabs-ball-step-line-height                      : 20px;
+@wizard-tabs-ball-step-padding                          : 7px 15px;
+@wizard-tabs-ball-step-bg                               : @gray-light;
+@wizard-tabs-ball-step-color                            : @gray-lighter;
+@wizard-tabs-ball-step-border-width                     : 4px;
+@wizard-tabs-ball-step-border                           : @wizard-tabs-ball-step-border-width solid @gray-dark;
+@wizard-tabs-ball-title-font-size                       : 11px;
+@wizard-tabs-ball-title-top                             : 15px;
+@wizard-tabs-ball-title-color                           : @gray-dark;
+@wizard-tabs-ball-horizontal-line-height                : 6px;
+@wizard-tabs-ball-line-border-top-color                 : lighten(@gray-dark, 20%);
+@wizard-tabs-ball-line-border-top                       : @wizard-tabs-ball-horizontal-line-height solid @wizard-tabs-ball-line-border-top-color;
+@wizard-tabs-ball-line-top                              : 22px;
+@wizard-tabs-ball-complete-step-bg                      : @wizard-tabs-arrow-complete-item-bg;
+@wizard-tabs-ball-complete-step-border-color            : darken(@wizard-tabs-ball-complete-step-bg, 5%);
+@wizard-tabs-ball-complete-line-border-top-color        : @wizard-tabs-ball-complete-step-border-color;
+@wizard-tabs-ball-complete-title-color                  : darken(@wizard-tabs-ball-complete-step-bg, 10%);
+@wizard-tabs-ball-active-step-padding                   : 12px 20px;
+@wizard-tabs-ball-active-step-bg                        : @wizard-tabs-arrow-active-item-bg;
+@wizard-tabs-ball-active-step-border-color              : darken(@wizard-tabs-ball-active-step-bg, 5%);
+@wizard-tabs-ball-active-line-border-top-color          : @wizard-tabs-ball-active-step-border-color;
+@wizard-tabs-ball-active-title-color                    : darken(@wizard-tabs-ball-active-step-bg, 10%);
+
+@wizard-tabs-ball-animation-duration                    : 0.2s;
+
+//------------------------------------------------------------------------------
+//----------------------------------TABLES--------------------------------------
+//------------------------------------------------------------------------------
+
+@table-condensed-xs-padding                             : 3px;
+@table-row-active-bg                                    : @gray-lighter;
+@table-thead-bg                                         : #FFF;
+@table-thead-border-bottom-width                        : 2px;
+
+//------------------------------------------------------------------------------
+//---------------------------------CHECKBOXES-----------------------------------
+//------------------------------------------------------------------------------
+
+//main colors
+@checkbox-primary-color                                 : @brand-primary;
+@checkbox-primary-disabled-color                        : lighten(@brand-primary, 50%);
+@checkbox-success-color                                 : @brand-success;
+@checkbox-success-disabled-color                        : lighten(@brand-success, 30%);
+@checkbox-warning-color                                 : @brand-warning;
+@checkbox-warning-disabled-color                        : lighten(@brand-warning, 30%);
+@checkbox-info-color                                    : @brand-info;
+@checkbox-info-disabled-color                           : lighten(@brand-info, 30%);
+@checkbox-danger-color                                  : @brand-danger;
+@checkbox-danger-disabled-color                         : lighten(@brand-danger, 30%);
+@checkbox-inverse-color                                 : @brand-inverse;
+@checkbox-inverse-disabled-color                        : lighten(@brand-inverse, 30%);
+
+//general variables
+@checkbox-label-offset-left                             : 10px;
+@checkbox-bg                                            : #FFF;
+@checkbox-border-color                                  : @gray-light;
+@checkbox-hover-box-shadow                              : inset 0 -1px 1px rgba(0, 0, 0, .1);
+@checkbox-active-bg                                     : lighten(@gray-lighter, 2%);
+@checkbox-active-box-shadow                             : inset 2px 2px 5px rgba(0, 0, 0, .2);
+@checkbox-transition-duration                           : 0.1s;
+
+//checkbox icon variables
+//------------Bootstrap icon "glyphicon-ok" class content
+/*@checkbox-icon-checked                                  : '\e013';
+@checkbox-icon-font-family                              : 'Glyphicons Halflings';
+@checkbox-icon-font-size                                : 14px;*/
+//------------Font Awesome icon "fa-checked" class content
+@checkbox-icon-checked                                  : @fa-var-check;
+@checkbox-icon-font-family                              : FontAwesome;
+@checkbox-icon-font-size                                : 16px;
+
+@checkbox-icon-line-height                              : 19px;
+
+//variables for normal size
+@checkbox-base-margin-bottom                            : 8px;
+@checkbox-base-border-width                             : 1px;
+@checkbox-base-size                                     : 18px;
+@checkbox-base-top                                      : 0;
+@checkbox-base-check-top                                : -1px;
+
+@checkbox-lg-margin-bottom                              : 13px;
+@checkbox-lg-border-width                               : 2px;
+@checkbox-lg-icon-size                                  : 25px;
+@checkbox-lg-top                                        : -2px;
+@checkbox-lg-check-top                                  : 2px;
+@checkbox-lg-icon-font-size                             : 22px;
+
+//------------------------------------------------------------------------------
+//--------------------------------RADIO BUTTONS---------------------------------
+//------------------------------------------------------------------------------
+
+@radio-primary-color                                    : @brand-primary;
+@radio-primary-disabled-color                           : lighten(@brand-primary, 50%);
+@radio-success-color                                    : @brand-success;
+@radio-success-disabled-color                           : lighten(@brand-success, 30%);
+@radio-warning-color                                    : @brand-warning;
+@radio-warning-disabled-color                           : lighten(@brand-warning, 20%);
+@radio-info-color                                       : @brand-info;
+@radio-info-disabled-color                              : lighten(@brand-info, 20%);
+@radio-danger-color                                     : @brand-danger;
+@radio-danger-disabled-color                            : lighten(@brand-danger, 30%);
+@radio-inverse-color                                    : @brand-inverse;
+@radio-inverse-disabled-color                           : lighten(@brand-inverse, 30%);
+
+@radio-label-offset-left                                : 10px;
+@radio-border-color                                     : darken(@gray-lighter, 10%);
+@radio-bg                                               : #FFF;
+@radio-hover-box-shadow                                 : inset 0 -1px 1px rgba(0, 0, 0, .1);
+@radio-active-bg                                        : lighten(@gray-lighter, 2%);
+@radio-active-box-shadow                                : inset 2px 2px 5px rgba(0, 0, 0, .2);
+@radio-transition-duration                              : 0.1s;
+@radio-line-height                                      : 19px;
+
+//normal size radio buttons
+@radio-margin-bottom                                    : 8px;
+@radio-border-width                                     : 1px;
+@radio-width                                            : 19px;
+@radio-height                                           : @radio-width;
+@radio-top                                              : 2px;
+@radio-check-width                                      : 9px;
+@radio-check-height                                     : @radio-check-width;
+@radio-check-top                                        : -2px;
+
+//large radio buttons
+@radio-lg-margin-bottom                                 : 13px;
+@radio-lg-border-width                                  : 2px;
+@radio-lg-width                                         : 25px;
+@radio-lg-height                                        : @radio-lg-width;
+@radio-lg-top                                           : -2px;
+@radio-lg-check-width                                   : 13px;
+@radio-lg-check-height                                  : 13px;
+
+//------------------------------------------------------------------------------
+//--------------------------------TILES-----------------------------------------
+//------------------------------------------------------------------------------
+
+@tile-body-padding                                      : 12px;
+@tile-margin-bottom                                     : 15px;
+@tile-transition-duration                               : 0.3s;
+@tile-icon-top                                          : 10px;
+@tile-icon-right                                        : @tile-icon-top;
+@tile-footer-padding                                    : 6px 10px;
+
+@tile-progress-margin-bottom                            : 20px;
+@tile-progress-bar-height                               : 2px;
+@tile-progress-bar-wrapper-bg                           : rgba(0,0,0,0.12);
+@tile-progress-bar-bg                                   : #FFF;
+@tile-progress-footer-padding                           : 7px 10px;
+@tile-progress-footer-bg                                : rgba(0,0,0,0.08);
+
+//------------------------------------------------------------------------------
+//--------------------------------SWITCHES--------------------------------------
+//------------------------------------------------------------------------------
+
+//private variables
+@switch-height-multiplier-offset                        : 0.05;
+
+@switch-off-bg                                          : lighten(@brand-danger, 10%);
+@switch-disabled-off-bg                                 : lighten(@switch-off-bg, 20%);
+@switch-on-bg                                           : @brand-success;
+@switch-disabled-on-bg                                  : lighten(@brand-success, 25%);
+@switch-transition-duration                             : 0.4s;
+@switch-circle-bg                                       : #FFF;
+@switch-box-shadow                                      : 0 2px 5px rgba(0, 0, 0, 0.3);
+@switch-disabled-box-shadow                             : 0 2px 5px rgba(0, 0, 0, 0.1);
+
+@switch-width-base                                      : 70px;
+@switch-height-base                                     : @switch-width-base/2 - @switch-width-base * @switch-height-multiplier-offset;
+@switch-circle-size-base                                : @switch-height-base;
+@switch-font-size-base                                  : 16px;
+
+@switch-width-lg                                        : 90px;
+@switch-height-lg                                       : @switch-width-lg/2 - @switch-width-lg * @switch-height-multiplier-offset;;
+@switch-circle-size-lg                                  : @switch-height-lg;
+@switch-font-size-lg                                    : 20px;
+
+@switch-width-sm                                        : 50px;
+@switch-height-sm                                       : @switch-width-sm/2 - @switch-width-sm * @switch-height-multiplier-offset;;
+@switch-circle-size-sm                                  : @switch-height-sm;
+@switch-font-size-sm                                    : 12px;
+
+@switch-width-xs                                        : 36px;
+@switch-height-xs                                       : @switch-width-xs/2 - @switch-width-xs * @switch-height-multiplier-offset;;
+@switch-circle-size-xs                                  : @switch-height-xs;
+@switch-font-size-xs                                    : 9px;
+
+@switch-outline-width-base                              : @switch-width-base;
+@switch-outline-height-base                             : @switch-height-base;
+@switch-outline-border-width                            : 2px;
+@switch-outline-off-border-color                        : #CFCFCF;
+@switch-outline-disabled-off-border-color               : lighten(#CFCFCF, 10%);
+@switch-outline-on-border-color                         : @brand-success;
+@switch-outline-disabled-on-border-color                : lighten(@brand-success, 25%);
+@switch-outline-off-bg                                  : #FFF;
+@switch-outline-on-bg                                   : @switch-outline-off-bg;
+@switch-outline-margin-bottom-base                      : @switch-outline-height-base/2 - 5px;
+@switch-outline-transition-duration                     : 0.4s;
+
+@switch-outline-circle-off-bg                           : @switch-outline-off-border-color;
+@switch-outline-disabled-circle-off-bg                  : lighten(@switch-outline-circle-off-bg, 10%);
+@switch-outline-circle-on-bg                            : @switch-outline-on-border-color;
+@switch-outline-disabled-circle-on-bg                   : lighten(@switch-outline-on-border-color, 25%);
+@switch-outline-circle-offset                           : 2px;
+@switch-outline-circle-size-base                        : @switch-outline-height-base - 2 * (@switch-outline-circle-offset + @switch-outline-border-width);
+
+@switch-outline-width-lg                                : @switch-width-lg;
+@switch-outline-height-lg                               : @switch-height-lg;
+@switch-outline-circle-size-lg                          : @switch-outline-height-lg - 2 * (@switch-outline-circle-offset + @switch-outline-border-width);
+
+@switch-outline-width-sm                                : @switch-width-sm;
+@switch-outline-height-sm                               : @switch-height-sm;
+@switch-outline-circle-size-sm                          : @switch-outline-height-sm - 2 * (@switch-outline-circle-offset + @switch-outline-border-width);
+
+@switch-outline-width-xs                                : @switch-width-xs;
+@switch-outline-height-xs                               : @switch-height-xs;
+@switch-outline-circle-size-xs                          : @switch-outline-height-xs - 2 * (@switch-outline-circle-offset + @switch-outline-border-width);
+
+//------------------------------------------------------------------------------
+//--------------------------------DROPDOWN--------------------------------------
+//------------------------------------------------------------------------------
+
+@dropdown-toggle-xs-padding-horizontal                  : 4px;
+@dropdown-toggle-sm-padding-horizontal                  : 6px;
+
+@dropdown-menu-padding                                  : 2px 0;
+@dropdown-menu-border-radius                            : 0;
+@dropdown-devider-margin-vertical                       : 2px;
+@dropdown-menu-reduced-padding                          : 1px 10px;
+@dropdown-menu-item-primary-hover-color                 : #FFF;
+@dropdown-menu-item-primary-hover-bg                    : @brand-primary;
+@dropdown-menu-item-success-hover-color                 : #FFF;
+@dropdown-menu-item-success-hover-bg                    : @brand-success; 
+@dropdown-menu-item-warning-hover-color                 : #FFF;
+@dropdown-menu-item-warning-hover-bg                    : @brand-warning;
+@dropdown-menu-item-info-hover-color                    : #FFF;
+@dropdown-menu-item-info-hover-bg                       : @brand-info;
+@dropdown-menu-item-danger-hover-color                  : #FFF;
+@dropdown-menu-item-danger-hover-bg                     : @brand-danger;
+@dropdown-menu-item-default-hover-color                 : #FFF;
+@dropdown-menu-item-default-hover-bg                    : @gray-light;
+@dropdown-menu-item-inverse-hover-color                 : #FFF;
+@dropdown-menu-item-inverse-hover-bg                    : @brand-inverse;
+@dropdown-menu-box-shadow                               : 0 6px 12px rgba(0,0,0,.175);
+
+
+//------------------------------------------------------------------------------
+//--------------------------------FORM ELEMENTS---------------------------------
+//------------------------------------------------------------------------------
+
+@lobi-form-fieldset-padding                             : 15px;
+@lobi-form-fieldset-border-color                        : darken(@gray-lighter, 5%);
+@lobi-form-fieldset-box-shadow                          : inset 0px 1px 3px rgba(0, 0, 0, 0.02);
+@lobi-form-fieldset-header-padding-bottom               : 7px;
+@lobi-form-fieldset-header-margin-bottom                : 15px;
+@lobi-form-input-file-btn-bg                            : @brand-info;
+@lobi-form-input-file-disabled-btn-bg                   : lighten(@brand-info, 20%);
+@lobi-form-footer-padding                               : 10px 12px;
+@lobi-form-footer-border-top                            : 1px solid rgba(0, 0, 0, 0.1);
+@lobi-form-footer-bg-color                              : @gray-lighter;
+
+@legend-font-size                                       : 18px;
+@legend-padding-bottom                                  : 5px;
+@legend-border-color-override                           : darken(@legend-border-color, 10%);
+@input-hover-border-color                               : darken(@input-border, 10%);
+@input-hover-bg                                         : darken(@input-bg, 1%);
+@input-border-disabled                                  : lighten(@input-border, 5%);
+
+@input-success-color                                    : darken(@brand-success, 15%);
+@input-success-border-color                             : @input-success-color;
+@input-success-addon-bg                                 : lighten(@brand-success, 40%);
+
+@input-error-color                                      : darken(@brand-danger, 8%);
+@input-error-border-color                               : @input-error-color;
+@input-error-addon-bg                                   : lighten(@brand-danger, 40%);
+
+@input-warning-color                                    : darken(@brand-warning, 15%);
+@input-warning-border-color                             : @input-warning-color;
+@input-warning-addon-bg                                 : lighten(@brand-warning, 40%);
+
+@input-height-xs                                        : 24px;
+@input-padding-vertical-xs                              : @padding-xs-vertical;
+@input-padding-horizontal-xs                            : @padding-xs-horizontal;
+@input-font-size-xs                                     : @font-size-xs;
+@input-line-height-xs                                   : @line-height-xs;
+@input-border-radius-xs                                 : 0;
+
+@input-font-size-sm                                     : @font-size-small;
+
+@input-font-size-lg                                     : @font-size-large;
+
+@input-height-xl                                        : 56px;
+@input-padding-vertical-xl                              : @padding-xl-vertical;
+@input-padding-horizontal-xl                            : @padding-xl-horizontal;
+@input-font-size-xl                                     : @font-size-xl;
+@input-line-height-xl                                   : @line-height-xl;
+@input-border-radius-xl                                 : 2px;
+//control label to be in the middle of the input
+@input-xl-control-label-padding-top                     : ((@input-padding-vertical-xl * @input-line-height-xl) + 5);
+
+@lobi-input-height                                      : 32px;
+@lobi-input-input-hover-border                          : lighten(@input-border-focus, 10%);
+@lobi-input-input-hover-bg                              : @input-hover-bg;
+@lobi-input-input-focus-border                          : darken(@lobi-input-input-hover-border, 10%);
+@lobi-input-input-border                                : darken(@input-border, 2%);
+@lobi-input-icon-width                                  : 24px;
+@lobi-input-icon-height                                 : @lobi-input-icon-width;
+@lobi-input-icon-color                                  : darken(@lobi-input-input-border, 5%);
+@lobi-input-icon-border-color                           : @lobi-input-icon-color;
+@lobi-input-icon-horizontal-offset                      : 5px;
+@lobi-input-icon-padding-horizontal                     : 3px;
+@lobi-input-padding-vertical                            : 5px;
+@lobi-input-padding-horizontal                          : 10px;
+@lobi-input-file-button-width                           : 100px;
+
+@form-input-note-font-size                              : 11px;
+@form-input-note-color                                  : lighten(@gray-light, 10%);
+
+//------------------------------------------------------------------------------
+//--------------------------------CALLOUTS--------------------------------------
+//------------------------------------------------------------------------------
+
+@callout-padding-vertical                               : 10px;
+@callout-padding-horizontal                             : 15px;
+@callout-border-left-width                              : 6px;
+
+@callout-success-bg                                     : lighten(@brand-success, 30%);
+@callout-success-border-left-color                      : @brand-success;
+
+@callout-danger-bg                                      : lighten(@brand-danger, 30%);
+@callout-danger-border-left-color                       : @brand-danger;
+
+@callout-info-bg                                        : lighten(@brand-info, 30%);
+@callout-info-border-left-color                         : @brand-info;
+
+@callout-warning-bg                                     : lighten(@brand-warning, 20%);
+@callout-warning-border-left-color                      : @brand-warning;
+
+@callout-primary-bg                                     : lighten(@brand-primary, 30%);
+@callout-primary-border-left-color                      : @brand-primary;
+
+//------------------------------------------------------------------------------
+//----------------------------------BADGES--------------------------------------
+//------------------------------------------------------------------------------
+
+@badge-danger-bg                                        : @brand-danger;
+@badge-danger-color                                     : #FFF;
+
+@badge-info-bg                                          : @brand-info;
+@badge-info-color                                       : #FFF;
+
+@badge-success-bg                                       : @brand-success;
+@badge-success-color                                    : #FFF;
+
+@badge-primary-bg                                       : @brand-primary;
+@badge-primary-color                                    : #FFF;
+
+@badge-warning-bg                                       : @brand-warning;
+@badge-warning-color                                    : #FFF;
+
+@badge-inverse-bg                                       : @brand-inverse;
+@badge-inverse-color                                    : #FFF;
+
+//------------------------------------------------------------------------------
+//----------------------------------DOCUMENTATION-------------------------------
+//------------------------------------------------------------------------------
+
+@plugin-doc-option-name-width                           : 2;
+@plugin-doc-option-type-width                           : 1;
+@plugin-doc-option-default-width                        : 3;
+@plugin-doc-option-description-width                    : 6;
+
+@plugin-doc-method-name-width                           : 2;
+@plugin-doc-method-params-width                         : 4;
+@plugin-doc-method-return-width                         : 2;
+@plugin-doc-method-description-width                    : 4;
+
+@plugin-doc-event-name-width                            : 3;
+@plugin-doc-event-params-width                          : 3;
+@plugin-doc-event-description-width                     : 6;
+
+@plugin-doc-row-border-bottom                           : 1px solid #ddd;
+@plugin-doc-row-header-font-size                        : 0.8em;
+@plugin-doc-row-header-color                            : #999;
+@plugin-doc-row-header-bg                               : #eee;
+@plugin-doc-cell-font-size                              : 0.95em;
+@plugin-doc-cell-padding-vertical                       : 6px;
+@plugin-doc-cell-padding-horizontal                     : 9px;
+@plugin-doc-cell-pre                                    : 320px;
+
+//------------------------------------------------------------------------------
+//----------------------------------ERROR PAGES---------------------------------
+//------------------------------------------------------------------------------
+
+@error-page-error-code-color                            : #A12929;
+@error-page-error-code-font-size                        : 110px;
+@error-page-error-code-text-shadow                      : 5px 5px 5px rgba(0, 0, 0, 0.5);
+@error-page-error-text-shadow                           : 2px 2px 3px rgba(0, 0, 0, 0.5);
+@error-page-error-subtext-font-size                     : 18px;
+@error-page-page-actions-li-margin-bottom               : 10px;
+@error-page-page-actions-li-padding-horizontal          : 10px;
+
+
+//------------------------------------------------------------------------------
+//----------------------------------POPOVER-------------------------------------
+//------------------------------------------------------------------------------
+
+@popover-danger-title-bg                                : @brand-danger;
+@popover-danger-title-color                             : #FFF;
+@popover-danger-border-color                            : darken(@brand-danger, 10%);
+
+@popover-success-title-bg                               : @brand-success;
+@popover-success-title-color                            : #FFF;
+@popover-success-border-color                           : darken(@brand-success, 10%);
+
+@popover-primary-title-bg                               : @brand-primary;
+@popover-primary-title-color                            : #FFF;
+@popover-primary-border-color                           : darken(@brand-primary, 10%);
+
+@popover-info-title-bg                                  : @brand-info;
+@popover-info-title-color                               : #FFF;
+@popover-info-border-color                              : darken(@brand-info, 10%);
+
+@popover-warning-title-bg                               : @brand-warning;
+@popover-warning-title-color                            : #FFF;
+@popover-warning-border-color                           : darken(@brand-warning, 10%);
+
+@popover-inverse-title-bg                               : @brand-inverse;
+@popover-inverse-title-color                            : #FFF;
+@popover-inverse-border-color                           : darken(@brand-inverse, 10%);
+
+//------------------------------------------------------------------------------
+//----------------------------------PAGINATION----------------------------------
+//------------------------------------------------------------------------------
+
+@pagination-balls-margin-right                          : 5px;
+@pagination-balls-width-base                            : 34px;
+@pagination-balls-border-width                          : 1px;
+@pagination-balls-line-height                           : @pagination-balls-width-base - 2 * @pagination-balls-border-width;
+
+@pagination-balls-width-lg                              : 47px;
+@pagination-balls-line-height-lg                        : @pagination-balls-width-lg - 2 * @pagination-balls-border-width;
+
+@pagination-balls-width-sm                              : 29px;
+@pagination-balls-line-height-sm                        : @pagination-balls-width-sm - 2 * @pagination-balls-border-width;
+
+//------------------------------------------------------------------------------
+//-------------------------------DISCOUNT LABELS--------------------------------
+//------------------------------------------------------------------------------
+
+@discount-label-box-shadow                              : none;
+@discount-label-border-radius                           : 3px;
+@discount-label-bg                                      : #FFF;
+@discount-label-border-color                            : darken(@discount-label-bg, 12%);
+@discount-label-padding-vertical                        : 30px;
+@discount-label-brand-letter-spacing                    : 3px;
+@discount-label-brand-padding                           : 10px;
+@discount-label-brand-min-height                        : 100px;
+@discount-label-percentage-font-size                    : 80px;
+@discount-label-percentage-line-height                  : 80px;
+@discount-label-percentage-padding-top                  : 20px;
+@discount-label-percentage-color                        : #f1c40f;
+@discount-label-percentage-type-font-size               : 20px;
+@discount-label-description-padding                     : 20px 15px;
+@discount-label-description-color                       : #999;
+@discount-label-description-min-height                  : 130px;
+@discount-label-ends-padding-horizontal                 : 15px;
+@discount-label-ends-color                              : @discount-label-percentage-color;
+@discount-label-coupon-font-size                        : 18px;
+@discount-label-coupon-padding                          : 20px 15px;
+@discount-label-coupon-bg                               : #2c3e50;
+@discount-label-coupon-open-code-link-color             : #16a085;
+@discount-label-coupon-code-padding                     : 10px 15px;
+@discount-label-coupon-code-color                       : @discount-label-percentage-color;
+@discount-label-coupon-code-bg                          : #f0f0f0;
+@discount-label-coupon-code-border-radius               : @discount-label-border-radius;
+
+@discount-label-default-bg                              : @gray-light;
+@discount-label-primary-bg                              : @brand-primary;
+@discount-label-danger-bg                               : @brand-danger;
+@discount-label-success-bg                              : @brand-success;
+@discount-label-warning-bg                              : @brand-warning;
+@discount-label-info-bg                                 : @brand-info;
+@discount-label-inverse-bg                              : @brand-inverse;
+@discount-label-purple-bg                               : @brand-purple;
+@discount-label-pink-bg                                 : @brand-pink;
+@discount-label-cyan-bg                                 : @brand-cyan;
+@discount-label-red-bg                                  : @brand-red;
+@discount-label-green-bg                                : @brand-green;
+
+//------------------------------------------------------------------------------
+//---------------------------------STAR RATING----------------------------------
+//------------------------------------------------------------------------------
+
+@lobi-rating-label-font-size                            : 18px;
+@lobi-rating-label-line-height                          : 22px;
+@lobi-rating-color                                      : darken(@gray-lighter, 20%);
+@lobi-rating-disabled-color                             : lighten(@lobi-rating-color, 10%);
+@lobi-rating-checked-color                              : lighten(@brand-primary, 5%);
+@lobi-rating-checked-disabled-color                     : lighten(@brand-primary, 45%);
+
+
+@lobi-rating-xs-font-size                               : 11px;
+@lobi-rating-xs-line-height                             : 12px;
+@lobi-rating-xs-label-font-size                         : 11px;
+
+@lobi-rating-sm-font-size                               : 14px;
+@lobi-rating-sm-line-height                             : 16px;
+@lobi-rating-sm-label-font-size                         : 14px;
+
+@lobi-rating-lg-font-size                               : 18px;
+@lobi-rating-lg-line-height                             : 22px;
+@lobi-rating-lg-label-font-size                         : 24px;
+
+@lobi-rating-xl-font-size                               : 22px;
+@lobi-rating-xl-line-height                             : 30px;
+@lobi-rating-xl-label-font-size                         : 32px;
+
+@lobi-rating-info-color                                 : @brand-info;
+@lobi-rating-info-disabled-color                        : lighten(@brand-info, 30%);
+@lobi-rating-success-color                              : @brand-success;
+@lobi-rating-success-disabled-color                     : lighten(@brand-success, 30%);
+@lobi-rating-warning-color                              : @brand-warning;
+@lobi-rating-warning-disabled-color                     : lighten(@brand-warning, 25%);
+@lobi-rating-danger-color                               : @brand-danger;
+@lobi-rating-danger-disabled-color                      : lighten(@brand-danger, 30%);
+@lobi-rating-inverse-color                              : @brand-inverse;
+@lobi-rating-inverse-disabled-color                     : lighten(@brand-inverse, 30%);
+
+//------------------------------------------------------------------------------
+//---------------------------------TAGS INPUT-----------------------------------
+//------------------------------------------------------------------------------
+
+@tags-input-min-height                                  : @input-height-base;
+@tags-input-border-width                                : 1px;
+@tags-input-font-size                                   : 13px;
+@tags-input-padding-vertical                            : 1px;
+@tags-input-padding-horizontal                          : 6px;
+@tags-input-tag-margin-vertical                         : 3px;
+@tags-input-tag-padding                                 : 5px 28px 4px 8px;
+@tags-input-tag-close-width                             : 24px;
+@tags-input-tag-close-font-size                         : 15px;
+
+//------------------------------------------------------------------------------
+//----------------------------------CHOSEN--------------------------------------
+//------------------------------------------------------------------------------
+
+@chosen-hover-bg                                        : @input-hover-bg;
+@chosen-min-height                                      : @input-height-base;
+@chosen-multi-chosen-choices-padding-horizontal         : 7px;
+@chosen-multi-chosen-choices-search-choice-color        : #FFF;
+@chosen-multi-chosen-choices-search-choice-bg           : @brand-info;
+@chosen-multi-chosen-choices-search-choice-padding-top  : 5px;
+@chosen-multi-chosen-choices-search-choice-padding-right: 28px;
+@chosen-multi-chosen-choices-search-choice-padding-left  : 8px;
+@chosen-multi-chosen-choices-search-choice-padding-bottom: 4px;
+@chosen-multi-chosen-choices-search-choice-padding      : @tags-input-tag-padding;
+@chosen-multi-chosen-choices-search-choice-close-width  : @tags-input-tag-close-width;
+
+//------------------------------------------------------------------------------
+//----------------------------------SELECT2-------------------------------------
+//------------------------------------------------------------------------------
+
+@select2-dropdown-open-border-color                     : @brand-info;
+@select2-list-item-highlighted-bg                       : @brand-primary;
+@select2-multi-selected-bg                              : @brand-info;
+@select2-multi-choice-close-icon                        : @fa-var-times-circle;
+@select2-png-path                                       : "../img/select2.png";
+@select2x2-png-path                                     : "../img/select2x2.png";
+@select2-spinner                                        : "../img/select2-spinner.gif";
+
+//------------------------------------------------------------------------------
+//-------------------------------PRICING TABLES---------------------------------
+//------------------------------------------------------------------------------
+
+
+@pricing-table-hover-transition-duration                : 0.3s;
+@pricing-table-hover-box-shadow                         : 0 0 10px 2px rgba(0, 0, 0, 0.4);
+@pricing-table-hover-scale                              : 1.05;
+@pricing-table-header-text-shadow                       : 2px 2px 2px rgba(0, 0, 0, 0.4);
+@pricing-table-header-font-size                         : 28px;
+@pricing-table-header-padding                           : 15px 20px;
+@pricing-table-price-padding-vertical                   : 20px;
+@pricing-table-body-font-size                           : 15px;
+@pricing-table-price-font-size                          : 40px;
+
+
+@membership-pricing-td-border-color                     : #ebebeb;
+@membership-pricing-td-bg                               : #fafafa;
+@membership-pricing-td-font-size                        : 14px;
+@membership-pricing-td-padding                          : 7px 10px;
+@membership-pricing-td-box-shadow                       : 0px 1px 0px white inset;
+@membership-pricing-td-width                            : 15%;
+@membership-pricing-td-properties-width                 : 24%;
+@membership-pricing-header-border-color                 : darken(@gray-lighter, 5%);
+@membership-pricing-header-padding-vertical             : 25px;
+
+@membership-pricing-free-header-bg                      : @gray-lighter;
+@membership-pricing-free-header-color                   : @gray;
+
+@membership-pricing-blue-header-bg                      : lighten(@brand-info, 10%);
+@membership-pricing-blue-header-color                   : #FFF;
+
+@membership-pricing-plan-name-font-size                 : 22px;
+@membership-pricing-header-td-font-size                 : 48px;
+
+@membership-pricing-standard-header-bg                  : #ff9317;
+@membership-pricing-standard-header-color               : #FFF;
+
+@membership-pricing-plan-price-line-height              : 35px;
+
+@membership-pricing-icon-font-size                      : 22px;
+@membership-pricing-icon-no-color                       : darken(@brand-danger, 10%);
+@membership-pricing-icon-yes-color                      : darken(@brand-success, 10%);
+
+//------------------------------------------------------------------------------
+//----------------------------------LOCK SCREEN---------------------------------
+//------------------------------------------------------------------------------
+
+@lock-screen-form-max-width                             : 500px;
+@lock-screen-form-padding                               : 15px;
+@lock-screen-clock-left                                 : 100px;
+@lock-screen-clock-bottom                               : 100px;
+@lock-screen-clock-font-size-date                       : 55px;
+@lock-screen-clock-font-size-time                       : 100px;
+@lock-screen-clock-color                                : #FFF;
+@lock-screen-clock-text-shadow                          : 3px 3px 5px #000;
+@lock-screen-clock-mobile-left                          : 20px;
+@lock-screen-clock-mobile-bottom                        : 20px;
+@lock-screen-clock-mobile-font-size-date                : 30px;
+@lock-screen-clock-mobile-font-size-time                : 50px;
+@lock-screen-clock-mobile-img-max-width                 : 140px;
+
+//------------------------------------------------------------------------------
+//-----------------------------------LOGIN FORM---------------------------------
+//------------------------------------------------------------------------------
+
+@login-background                                       : #FFF;
+@login-max-width                                        : 400px;
+@login-border-radius                                    : 0px;
+@login-box-shadow                                       : 0 0 20px rgba(0, 0, 0, 0.5);
+
+
+@login-header-background                                : lighten(@gray-lighter, 2%);
+@login-header-border                                    : darken(@gray-lighter, 7%);
+@login-header-border-width                              : 1px;
+@login-header-link                                      : #079170;
+@login-header-font-size                                 : 22px;
+@login-header-padding-vertical                          : 15px;
+@login-header-padding-horizontal                        : 20px;
+
+
+@login-footer-background                                : @login-header-background;
+@login-footer-border                                    : @login-header-border;
+@login-footer-border-width                              : 1px;
+
+@login-footer-padding-vertical                          : @login-header-padding-vertical;
+@login-footer-padding-horizontal                        : @login-header-padding-horizontal;
+
+//------------------------------------------------------------------------------
+//-----------------------------------TIMELINE-----------------------------------
+//------------------------------------------------------------------------------
+
+@timeline-color                                         : @brand-primary;
+@timeline-bg                                            : #FFF;
+
+@timeline-badge-size                                    : 40px;
+@timeline-badge-color                                   : #fff;
+@timeline-badge-font-size                               : 18px;
+
+@timeline-vertical-line-left                            : 30px;
+@timeline-vertical-line-width                           : 2px;
+@timeline-vertical-line-color                           : darken(@gray-lighter, 10%);
+
+@timeline-panel-body-padding                            : 10px;
+@timeline-panel-border-bottom                           : 1px solid darken(@gray-lighter, 5%);
+@timeline-panel-footer-padding                          : 10px 15px;
+@timeline-year-width                                    : 60px;
+@timeline-year-font-size                                : 22px;
+
+//------------------------------------------------------------------------------
+//-----------------------------------INVOICE------------------------------------
+//------------------------------------------------------------------------------
+
+@invoice-color                                          : @brand-info;
+@invoice-min-height                                     : 680px;
+@invoice-padding                                        : 15px;
+@invoice-header-padding                                 : 10px 0;
+@invoice-header-border-bottom                           : 1px solid @invoice-color;
+@invoice-header-margin-bottom                           : 20px;
+@invoice-contacts-margin-bottom                         : 20px;
+@invoice-main-padding-bottom                            : 50px;
+@invoice-main-thanks-margin-top                         : -100px;
+@invoice-main-thanks-font-size                          : 2em;
+@invoice-main-thanks-margin-bottom                      : 50px;
+@invoice-main-notices-padding-left                      : 6px;
+@invoice-main-notices-border-left                       : 6px solid @invoice-color;
+@invoice-main-notices-notice-font-size                  : 1.2em;
+@invoice-table-margin-bottom                            : 20px;
+@invoice-table-item-description-title-color             : @invoice-color;
+@invoice-table-item-description-title-font-size         : 1.2em;
+@invoice-table-row-number-color                         : #FFFFFF;
+@invoice-table-row-number-font-size                     : 1.6em;
+@invoice-table-row-number-bg                            : @invoice-color;
+@invoice-table-hour-price-bg                            : #DDD;
+@invoice-table-total-bg                                 : @invoice-table-row-number-bg;
+@invoice-table-total-color                              : @invoice-table-row-number-color;
+@invoice-table-tfoot-td-padding                         : 10px 20px;
+@invoice-table-tfoot-td-font-size                       : 1.2em;
+@invoice-table-tfoot-td-border-top                      : 1px solid #AAAAAA;
+@invoice-table-tfoot-last-tr-color                      : @invoice-color;
+@invoice-table-tfoot-last-tr-font-size                  : 1.4em;
+@invoice-table-tfoot-last-tr-border-top                 : 1px solid @invoice-color;
+@invoice-table-cell-padding                             : 15px;
+@invoice-table-cell-background                          : #EEEEEE;
+@invoice-table-cell-border-bottom                       : 1px solid #FFFFFF;
+@invoice-table-td-amount-font-size                      : 1.2em;
+@invoice-footer-color                                   : #777777;
+@invoice-footer-height                                  : 30px;
+@invoice-footer-border-top                              : 1px solid #AAAAAA;
+@invoice-footer-padding                                 : 8px 0;
+
+
+//------------------------------------------------------------------------------
+//-----------------------------------HELPER CLASSES-----------------------------
+//------------------------------------------------------------------------------
+
+@helper-class-border-color-default                      : #e5e5e5;
+@text-muted-color                                       : lighten(@gray-light, 7%);
+
+//------------------------------------------------------------------------------
+//-----------------------------------PROFILE------------------------------------
+//------------------------------------------------------------------------------
+
+@profile-profile-header-bachground-heigh                 : 300px;
+@profile-profile-header-bachground-btn-follow-margin-top : 130px;
+@profile-profile-header-bachground-btn-follow-width      : 150px;
+@profile-profile-header-avatar-image-height              : 150px;
+@profile-profile-header-avatar-image-width               : 150px;
+@profile-profile-header-avatar-image-top                 : 75px;
+@profile-profile-header-avatar-image-left                : -75px;
+@profile-profile-header-header-text-color                : #808080;
+@profile-profile-header-header-text-margin-left          : 80px;
+@profile-profile-header-header-text-margin-top           : 30px;
+@profile-profile-header-header-text-margin-bottom        : 20px;
+@profile-profile-header-header-text-ul-fa-width          : 20px;
+@profile-profile-header-header-text-ul-fa-font-size      : 120%;
+@profile-post-background-color                           : #FFF;
+@profile-post-margin-bottom                              : 10px;
+@profile-post-border                                     : 1px solid @gray-lighter;
+@profile-col-recent-activities-profile-news-btn-group-btn-height         : 35px;
+@profile-col-recent-activities-tab-pane-messages-media-list-max-height   : 480px;
+
+//------------------------------------------------------------------------------
+//-----------------------------------MESSAGES-----------------------------------
+//------------------------------------------------------------------------------
+
+@messages-max-height                                    : 400px;
+@messages-padding                                       : 15px;
+@messages-bg                                            : #FFF;
+@messages-header-padding                                : 5px;
+@messages-header-font-size                              : 28px;
+@messages-header-color                                  : #FFF;
+@messages-header-bg                                     : rgba(34, 72, 102, 0.52);
+@messages-margin-bottom                                 : 15px;
+@message-text-border-radius                             : 8px;
+@message-text-padding                                   : 10px;
+@message-text-arrow-height                              : 16px;
+@message-text-arrow-width                               : 8px;
+@message-avatar-size                                    : 50px;
+@message-time-width                                     : 50px;
+@message-body-padding-top                               : 5px;
+@message-body-image-padding                             : @message-avatar-size + 20px;
+@message-body-time-padding                              : @message-time-width + 5px;
+@message-sender-text-color                              : #FFF;
+@message-sender-text-bg                                 : rgba(74, 90, 108, 0.78);          
+@message-receiver-text-color                            : #FFF;
+@message-receiver-text-bg                               : @brand-info;
+@message-older-date-line-color                          : lighten(@gray-light, 20%);
+
+//------------------------------------------------------------------------------
+//-----------------------------------X-EDITABLE---------------------------------
+//------------------------------------------------------------------------------
+
+@x-editable-loading-img-path                            : "../img/x-editable/loading.gif";
+@x-editable-clear-img-path                              : "../img/x-editable/clear.png";
+
+//------------------------------------------------------------------------------
+//-----------------------------------DROPZONE-----------------------------------
+//------------------------------------------------------------------------------
+
+@dropzone-spritemap-path                                : "../img/spritemap.png";
+
+//------------------------------------------------------------------------------
+//-----------------------------------DATATABLES---------------------------------
+//------------------------------------------------------------------------------
+
+@datatables-sort-both-img-path                          : "../img/datatables/sort_both.png";
+@datatables-sort-asc-img-path                           : "../img/datatables/sort_asc.png";
+@datatables-sort-desc-img-path                          : "../img/datatables/sort_desc.png";
+@datatables-sort-asc-disabled-img-path                  : "../img/datatables/sort_asc_disabled.png";
+@datatables-sort-desc-disabled-img-path                 : "../img/datatables/sort_desc_disabled.png";
+
+//------------------------------------------------------------------------------
+//-----------------------------------JCROP--------------------------------------
+//------------------------------------------------------------------------------
+
+@jcrop-img-path                                         : "../img/Jcrop.gif";
+
+//------------------------------------------------------------------------------
+//-----------------------------------JSTREE-------------------------------------
+//------------------------------------------------------------------------------
+
+@jstree-32px-img-path                                   : "../img/jstree/32px.png";
+@jstree-40px-img-path                                   : "../img/jstree/40px.png";
+@jstree-throbber-img-path                               : "../img/jstree/throbber.gif";
+
+//------------------------------------------------------------------------------
+//-----------------------------------JQUERY UI----------------------------------
+//------------------------------------------------------------------------------
+
+@jquery-ui-icons-222222-path                            : "../img/jquery-ui/ui-icons_222222_256x240.png";

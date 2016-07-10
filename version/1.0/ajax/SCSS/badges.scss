@@ -1,0 +1,55 @@
+//Author      : @arboshiki
+
+.badge-danger{
+    background-color: $badge-danger-bg !important;
+    color: $badge-danger-color !important;
+}
+.badge-info{
+    background-color: $badge-info-bg !important;
+    color: $badge-info-color !important;
+}
+.badge-success{
+    background-color: $badge-success-bg !important;
+    color: $badge-success-color !important;
+}
+.badge-primary{
+    background-color: $badge-primary-bg !important;
+    color: $badge-primary-color !important;
+}
+.badge-warning{
+    background-color: $badge-warning-bg !important;
+    color: $badge-warning-color !important;
+}
+.badge-inverse{
+    background-color: $badge-inverse-bg !important;
+    color: $badge-inverse-color !important;
+}
+
+.badge-cyan{
+    background-color: $brand-cyan-dark !important;
+    color: #FFF !important;
+}
+.badge-purple{
+    background-color: $brand-purple !important;
+    color: #FFF !important;
+}
+.badge-pink{
+    background-color: $brand-pink-dark !important;
+    color: #FFF !important;
+}
+.badge-orange{
+    background-color: $brand-orange-dark !important;
+    color: #FFF !important;
+}
+.badge-blue{
+    background-color: $brand-blue !important;
+    color: #FFF !important;
+}
+.badge-green{
+    background-color: $brand-green !important;
+    color: #FFF !important;
+}
+.badge-xs{
+    font-size: 70%;
+    padding: 3px 6px;
+}

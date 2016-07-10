@@ -1,0 +1,157 @@
+//Author      : @arboshiki
+
+.wizard {
+    margin-bottom: 20px;
+    .wizard-tabs {
+        position: relative;
+        overflow: hidden;
+        border: $wizard-tabs-border;
+        li{
+            margin: 0;
+        }
+        &.wizard-tab-arrows{
+            li{
+                a{
+                    @include transition(all $wizard-tabs-arrow-animation-duration);
+                    border-radius: 0;
+                    margin: 0;
+                    position: relative;
+                    float: left;
+                    cursor: default;
+                    height: $wizard-tabs-arrow-item-height; 
+                    padding: $wizard-tabs-arrow-item-padding;
+                    font-size: $wizard-tabs-arrow-item-font-size;
+                    line-height: $wizard-tabs-arrow-item-line-height;
+                    color: $wizard-tabs-arrow-item-color;
+                    background: $wizard-tabs-arrow-item-bg;
+                    .chevron{
+                        position: absolute;
+                        display: block;
+                        z-index: 1;
+                        top: $wizard-tabs-arrow-item-chevron-top;
+                        right: -$wizard-tabs-arrow-item-chevron-border-left-width;
+                        border: $wizard-tabs-arrow-item-chevron-border-width solid transparent;
+                        border-right: 0;
+                        border-left: $wizard-tabs-arrow-item-chevron-border-left-width solid $wizard-tabs-border-color;
+                        @include transition(all $wizard-tabs-arrow-animation-duration);
+                        &:before {
+                            @include transition($wizard-tabs-arrow-animation-duration all);
+                            position: absolute;
+                            top: -$wizard-tabs-arrow-item-chevron-border-width;
+                            right: 1px;
+                            display: block;
+                            border: $wizard-tabs-arrow-item-chevron-border-width solid transparent;
+                            border-right: 0;
+                            border-left: $wizard-tabs-arrow-item-chevron-border-left-width solid $wizard-tabs-arrow-item-bg;
+                            content: "";
+                        }
+                    }
+                    .badge {
+                        @include transition($wizard-tabs-arrow-animation-duration all);
+                        background-color: $wizard-tabs-arrow-item-badge-bg;
+                    }
+                }
+                &.complete{
+                    a{
+                        color: $wizard-tabs-arrow-complete-item-color;
+                        background-color: $wizard-tabs-arrow-complete-item-bg;
+                        .chevron{
+                            border-left-color: $wizard-tabs-arrow-complete-item-border-color; 
+                            &:before{
+                                border-left-color: $wizard-tabs-arrow-complete-item-bg;
+                            }
+                        }
+                        .badge{
+                            background-color: $wizard-tabs-arrow-complete-item-badge-bg;
+                            color: $wizard-tabs-arrow-complete-item-badge-color;
+                        }
+                    }
+                }
+                &.active{
+                    a{
+                        font-weight: bold;
+                        color: $wizard-tabs-arrow-active-item-color;
+                        background: $wizard-tabs-arrow-active-item-bg;
+                        .chevron{
+                            border-left-color: $wizard-tabs-arrow-active-item-border-color; 
+                            &:before {
+                                border-left-color: $wizard-tabs-arrow-active-item-bg;
+                            }
+                        }
+                        .badge {
+                            background: $wizard-tabs-arrow-active-item-badge-bg;
+                            color: $wizard-tabs-arrow-active-item-badge-color;
+                        }
+                    }
+                }
+            }
+        }
+        &.wizard-tab-balls{
+            padding: $wizard-tabs-balls-padding-vertical $wizard-tabs-balls-padding-horizontal;
+            li{
+                text-align: center;
+                a{
+                    background-color: transparent;
+                    .step{
+                        @include transition($wizard-tabs-ball-animation-duration all);
+                        border-radius: 50%;
+                        position: relative;
+                        font-size: $wizard-tabs-ball-step-font-size;
+                        line-height: $wizard-tabs-ball-step-line-height;
+                        padding: $wizard-tabs-ball-step-padding;
+                        background-color: $wizard-tabs-ball-step-bg;
+                        color: $wizard-tabs-ball-step-color;
+                        z-index: 2;
+                        border: $wizard-tabs-ball-step-border;
+                    }
+                    .title{
+                        position: relative;
+                        display: block;
+                        color: $wizard-tabs-ball-title-color;
+                        font-size: $wizard-tabs-ball-title-font-size;
+                        top: $wizard-tabs-ball-title-top;
+                        width: 100%;
+                    }
+                }
+                &:before{
+                    content: "";
+                    display: block;
+                    overflow: hidden;
+                    position: relative;
+                    border-top: $wizard-tabs-ball-line-border-top;
+                    top: $wizard-tabs-ball-line-top;
+                    width: 100%;
+                    z-index: 1;
+                }
+                &.complete{
+                    .step{
+                        background-color: $wizard-tabs-ball-complete-step-bg;
+                        border-color: $wizard-tabs-ball-complete-step-border-color;
+                    }
+                    .title{
+                        color: $wizard-tabs-ball-complete-title-color;
+                    }
+                    &:before{
+                        border-top-color: $wizard-tabs-ball-complete-line-border-top-color;
+                    }
+                }
+                &.active{
+                    .step{
+                        background-color: $wizard-tabs-ball-active-step-bg;
+                        border-color: darken($wizard-tabs-ball-active-step-bg, 10%);
+                        padding: $wizard-tabs-ball-active-step-padding;
+                    }
+                    .title{
+                        color: $wizard-tabs-ball-active-title-color;
+                    }
+                    &:before{
+                        border-top-color: $wizard-tabs-ball-active-line-border-top-color;
+                    }
+                }
+            }
+        }
+    }
+    .tab-content{
+        padding: $wizard-tab-content-padding;
+    }
+}

@@ -1,0 +1,175 @@
+/*Author      : @arboshiki*/
+
+.pricing-table{
+    @include transition(all $pricing-table-hover-transition-duration);
+    .panel-heading,
+    .panel-body,
+    .panel-footer{
+        text-align: center;
+    }
+    .panel-heading{
+        font-size: $pricing-table-header-font-size;
+        padding: $pricing-table-header-padding;
+        text-shadow: $pricing-table-header-text-shadow;
+    }
+    .panel-body{
+        padding: 0;
+        font-size: $pricing-table-body-font-size;
+        .table-price{
+            text-align: center;
+            padding: $pricing-table-price-padding-vertical 0;
+            font-size: $pricing-table-price-font-size;
+        }
+        table{
+            margin-bottom: 0;
+        }
+    }
+    &.table-default,
+    &:hover{
+        @include scale($pricing-table-hover-scale);
+        @include box-shadow($pricing-table-hover-box-shadow);
+    }
+    &:hover{
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.membership-pricing-table{
+    width: 920px;
+    table{
+        .icon-no,
+        .icon-yes{
+            font-size: $membership-pricing-icon-font-size;
+        }
+        .icon-no{
+            color: $membership-pricing-icon-no-color
+        }
+        .icon-yes{
+            color: $membership-pricing-icon-yes-color
+        }
+        .plan-header{
+            text-align: center;
+            font-size: $membership-pricing-header-td-font-size;
+            border: 1px solid $membership-pricing-header-border-color;
+            padding: $membership-pricing-header-padding-vertical 0;
+        }
+        .plan-header-free{
+            background-color: $membership-pricing-free-header-bg;
+            color: $membership-pricing-free-header-color;
+        }
+        .plan-header-blue{
+            color: $membership-pricing-blue-header-color;
+            background-color: $membership-pricing-blue-header-bg;
+            border-color: darken($membership-pricing-blue-header-bg, 10%);
+        }
+        .plan-header-standard{
+            color: $membership-pricing-standard-header-color;
+            background-color: $membership-pricing-standard-header-bg;
+            border-color: darken($membership-pricing-standard-header-bg, 10%);
+        }
+        td{
+            text-align: center;
+            width: 15%;
+            padding: $membership-pricing-td-padding;
+            background-color: $membership-pricing-td-bg;
+            font-size: $membership-pricing-td-font-size;
+            @include box-shadow($membership-pricing-td-box-shadow);
+        }
+        &, td{
+            border: 1px solid $membership-pricing-td-border-color;
+        }
+        tr{
+            td{
+                &:first-child{
+                    background-color: transparent;
+                    text-align: right;
+                    width: $membership-pricing-td-properties-width;
+                }
+                &:nth-child(5){
+                    background-color: #FFF;
+                }
+            }
+            &:first-child,
+            &:nth-child(2){
+                td{
+                    @include box-shadow(none);
+                }
+            }
+            &:first-child{
+                th:first-child{
+                    border-top-color: transparent;
+                    border-left-color: transparent;
+                    border-right-color: $membership-pricing-header-border-color;
+                }
+                th{
+                    .pricing-plan-name{
+                        font-size: $membership-pricing-plan-name-font-size;
+                    }
+                    .pricing-plan-price{
+                        line-height: $membership-pricing-plan-price-line-height;
+                        >sup{
+                            font-size: 45%;
+                        }
+                        >span{
+                            font-size: 30%;
+                        }
+                    }
+                    .pricing-plan-period{
+                        margin-top: -7px;
+                        font-size: 25%;
+                    }
+                }
+            }
+        }
+        .header-plan-inner{
+            position: relative;
+        }
+        .recommended-plan-ribbon{
+            box-sizing: content-box;
+            background-color: #dc3b5d;
+            color: #FFFFFF;
+            position: absolute;
+            padding: 3px 6px;
+            font-size: 11px !important;
+            font-weight: 500;
+            left: -6px;
+            top: -22px;
+            z-index: 99;
+            width: 100%;
+            @include box-shadow(0 -1px #c2284c inset);
+            text-shadow: 0 -1px #c2284c;
+            &:before{
+                border: solid;
+                border-color: #c2284c transparent;
+                border-width: 6px 0px 0px 6px;
+                bottom: -5px;
+                content: "";
+                left: 0%;
+                position: absolute;
+                z-index: 90;
+            }
+            &:after{
+                border: solid;
+                border-color: #c2284c transparent;
+                border-width: 6px 6px 0px 0px;
+                bottom: -5px;
+                content: "";
+                right: 0%;
+                position: absolute;
+                z-index: 90;
+            }
+        }
+        .plan-head{
+            box-sizing: content-box;
+            background-color: #ff9c00;
+            border: solid 1px #cf7300;
+            position: absolute;
+            top: -33px;
+            left: -1px;
+            height: 30px;
+            width: 100%;
+            border-bottom: none;
+        }
+    }
+}

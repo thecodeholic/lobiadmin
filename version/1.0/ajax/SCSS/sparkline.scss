@@ -1,0 +1,7 @@
+/*Author      : @arboshiki*/
+.jqstooltip{
+    padding: 7px!important;
+    border: none!important;
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    @include box-sizing(content-box);
+}

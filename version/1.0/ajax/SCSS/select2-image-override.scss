@@ -1,0 +1,26 @@
+/*Author      : @arboshiki*/
+
+.select2-container .select2-choice abbr,
+.select2-container .select2-choice .select2-arrow b,
+.select2-search input,
+.select2-search-choice-close{
+    background-image: url($select2-png-path);
+}
+
+.select2-container-multi .select2-choices .select2-search-field input.select2-active {
+    background-image: url($select2-spinner) !important;
+}
+
+.select2-search input.select2-active,
+.select2-more-results.select2-active{
+    background-image: url($select2-spinner);
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx)  {
+    .select2-search input,
+    .select2-search-choice-close,
+    .select2-container .select2-choice abbr,
+    .select2-container .select2-choice .select2-arrow b {
+        background-image: url($select2x2-png-path) !important;
+    }
+}

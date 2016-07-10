@@ -1,0 +1,466 @@
+//Author     : @arboshiki
+
+@import "../../../BOOTSTRAP/less/variables.less";
+@import "../../../BOOTSTRAP/less/mixins.less";
+@import "variables.less";
+
+.lobimail{
+    padding: @mailbox-padding;
+    background-color: @mailbox-bg;
+    .col-menu-search{
+        margin-bottom: @margin-bottom-default;
+        .col-search{
+            margin-bottom: @margin-bottom-default;
+        }
+        .col-menu{
+            .btn-compose{
+                outline: 0;
+                margin-bottom: @margin-bottom-default;
+            }
+            .nav-menu{
+                li{
+                    a{
+                        color: @mailbox-menu-item-color;
+                        padding: @mailbox-menu-item-padding-vertical @mailbox-menu-item-padding-horizontal;
+                    }
+                    &.active{
+                        a{
+                            border-left: @mailbox-menu-item-active-border-left-width solid @mailbox-menu-item-active-border-color;
+                            background-color: @mailbox-menu-item-active-bg;
+                            color: @mailbox-menu-item-active-color;
+                            .transition(all @mailbox-menu-item-transition-duration);
+                            &:hover{
+                                background-color: @mailbox-menu-item-hover-bg;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .row-actions{
+        .btn{
+            padding: @mailbox-table-actions-btn-padding;
+            &.dropdown-toggle{
+                padding-left: @mailbox-table-actions-btn-dropdown-padding-horizontal;
+                padding-right: @mailbox-table-actions-btn-dropdown-padding-horizontal;
+            }
+        }
+    }
+    .mailbox-table-wrapper{
+        .row-actions{
+            .col-main-actions{
+                margin-bottom: @margin-bottom-default;
+            }
+            .col-pager{
+                margin-bottom: @margin-bottom-default;
+            }
+            .col-main-actions{
+                .check-actions{
+                    .btn{
+                        padding-left: @mailbox-table-actions-btn-dropdown-padding-horizontal;
+                        padding-right: @mailbox-table-actions-btn-dropdown-padding-horizontal;
+                        .checkbox-inline{
+                            padding-left: @mailbox-table-actions-check-all-checkbox-padding-left;
+                            margin-top: @mailbox-table-actions-check-all-checkbox-margin-top;
+                        }
+                    }
+                }
+            }
+            .col-pager{
+                .pager-info{
+                    padding: @mailbox-table-actions-pager-info-padding;
+                    &>span{
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        .col-table{
+            table{
+                table-layout: fixed;
+            }
+            tr{
+                td{
+                    white-space: nowrap;
+                    padding: @mailbox-table-td-padding;
+                }
+                .td-checkbox{
+                    width: @mailbox-row-checkbox-td-width;
+                    max-width: @mailbox-row-checkbox-td-width;
+                    .checkbox-inline{
+                        margin-top: @mailbox-table-td-checkbox-margin-top;
+                    }
+                }
+                .td-star{
+                    width: @mailbox-row-td-star-width;
+                    max-width: @mailbox-row-td-star-width;
+                    &:hover{
+                        color: @mailbox-row-td-star-hover-color;
+                    }
+                }
+                .td-sender,
+                .td-message{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .td-sender{
+                    width: @mailbox-td-sender-width;
+                }
+                .td-message{
+                    width: 100%;
+                    small{
+                        color: @mailbox-row-subtext-color;
+                    }
+                }
+                .td-attachment{
+                    width: @mailbox-td-attachement-with;
+                }
+                .td-time{
+                    text-align: right;
+                    width: @mailbox-row-td-time-width;
+                }
+                &.unread{
+                    td{
+                        font-weight: 600;
+                        small{
+                            font-weight: normal;
+                        }
+                    }
+                }
+                &.starred{
+                    td.td-star{
+                        color: @mailbox-row-starred-star-color;
+                    }
+                }
+                &:hover{
+                    cursor: pointer;
+                    border-left: @mailbox-row-hover-border-left;
+                    background-color: @mailbox-row-hover-bg;
+                    .transition(all @mailbox-row-hover-transition-duration);
+                }
+                &.selected{
+                    background-color: @mailbox-row-selected-bg;
+                }
+            }
+        }
+    }
+    .mailbox-compose-email{
+        .row-header{
+            .form-group{
+                margin-bottom: 5px;
+                .select2-container{
+                    width: 100%;
+                }
+                &.to{
+                    position: relative;
+                    .show-cc-bcc{
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        padding: 5px;
+                        .show-cc, 
+                        .show-bcc{
+                            margin-right: 7px;
+                            color: @mailbox-compose-show-cc-bcc-color;
+                            &:hover{
+                                cursor: pointer;
+                                color: darken(@mailbox-compose-show-cc-bcc-color, 15%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .row-body{
+            .note-editor{
+                .note-editable{
+                    min-height: @mailbox-compose-note-editor-min-height;
+                }
+            }
+            .compose-email-footer{
+                margin-bottom: 0;
+                margin-top: -1px;
+                border: @mailbox-compose-editor-footer-border-top;
+            }
+        }
+    }
+    .mailbox-message-view{
+        .btn-go-back{
+            margin-right: 25px;
+        }
+        .row-subject{
+            padding: @mailbox-message-view-subject-padding-vertical @mailbox-message-view-subject-padding-horizontal;
+            border-bottom: @mailbox-message-view-row-sender-border-bottom;
+            .subject-text{
+                font-weight: 500;
+                margin: 0px;
+            }
+        }
+        .row-conversation{
+            .row-message{
+                .row-sender{
+                    cursor: pointer;
+                    padding: @padding-vertical @padding-horizontal;
+                    border-bottom: @mailbox-message-view-row-sender-border-bottom;
+                    .ctr-img{
+                        float: left;
+                        .icon{
+                            font-size: @mailbox-message-view-row-sender-img-icon-font-size;
+                            color: @mailbox-message-view-row-sender-img-icon-color;
+                        }
+                        img{
+                            .square(@mailbox-message-view-row-sender-img-size);
+                        }
+                    }
+                    .ctr-name-email{
+                        float: left;
+                        margin-left: @mailbox-message-view-row-sender-name-email-margin-left;
+                        margin-top: @mailbox-message-view-row-sender-name-email-margin-top;
+                        .name{
+                            margin: 0;
+                        }
+                    }
+                    .ctr-body-text{
+                        float: left;
+                        display: none;
+                        margin-top: @mailbox-message-view-row-sender-body-text-margin-top;
+                        margin-left: @mailbox-message-view-row-sender-body-text-margin-left;
+                        font-size: @mailbox-message-view-row-sender-body-text-font-size;
+                        color: @mailbox-message-view-row-sender-body-text-color;
+                    }
+                    .col-email-date{
+                        float: right;
+                        text-align: right;
+                        margin-top: @mailbox-message-view-row-sender-email-date-margin-top;
+                    }
+                }
+                .row-body{
+                    text-align: justify;
+                    font-size: @mailbox-row-body-font-size;
+                    line-height: @mailbox-row-body-line-height;
+                    padding: @padding-vertical @padding-base-horizontal;
+                    .attachments{
+                        margin-top: @mailbox-attachments-margin-top;
+                        border-top: @mailbox-attachments-border-top;
+                        .attachments-header{
+                            margin: @mailbox-attachments-header-margin-vertical @mailbox-attachments-header-margin-horizontal;
+                        }
+                        .attachments-title{
+                            display: inline-block;
+                        }
+                        .row-attachments{ 
+                            padding: @mailbox-attachments-row-padding-vertical @mailbox-attachments-row-padding-horizontal;
+                            margin: 0 @mailbox-attachments-row-margin-horizontal;
+                            .col-attachment{
+                                float: left;
+                                background-color: @mailbox-col-attachment-bg-color;
+                                margin: @mailbox-col-attachment-margin-vertical @mailbox-col-attachment-margin-horizontal;
+                                min-width: @mailbox-col-attachment-min-width;
+                                border: @mailbox-col-attachment-border;
+                                .box-shadow(@mailbox-col-attachment-box-shadow);
+                                .file-type-wrapper{
+                                    text-align: center;
+                                    position: relative;
+                                    overflow: hidden;
+                                    padding: @mailbox-col-attachment-file-type-padding;
+                                    font-size: @mailbox-col-attachment-file-type-font-size;
+                                    color: @mailbox-col-attachment-file-color;
+                                    .caption {
+                                        position:absolute;
+                                        top: -100%;
+                                        right: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        text-align: center;
+                                        z-index: 2;
+                                        font-size: @mailbox-col-attachment-file-caption-font-size;
+                                        background: @mailbox-col-attachment-file-caption-bg;
+                                        color: @mailbox-col-attachment-file-caption-color;
+                                        .transition(all 0.3s ease-in-out);
+                                    }
+                                    &:hover{
+                                        .caption{
+                                            top: 0%;
+                                        }
+                                    }
+                                }
+                                .footer{
+                                    background-color: @gray-lighter;
+                                    font-size: 14px;
+                                    padding: 7px 10px;
+                                    small{
+                                        font-size: 12px;
+                                        color: @gray-light;
+                                    }
+                                }
+                                &.file-type-zip{
+                                    .file-type-wrapper{
+                                        .file-type{
+                                            color: #a80a0a;
+                                        }
+                                    }
+                                    .footer{
+                                        color: #a80a0a;
+                                    }
+                                }
+                                &.file-type-xls{
+                                    .file-type-wrapper{
+                                        .file-type{
+                                            color: @brand-success;
+                                        }
+                                    }
+                                    .footer{
+                                        color: @brand-success;
+                                    }
+                                }
+                                &.file-type-docx{
+                                    .file-type-wrapper{
+                                        .file-type{
+                                            color: @brand-info;
+                                        }
+                                    }
+                                    .footer{
+                                        color: @brand-info;
+                                    }
+                                }
+                                &.file-type-img{
+                                    .file-type-wrapper{
+                                        padding: 0;
+                                        .file-type{
+                                            img{
+                                                height: 119px;
+                                                margin: 0 auto;
+                                            }
+                                        }
+                                    }
+                                    .footer{
+                                        color: @brand-info;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.collapsed{
+                    .row-sender{
+                        background-color: @mailbox-message-view-collapsed-row-sender-bg;
+                        border-bottom-color: @mailbox-message-view-collapsed-row-sender-border-bottom-color;
+                        .ctr-body-text{
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        .row-reply-or-forward{
+            margin-bottom: 20px;
+            position: relative;
+            border-top: @mailbox-message-view-row-reply-or-forward-border-top;
+            .ctr-img{
+                font-size: @mailbox-message-view-row-reply-or-forward-ctr-img-font-size;
+                color: @mailbox-message-view-row-reply-or-forward-ctr-img-color;
+                img{
+                    .square(@mailbox-message-view-row-reply-or-forward-img-size);
+                }
+            }
+            .ctr-reply-or-forward{
+                position: absolute;
+                margin-top: 10px;
+                padding: 7px;
+                top: 0px;
+                left: 90px;
+                right: 0px;
+                height: 70px;
+                z-index: 2;
+                border: @mailbox-message-view-row-reply-or-forward-ctr-input-border;
+                .inner-text{
+                    color: @gray-light;
+                    .action-reply, .action-forward{
+                        font-weight: bold;
+                        color: @gray;
+                        &:hover{
+                            cursor: pointer;
+                            color: @brand-primary;
+                        }
+                    }
+                }
+            }
+            .compose-email-wrapper{
+                display: none;
+                .reply-text{
+                    padding-left: 50px;
+                    color: @gray-light;
+                    font-size: 50% !important;
+                    .sender{
+                        font-size: 14px;
+                        color: @brand-info
+                    }
+                    blockquote{
+                        font-size: 14px;
+                        p{
+                            font-size: 14px;
+                        }
+                    }
+                }
+                .note-editor{
+                    min-height: 300px;
+                }
+                .compose-email-footer{
+                    border: 1px solid @gray-light;
+                    border-top: none;
+                    .well{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: @screen-xs-max){
+        .col-content{
+            border-left: @mailbox-col-content-border-left;
+        }
+    }
+    @media (max-width: @screen-xs-max){
+        .col-menu-search{
+            border-bottom: @mailbox-col-menu-search-border-bottom;
+        }
+        .mailbox-table-wrapper .col-table{
+            tr{
+                td{
+                    padding: @mailbox-xs-td-padding;
+                }
+                .td-checkbox{
+                    width: @mailbox-xs-td-checkbox-width;
+                }
+                .td-star{
+                    width: @mailbox-xs-td-star-width;
+                }
+                .td-attachment{
+                    width: @mailbox-xs-td-attachement-width;
+                }
+                .td-time{
+                    width: @mailbox-xs-td-time;
+                }
+            }
+        }
+    }
+    @media (max-width: @screen-xs-min){
+        .mailbox-table-wrapper{
+            .col-table{
+                font-size: @mailbox-xxs-font-size;
+                tr{
+                    td{
+                    }
+                    .td-sender{
+                        width: @mailbox-xxs-td-sender-width;
+                    }
+                    .td-time{
+                        width: @mailbox-xxs-td-time;
+                    }
+                }
+            }
+        }
+    }
+}

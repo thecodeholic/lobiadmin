@@ -1,0 +1,26 @@
+//Author     : @arboshiki
+
+.navbar{
+    border: none;
+}
+ .navbar-right{
+    float: right !important;
+    margin: 0;
+}
+.navbar-form{
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+}
+.navbar-nav{
+    >li{
+        >.dropdown-menu{
+            margin-top: -5px;
+        }
+    }
+}
+@media (max-width: $screen-xs-max){
+    .navbar-nav .open .dropdown-menu{
+        position: absolute;
+    }
+}

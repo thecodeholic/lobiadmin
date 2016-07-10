@@ -1,0 +1,10 @@
+/*Author      : @arboshiki*/
+
+@mixin discount-label-variant($bg){
+    .discount{
+        background-color: $bg;
+        &:after{
+            border-top: 20px solid $bg;
+        }
+    }
+}

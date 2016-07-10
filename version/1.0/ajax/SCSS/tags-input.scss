@@ -1,0 +1,51 @@
+/*Author      : @arboshiki*/
+
+.bootstrap-tagsinput{
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
+    padding: $tags-input-padding-vertical $tags-input-padding-horizontal;
+    min-height: $tags-input-min-height;
+    border-width: $tags-input-border-width;
+    .tag{
+        position: relative;
+        border-radius: 0;
+        display: inline-block;
+        margin-top: $tags-input-tag-margin-vertical;
+        margin-bottom: $tags-input-tag-margin-vertical;
+        padding: $tags-input-tag-padding;
+        font-size: $tags-input-font-size;
+        [data-role=remove]{
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: $tags-input-tag-close-width;
+            line-height: $tags-input-min-height - 2 * $tags-input-border-width - 2 * $tags-input-padding-vertical - 2 * $tags-input-tag-margin-vertical;
+            @include transition(background-color $transition-duration);
+            &:after{
+                content: $fa-var-times-circle;
+                font-family: fontAwesome;
+                padding: 2px 1px;
+                font-size: $tags-input-tag-close-font-size;
+                text-align: center;
+            }
+            &:hover{
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+    &:focus{
+        border-color: red;
+    }
+    input{
+        &,
+        &:hover,
+        &:focus{
+            border-color: transparent;
+            background-color: transparent;
+        }
+    }
+}

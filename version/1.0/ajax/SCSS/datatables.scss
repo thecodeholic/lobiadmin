@@ -1,0 +1,48 @@
+/*Author      : @arboshiki*/
+
+.dataTables_wrapper{
+    .table{
+        thead, tfoot{
+            >tr{
+                >th,
+                >td{
+                    &.with-input{
+                        padding: 5px;
+                        font-weight: 400;
+                        >.form-control{
+                            width: 100%;
+                        }
+                        >.input-group{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .dt-toolbar-reversed{
+        .dataTables_filter{
+            text-align: left;
+        }
+        .dataTables_length{
+            text-align: right;
+        }
+    }
+    .dataTables_paginate{
+        .paginate_button{
+            border: none;
+            padding: 0;
+            margin-left: 0;
+            &,
+            &:hover{
+                border: none;
+            }
+            &:hover,
+            &:active,
+            &:focus{
+                background: none;
+                @include box-shadow(none);
+            }
+        }
+    }
+}

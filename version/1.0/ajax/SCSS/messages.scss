@@ -1,0 +1,117 @@
+//Author      : @arboshiki
+
+.lobi-messages{
+    background-color: $messages-bg;
+    .message-list-wrapper{
+        overflow: auto;
+    }
+    .message-list{
+        list-style: none;
+        height: $messages-max-height;
+        padding: $messages-padding;
+    }
+
+    .message-contact{
+        text-align: center;
+        font-weight: 500;
+        padding: $messages-header-padding;
+        font-size: $messages-header-font-size;
+        color: $messages-header-color;
+        background-color: $messages-header-bg;
+    }
+
+    .message-older-date{
+        position: relative;
+        text-align: center;
+        .older-date-text{
+            position: relative;
+            background-color: $messages-bg;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        &:before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -1px;
+            height: 2px;
+            width: 100%;
+            background-color: $message-older-date-line-color;
+        }
+    }
+
+    .message{
+        position: relative;
+        margin-bottom: $messages-margin-bottom;
+    }
+    .message-avatar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        @include square($message-avatar-size);
+    }
+    .message-body{
+        display: block;
+        padding-left: $message-body-image-padding;
+        padding-right: $message-body-time-padding;
+        padding-top: $message-body-padding-top;
+    }
+    .message-text{
+        display: block;
+        position: relative;
+        margin-bottom: 0;
+        border-radius: $message-text-border-radius;
+        padding: $message-text-padding;
+        &:before{
+            content: " ";
+            position: absolute;
+            top: 10px;
+            border: $message-text-arrow-width solid transparent;
+        }
+    }
+    .message-time{
+        position: absolute;
+        text-align: center;
+        bottom: 3px;
+        right: 0;
+        z-index: 2;
+    }
+    .message-receiver{
+        .message-text{
+            color: $message-receiver-text-color;
+            background-color: $message-receiver-text-bg;
+            &:before{
+                border-left: none;
+                left: -$message-text-arrow-width;
+                border-right-color: $message-receiver-text-bg;
+            }
+        }
+    }
+    .message-sender{
+        .message-avatar{
+            left: auto;
+            right: 0;
+        }
+        .message-body{
+            padding-left: $message-body-time-padding;
+            padding-right: $message-body-image-padding;
+        }
+        .message-text{
+            color: $message-sender-text-color;
+            background-color: $message-sender-text-bg;
+            &:before{
+                border-right: none;
+                right: -$message-text-arrow-width;
+                border-left-color: $message-sender-text-bg;
+            }
+        }
+        .message-time{
+            right: auto;
+            left: 0;
+        }
+    }
+    @include clearfix();
+} 

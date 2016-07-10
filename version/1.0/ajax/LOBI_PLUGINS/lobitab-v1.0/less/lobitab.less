@@ -1,0 +1,85 @@
+/* 
+    Created on : Oct 25, 2014, 2:43:53 PM
+    Author     : @arboshiki
+*/
+@import "../../bootstrap-3.3.1/less/variables.less";
+@import "../../bootstrap-3.3.1/less/mixins.less";
+
+.lobitab{
+    .nav-tabs{
+        li>a{
+            .lobitab-close{
+                .transition(all 0.3s);
+                cursor: pointer;
+                border: none;
+                outline: 0;
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 1px;
+                width: 16px;
+                height: 16px;
+                border-radius: 2px;
+                color: @gray-light;
+                margin-left: 5px;
+                top: 10px;
+                padding: 1px;
+                &:hover{
+                    color: #FFF;
+                    background-color: @brand-danger;
+                }
+            }
+        }
+        >li{
+            >a{
+                input{
+                    outline: 0;
+                    padding: 3px;
+                    font-size: 13px;
+                    background-color: lighten(@gray-lighter, 5%);
+                    border: 1px solid @brand-info;
+                    width: 100px;
+                    margin-top: -5px;
+                    margin-bottom: -5px;
+                }
+            }
+            &.lobitab-add-new{
+                >a{
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+            .dropdown-menu{
+                >li{
+                    >a{
+                        position: relative;
+                        .lobitab-close{
+                            float: right;
+                            margin-top: 2px;
+                        }
+                    }
+                }
+            }
+        }
+        .lobitab-placeholder{
+            background-color: #f9f5d1;
+            border: 1px dashed @gray-light;
+            margin-top: -2px;
+            margin-right: 1px;
+        }
+    }
+    .tab-content{
+        padding: 0;
+        .tab-pane{
+            padding: 10px;
+        }
+    }
+    &.nav-tabs-left,
+    &.nav-tabs-right{
+        .nav-tabs{
+            .lobitab-placeholder{
+                margin-right: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

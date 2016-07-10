@@ -1,0 +1,112 @@
+/*Author      : @arboshiki*/
+//mixins for checkboxes
+@mixin checkbox-variant($color){
+    i{
+        color: $color;
+    }
+    input[type=checkbox]{
+        &:checked{
+            &+i{
+                border-color: $color;
+            }
+        }
+    }
+    &:hover{
+        input[type=checkbox]{
+            &:checked{
+                &+i{
+                    border-color: $color;
+                    color: $color;
+                }
+            }
+        }
+        i{
+            border-color: $color;
+        }
+    }
+    &.lobicheck-inversed{
+        i{
+            color: $checkbox-bg;
+        }
+        input[type=checkbox]{
+            &:checked{
+                &+i{
+                    background-color: $color;
+                }
+            }
+        }
+        &:hover{
+            input[type=checkbox]{
+                &:checked{
+                    &+i{
+                        border-color: darken($color, 10%);
+                        background-color: darken($color, 10%);
+                        color: $checkbox-bg;
+                    }
+                }
+            }
+        }
+    }
+}
+@mixin checkbox-disabled-variant($color){
+    @include checkbox-variant($color);
+    &:hover{
+        i{
+            border-color: $checkbox-border-color;
+        }
+    }
+    &.lobicheck-inversed{
+        &:hover{
+            input[type=checkbox]:checked{
+                &+i{
+                    border-color: $color;
+                    background-color: $color;
+                    color: $checkbox-bg;
+                }
+            }
+        }
+    }
+}
+
+@mixin checkbox-disabled-variant2($color){
+    &:checked + i{
+        border-color: $color;
+        color: $color
+    }
+}
+
+@mixin checkbox-disabled-variant3($color){
+    &:checked + i{
+        border-color: $color;
+        background-color: $color;
+        color: $checkbox-bg;
+    }
+}
+
+@mixin checkbox-size($border-width, $size, $margin-bottom, $font-size, $top, $check-top){
+    padding-left: $size + 2 * ($border-width) + $checkbox-label-offset-left;
+    margin-bottom: $margin-bottom;
+    i{
+        width: $size;
+        height: $size; 
+        border-width: $border-width;
+        top: $top;
+    }
+    input[type=checkbox]{
+        &:checked{
+            &+i{
+                &:after{
+                    font-size: $font-size;
+                    top: $check-top;
+                    width: $size - 2 * ($border-width) - 1;
+                    height: $size - 2 * ($border-width) - 1;
+                }
+            }
+        }
+    }
+    &.lobicheck-rounded{
+        i{
+            border-radius: $size/4;
+        }
+    }
+}

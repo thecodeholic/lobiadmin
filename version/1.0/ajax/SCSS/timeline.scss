@@ -1,0 +1,74 @@
+/*Author      : @arboshiki*/
+.timeline{
+    list-style: none;
+    position: relative;
+    padding: 0;
+    background-color: $timeline-bg;
+    &,
+    small{
+        color: $timeline-color;
+    }
+    >li{
+        position: relative;
+        margin-bottom: 20px;
+        .timeline-badge{
+            position: absolute;
+            display: block;
+            text-align: center;
+            border-radius: 50%;
+            z-index: 100;
+            margin-top: -4px;
+            @include square($timeline-badge-size);
+            line-height: $timeline-badge-size;
+            color: $timeline-badge-color;
+            font-size: $timeline-badge-font-size;
+            left: ($timeline-vertical-line-left + $timeline-vertical-line-width / 2) - $timeline-badge-size /2;
+        }
+        .timeline-panel{
+            position: relative;
+            display: block;
+            padding-left: 15px;
+            padding-bottom: 15px;
+            margin-left: $timeline-vertical-line-left * 2;
+            border-bottom: $timeline-panel-border-bottom;
+            .timeline-title{
+                margin-bottom: 0;
+            }
+            .timeline-body{
+                text-align: justify;
+                padding-top:$timeline-panel-body-padding;
+                blockquote{
+                    font-size: 100%;
+                    margin-bottom: 0;
+                }
+            }
+            .timeline-footer{
+                padding: $timeline-panel-footer-padding;
+            }
+        }
+        &.timeline-year{
+            top: 0;
+            font-weight: bold;
+            text-align: center;
+            background-color: $timeline-bg;
+            width: $timeline-year-width;
+            margin-left: ($timeline-vertical-line-left + $timeline-vertical-line-width / 2) - $timeline-year-width /2;
+            font-size: $timeline-year-font-size;
+        }
+        &:last-child{
+            .timeline-panel{
+                border-bottom: none;
+            }
+        }
+    }
+    &:before{
+        position: absolute;
+        display: block;
+        top: 0;
+        bottom: 0;
+        content: " ";
+        width: $timeline-vertical-line-width;
+        background-color: $timeline-vertical-line-color;
+        left: $timeline-vertical-line-left;
+    }
+}

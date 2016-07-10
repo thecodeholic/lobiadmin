@@ -1,0 +1,70 @@
+/*Author      : @arboshiki*/
+
+@mixin menu-color-variant($menu-bg){
+    $menu-collapse-line-bg                          : lighten($menu-bg, 10%);
+    $menu-collapse-line-border-color                : lighten($menu-bg, 25%);
+    $menu-toggle-btn-color                          : lighten($gray-light, 45%);
+    $menu-toggle-btn-hover-color                    : lighten($menu-toggle-btn-color, 20%);
+    $nav-menu-item-color                            : darken($gray-lighter, 7%);
+    $nav-menu-item-hover-color                      : #FFF;
+    $nav-menu-item-bg                               : darken($menu-bg, 5%);
+    $nav-menu-item-hover-bg                         : darken($nav-menu-item-bg, 4%);
+    $nav-menu-item-active-bg                        : $nav-menu-item-hover-bg;
+    $nav-menu-item-opened-bg                        : $nav-menu-item-hover-bg;
+    $nav-menu-item-active-border-left               : 4px solid $brand-info;
+    $nav-menu-item-active-color                     : #FFF;
+    $nav-menu-submenu-vertical-line-color           : rgba(255, 255, 255, 0.5);
+    $nav-menu-submenu-item-bg                       : lighten($nav-menu-item-bg, 5%);
+    $nav-menu-submenu-item-hover-bg                 : darken($nav-menu-submenu-item-bg, 4%);
+    $nav-menu-submenu-item-opened-bg                : $nav-menu-submenu-item-hover-bg;
+    $nav-menu-submenu-item-active-bg                : $nav-menu-submenu-item-hover-bg;
+    .menu{
+        background-color: $menu-bg;
+        nav{
+            >ul{
+                >li{
+                    >a{
+                        background-color: $nav-menu-item-bg;
+                    }
+                    &>a:hover{
+                        background-color: $nav-menu-item-hover-bg;
+                    }
+                    &.opened>a{
+                        background-color: $nav-menu-item-opened-bg;
+                    }
+                    &.active>a{
+                        background-color: $nav-menu-item-active-bg;
+                    }
+                    ul{
+                        >li{
+                            >a{
+                                background-color: lighten($nav-menu-submenu-item-bg, 5%);
+                                &:hover{
+                                    background: $nav-menu-submenu-item-hover-bg;
+                                }
+                            }
+                            &.active{
+                                >a{
+                                    background: $nav-menu-submenu-item-active-bg;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .menu-collapse-line{
+            background-color: $menu-collapse-line-bg;
+            border-color: $menu-collapse-line-border-color;
+        }
+    }
+    &.menu-collapsed .menu{
+        .menu-heading .menu-header-buttons-wrapper:hover .menu-header-buttons{
+            background-color: $menu-bg;
+        }
+        nav>ul>li:hover>a .inner-text{
+            background-color: $nav-menu-item-active-bg;
+        }
+    }
+    
+}

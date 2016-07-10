@@ -1,0 +1,100 @@
+/*Author      : @arboshiki*/
+
+@import "../BOOTSTRAP/scss/bootstrap/_variables.scss";
+@import "../BOOTSTRAP/scss/bootstrap/_mixins.scss";
+@import "../PLUGINS/font-awesome-4.3.0/scss/_variables.scss";
+@import "variables.scss";
+
+@import "fonts.scss";
+@import "../PLUGINS/animate.css";
+
+@import "mixins.scss";
+@import "buttons.scss";
+@import "scaffolding.scss";
+
+
+.lock-screen{
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30000;
+    background-color: $brand-info;
+    .lock-form-wrapper{
+        display: table;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        >div{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        form{
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+        }
+    }
+    .lock-screen-form{
+        position: relative;
+        margin: 0 auto;
+        max-width: $lock-screen-form-max-width;
+        padding: $lock-screen-form-padding;
+        .fullname,
+        .lock-screen-email,
+        .locked{
+            color: $gray-lighter;
+        }
+    }
+    .carousel-wrapper{
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3000;
+        .carousel,.item,.active{
+            height:100%;
+        }
+        .carousel-inner{
+            height:100%;
+        }
+        .fill{
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    .lock-screen-clock{
+        position: fixed;
+        bottom: $lock-screen-clock-bottom;
+        left: $lock-screen-clock-left;
+        font-size: $lock-screen-clock-font-size-date;
+        color: $lock-screen-clock-color;
+        text-shadow: $lock-screen-clock-text-shadow;
+    }
+    .lock-screen-time{
+        font-size: $lock-screen-clock-font-size-time;
+    }
+    @media (max-width: $screen-xs-max){
+        .lock-screen-clock{
+            left: $lock-screen-clock-mobile-left;
+            bottom: $lock-screen-clock-mobile-bottom;
+            font-size: $lock-screen-clock-mobile-font-size-date;
+        }
+        .lock-screen-time{
+            font-size: $lock-screen-clock-mobile-font-size-time;
+        }
+    }
+    @media (max-width: $screen-xs-min){
+        .lock-form-wrapper{
+            top: 0px;
+            img{
+                max-width: $lock-screen-clock-mobile-img-max-width;
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+/*Author      : @arboshiki*/
+
+.editable-input .datepicker{
+    .prev i{
+        font-style: normal;
+        &:before{
+            content: '«';
+        }
+    }
+    .next i{
+        font-style: normal;
+        &:before{
+            content: '»';
+        }
+    }
+}

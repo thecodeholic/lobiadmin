@@ -1,0 +1,19 @@
+/*Author      : @arboshiki*/
+
+@media (max-width: $screen-xs-min){
+    @include responsive-visibility('.visible-xxs');
+    .visible-xxs-inline{
+        display: inline !important;
+    }
+    .visible-xxs-inline-block{
+        display: inline-block !important;
+    }
+    .visible-xxs-block{
+        display: block !important;
+    }
+}
+
+@media (max-width: $screen-xs-min){
+    @include responsive-invisibility('.hidden-xxs');
+}
+

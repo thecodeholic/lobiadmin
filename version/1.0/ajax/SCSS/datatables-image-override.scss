@@ -1,0 +1,17 @@
+/*Author      : @arboshiki*/
+
+table.dataTable thead .sorting {
+  background-image: url($datatables-sort-both-img-path);
+}
+table.dataTable thead .sorting_asc {
+  background-image: url($datatables-sort-asc-img-path);
+}
+table.dataTable thead .sorting_desc {
+  background-image: url($datatables-sort-desc-img-path);
+}
+table.dataTable thead .sorting_asc_disabled {
+  background-image: url($datatables-sort-asc-disabled-img-path);
+}
+table.dataTable thead .sorting_desc_disabled {
+  background-image: url($datatables-sort-desc-disabled-img-path);
+}

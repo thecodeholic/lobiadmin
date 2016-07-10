@@ -1,0 +1,28 @@
+//Author      : $arboshiki
+
+//Cyan theme
+$cyan-navbar-bg                                 : #449A9D;
+$cyan-navbar-brand-color                        : #FFF;
+$cyan-navbar-text-color                         : $gray-lighter;
+$cyan-menu-bg                                   : darken($cyan-navbar-bg, 10%);
+
+//Green theme
+$green-navbar-bg                                : #2E9479;
+$green-navbar-brand-color                       : #FFF;
+$green-navbar-text-color                        : $gray-lighter;
+$green-menu-bg                                  : darken($green-navbar-bg, 10%);
+
+//Green theme
+$brown-navbar-bg                                : #76493C;
+$brown-navbar-brand-color                       : #FFF;
+$brown-navbar-text-color                        : $gray-lighter;
+$brown-menu-bg                                  : darken($brown-navbar-bg, 10%);
+
+//Light theme
+$light-menu-gradient-start-color                : darken(#e2e2e2, 12%);
+$light-menu-gradient-end-color                  : darken(#f7f7f7, 5%);
+$light-menu-border-right                        : 1px solid $light-menu-gradient-start-color;
+
+$light-menu-item-gradient-start-color           : #f7f7f7;
+$light-menu-item-gradient-end-color             : #e2e2e2;
+$light-menu-item-color                          : $gray-dark;

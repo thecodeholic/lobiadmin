@@ -1,0 +1,149 @@
+/*
+    Author      : @arboshiki
+*/
+//------------------------------------------------------------------------------
+//----------------------------BUTTON GROUPS VERTICAL----------------------------
+//------------------------------------------------------------------------------
+.btn-group-vertical > .btn {
+    &:first-child:not(:last-child) {
+        border-top-right-radius: @btn-border-radius !important;
+        border-top-left-radius: @btn-border-radius !important;
+    }
+    &:last-child:not(:first-child) {
+        .border-bottom-radius(@btn-border-radius);
+    }
+}
+//------------------------------------------------------------------------------
+//----------------------BUTTON GROUP COLORS AND SIZES---------------------------
+//------------------------------------------------------------------------------
+.btn-group{
+    &.btn-group-success{
+        .btn{
+            &:extend(.btn-success all);
+        }
+    }
+    &.btn-group-danger{
+        .btn{
+            &:extend(.btn-danger all);
+        }
+    }
+    &.btn-group-warning{
+        .btn{
+            &:extend(.btn-warning all);
+        }
+    }
+    &.btn-group-primary{
+        .btn{
+            &:extend(.btn-primary all);
+        }
+    }
+    &.btn-group-info{
+        .btn{
+            &:extend(.btn-info all);
+        }
+    }
+    &.btn-group-default{
+        .btn{
+            &:extend(.btn-default all);
+        }
+    }
+    &.btn-group-inverse{
+        .btn{
+            &:extend(.btn-default all);
+        }
+    }
+    &.btn-group-pretty{
+        .btn{
+            &:extend(.btn-pretty all);
+        }
+    }
+    &.btn-group-xl{
+        .btn{
+            &:extend(.btn-xl all);
+        }
+    }
+}
+//------------------------------------------------------------------------------
+//----------------------BUTTON GROUP--------------------------------------------
+//------------------------------------------------------------------------------
+.btn-group{
+    &.btn-group-xs >.btn.dropdown-toggle{
+        padding-left: @dropdown-toggle-xs-padding-horizontal;
+        padding-right: @dropdown-toggle-xs-padding-horizontal;
+    }
+    &.btn-group-sm >.btn.dropdown-toggle{
+        padding-left: @dropdown-toggle-sm-padding-horizontal;
+        padding-right: @dropdown-toggle-sm-padding-horizontal;
+    }
+    .dropdown-menu{
+        &.dropdown-menu-auto-width{
+            min-width: 0;
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+//----------------------BUTTON TOOLBAR COLORS AND SIZES-------------------------
+//------------------------------------------------------------------------------
+.btn-toolbar{
+    &.btn-toolbar-success{
+        .btn{
+            &:extend(.btn-success all);
+        }
+    }
+    &.btn-toolbar-danger{
+        .btn{
+            &:extend(.btn-danger all);
+        }
+    }
+    &.btn-toolbar-warning{
+        .btn{
+            &:extend(.btn-warning all);
+        }
+    }
+    &.btn-toolbar-primary{
+        .btn{
+            &:extend(.btn-primary all);
+        }
+    }
+    &.btn-toolbar-info{
+        .btn{
+            &:extend(.btn-info all);
+        }
+    }
+    &.btn-toolbar-default{
+        .btn{
+            &:extend(.btn-default all);
+        }
+    }
+    &.btn-toolbar-inverse{
+        .btn{
+            &:extend(.btn-default all);
+        }
+    }
+    &.btn-toolbar-pretty{
+        .btn{
+            &:extend(.btn-pretty all);
+        }
+    }
+    &.btn-toobar-xl{
+        .btn{
+            &:extend(.btn-xl all);
+        }
+    }
+    &.btn-toobar-lg{
+        .btn{
+            &:extend(.btn-lg all);
+        }
+    }
+    &.btn-toobar-sm{
+        .btn{
+            &:extend(.btn-sm all);
+        }
+    }
+    &.btn-toobar-xs{
+        .btn{
+            &:extend(.btn-xs all);
+        }
+    }
+}

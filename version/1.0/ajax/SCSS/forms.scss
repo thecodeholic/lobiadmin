@@ -1,0 +1,501 @@
+/*Author      : $arboshiki*/
+
+legend{
+    font-weight: 400;
+    border-style: dashed;
+    border-color: $legend-border-color-override;
+    padding-bottom: $legend-padding-bottom;
+    font-size: $legend-font-size;
+}
+.form-input-note{
+    color: $form-input-note-color;
+    font-size: $form-input-note-font-size;
+}
+label{
+    font-weight: 400;
+    margin-bottom: 3px;
+}
+
+.form-horizontal{
+    .help-block{
+        margin-bottom: 0;
+    }
+}
+
+.help-block{
+    margin-top: 3px;
+    margin-bottom: 4px;
+    font-size: 90%;
+}
+
+.form-control{
+    &:hover,
+    &:focus{
+        background-color: $input-hover-bg;
+    }
+    &:hover{
+        border-color: $input-hover-border-color;
+    }
+    &:focus{
+        border-color: $input-border-focus;
+        @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+    }
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] &{
+            border-color: $input-border-disabled;
+    }
+}
+textarea{
+    &.expandible{
+        @include transition(all 0.3s);
+        &:focus{
+            min-height: 100px;
+        }
+    }
+}
+fieldset[disabled]{
+    .has-error{
+        @include form-control-validation(lighten($input-error-color, 5%), lighten($input-error-border-color, 10%), lighten($input-error-addon-bg, 10%));
+    }
+    .has-success{
+        @include form-control-validation(lighten($input-success-color, 5%), lighten($input-success-border-color, 10%), lighten($input-success-addon-bg, 10%));
+    }
+    .has-warning{
+        @include form-control-validation(lighten($input-warning-color, 5%), lighten($input-warning-border-color, 10%), lighten($input-warning-addon-bg, 10%));
+    }
+}
+
+//------------------------------------------------------------------------------
+.lobi-form{
+    input,
+    select,
+    textarea{
+        outline: 0;
+        height: 100%;
+        width: 100%;
+        border: 1px solid $lobi-input-input-border;
+        padding: $lobi-input-padding-vertical $lobi-input-padding-horizontal;
+    }
+    input,
+    select{
+        height: $lobi-input-height;
+    }
+    textarea{
+        height: auto;
+        resize: none;
+    }
+    input,
+    select,
+    textarea{
+        @include transition(all 0.2s);
+        &:hover{
+            border-color: $lobi-input-input-hover-border;
+        }
+        &:focus{
+            border-color: $lobi-input-input-focus-border;
+        }
+        &:hover,
+        &:focus{
+            background-color: $lobi-input-input-hover-bg;
+        }
+    }
+
+
+    fieldset{
+        padding: $lobi-form-fieldset-padding;
+        header{
+            font-size: $legend-font-size;
+            padding-bottom: $lobi-form-fieldset-header-padding-bottom;
+            margin-bottom: $lobi-form-fieldset-header-margin-bottom;
+            border-bottom: 1px dashed $legend-border-color-override;
+        }
+    }
+    fieldset + fieldset{
+        border-top: 1px solid $lobi-form-fieldset-border-color;
+        @include box-shadow($lobi-form-fieldset-box-shadow);
+    }
+    fieldset[disabled]{
+        input,
+        textarea,
+        select{
+            &,
+            &:hover,
+                &:focus{
+                cursor: not-allowed;
+                border-color: $input-border-disabled;
+                background-color: $input-bg-disabled;
+            }
+        }
+        .checkbox,
+        .radio{
+            cursor: not-allowed;
+        }
+    }
+    footer{
+        text-align: right;
+        padding: $lobi-form-footer-padding;
+        border-top: $lobi-form-footer-border-top;
+        background-color: $lobi-form-footer-bg-color;
+    }
+    .input{
+        position: relative;
+        font-weight: 400;
+        display: block;
+        .tooltip{
+            position: absolute;
+            z-index: 99999;
+            left: -9999px;
+            padding: 3px 8px;
+            font-size: 11px;
+            line-height: 17px;
+            font-weight: 400;
+            background: rgba(0,0,0,.9);
+            /*For :after border. Which has border color inherit*/
+            border-color: rgba(0,0,0,.9);
+            color: #fff;
+            opacity: 0;
+            @include transition(margin .3s,opacity .3s);
+            &:after{
+                content: ' ';
+                position: absolute;
+                color: inherit;
+            }
+            &.tooltip-primary{
+                @include tooltip-variant($brand-primary);
+            }
+            &.tooltip-danger{
+                @include tooltip-variant($brand-danger);
+            }
+            &.tooltip-success{
+                @include tooltip-variant($brand-success);
+            }
+            &.tooltip-info{
+                @include tooltip-variant($brand-info);
+            }
+            &.tooltip-warning{
+                @include tooltip-variant($brand-warning);
+            }
+        }
+        .tooltip-top-right,
+        .tooltip-top-left{
+            bottom: 100%;
+            margin-bottom: 15px;
+        }
+        .tooltip-bottom-left,
+        .tooltip-bottom-right{
+            top: 100%;
+            margin-top: 15px;
+        }
+        .tooltip-left{
+            top: 4px;
+            white-space: nowrap;
+            margin-right: 15px;
+        }
+        .tooltip-right{
+            top: 4px;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+        .tooltip-bottom-left:after{
+            bottom: 100%;
+            left: ($lobi-input-icon-horizontal-offset + $lobi-input-icon-width) / 2 - $lobi-input-icon-padding-horizontal;
+            border: 4px solid transparent;
+            border-bottom-color: inherit;
+        }
+        .tooltip-bottom-right:after{
+            bottom: 100%;
+            right: ($lobi-input-icon-horizontal-offset + $lobi-input-icon-width) / 2 - $lobi-input-icon-padding-horizontal;
+            border: 4px solid transparent;
+            border-bottom-color: inherit;
+        }
+        .tooltip-top-right:after{
+            top: 100%;
+            right: ($lobi-input-icon-horizontal-offset + $lobi-input-icon-width) / 2 - $lobi-input-icon-padding-horizontal;
+            border: 4px solid transparent;
+            border-top-color: inherit;
+        }
+        .tooltip-top-left:after{
+            top: 100%;
+            left: ($lobi-input-icon-horizontal-offset + $lobi-input-icon-width) / 2 - $lobi-input-icon-padding-horizontal;
+            border: 4px solid transparent;
+            border-top-color: inherit;
+        }
+        .tooltip-left:after{
+            top: 6px;
+            left: 100%;
+            border: 4px solid transparent;
+            border-left-color: inherit;
+        }
+        .tooltip-right:after{
+            top: 6px;
+            right: 100%;
+            border: 4px solid transparent;
+            border-right-color: inherit;
+        }
+        input, textarea{
+            &:focus{
+                &+.tooltip{
+                    opacity: 1;
+                }
+                &+.tooltip-top-right{
+                    right: 0;
+                    left: auto;
+                    margin-bottom: 5px;
+                }
+                &+.tooltip-top-left{
+                    left: 0;
+                    margin-bottom: 5px;
+                }
+                &+.tooltip-bottom-right{
+                    right: 0;
+                    left: auto;
+                    margin-top: 5px;
+                }
+                &+.tooltip-bottom-left{
+                    left: 0;
+                    margin-top: 5px;
+                }
+                &+.tooltip-left{
+                    left: auto;
+                    right: 100%;
+                    margin-right: 5px;
+                }
+                &+.tooltip-right{
+                    left: 100%;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+    .input-icon{
+        position: absolute;
+        text-align: center;
+        color: $lobi-input-icon-color;
+        top: ($lobi-input-height - $lobi-input-icon-height) / 2;
+        width: $lobi-input-icon-width ;
+        height: $lobi-input-icon-height;
+        line-height: $lobi-input-icon-height;
+    }
+    .input-icon-append{
+        border-left: 1px solid $lobi-input-icon-border-color;
+        padding-left: $lobi-input-icon-padding-horizontal;
+        right: $lobi-input-icon-horizontal-offset;
+        &~input,
+        &~textarea{
+            padding-right: $lobi-input-icon-width + $lobi-input-icon-horizontal-offset + $lobi-input-padding-horizontal;
+        }
+    }
+    .input-icon-prepend{
+        border-right: 1px solid $lobi-input-icon-border-color;
+        padding-right: $lobi-input-icon-padding-horizontal;
+        left: $lobi-input-icon-horizontal-offset;
+        &~input,
+        &~textarea{
+            padding-left: $lobi-input-icon-width + $lobi-input-icon-horizontal-offset + $lobi-input-padding-horizontal;
+        }
+    }
+    .input-file{
+        button{
+            position: absolute;
+            right: 1px;
+            top: 1px;
+            height: $lobi-input-height - 2px;
+            border-color: transparent;
+            background-color: $lobi-form-input-file-btn-bg;
+            color: #FFF;
+            border-radius: 0;
+            width: $lobi-input-file-button-width;
+            input[type="file"]{
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                opacity: 0;
+            }
+            &.btn-left{
+                right: auto;
+                left: 0;
+            }
+        }
+    }
+    fieldset[disabled]{
+        .input{
+            button{
+                cursor: not-allowed;
+                background-color: $lobi-form-input-file-disabled-btn-bg;
+                input[type="file"]{
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+    .form-group{
+        &.has-feedback{
+            .input{
+                .input-icon-append{
+                    &~.form-control-feedback{
+                        right: $lobi-input-icon-width + 5px;
+                    }
+                }
+            }
+        }
+    }
+    .has-success{
+        @include lobi-form-input-validation($input-success-color, $input-success-border-color);
+    }
+    .has-error{
+        @include lobi-form-input-validation($input-error-color, $input-error-border-color);
+    }
+    .has-warning{
+        @include lobi-form-input-validation($input-warning-color, $input-warning-border-color);
+    }
+    .has-feedback{
+        .input-file{
+            .form-control-feedback{
+                right: $lobi-input-file-button-width + 5px;
+            }
+        }
+    }
+}
+
+//                        FORM STATES AND FEEDBACKS
+//------------------------------------------------------------------------------
+.has-success{
+    @include form-control-validation($input-success-color, $input-success-border-color, $input-success-addon-bg);
+    .form-control{
+        &:focus{
+            &+.form-control-feedback{
+                color: darken($input-success-border-color, 10%);
+            }
+        }
+    }
+}
+.has-warning{
+    @include form-control-validation($input-warning-color, $input-warning-border-color, $input-warning-addon-bg);
+    .form-control{
+        &:focus{
+            &+.form-control-feedback{
+                color: darken($input-warning-border-color, 10%);
+            }
+        }
+    }
+}
+.has-error{
+    @include form-control-validation($input-error-color, $input-error-border-color, $input-error-addon-bg);
+    .form-control{
+        &:focus{
+            &+.form-control-feedback{
+                color: darken($input-error-border-color, 10%);
+            }
+        }
+    }
+}
+.has-success,
+.has-warning,
+.has-error{
+    .form-control{
+        &+.form-control-feedback{
+            @include transition(color 0.3s);
+        }
+        &:focus{
+            @include box-shadow(none);
+        }
+    }
+}
+
+@include input-size('.input-xs', $input-height-xs, $input-padding-vertical-xs, $input-padding-horizontal-xs, $input-font-size-xs, $input-line-height-xs, $input-border-radius-xs);
+.form-group-xs {
+  @include input-size('.form-control', $input-height-xs, $input-padding-vertical-xs, $input-padding-horizontal-xs, $input-font-size-xs, $input-line-height-xs, $input-border-radius-xs);
+}
+
+@include input-size('.input-xl', $input-height-xl, $input-padding-vertical-xl, $input-padding-horizontal-xl, $input-font-size-xl, $input-line-height-xl, $input-border-radius-xl);
+.form-group-xl {
+  @include input-size('.form-control', $input-height-xl, $input-padding-vertical-xl, $input-padding-horizontal-xl, $input-font-size-xl, $input-line-height-xl, $input-border-radius-xl);
+}
+
+.form-group-xs {
+    @media (min-width: $screen-sm-min) {
+        .control-label {
+            padding-top: ($padding-xs-vertical + 1);
+        }
+    }
+}
+
+//to show .form-control-feedback properly for different size inputs
+.form-group-xl .form-control-feedback,
+.input-xl + .form-control-feedback {
+    width: $input-height-xl;
+    height: $input-height-xl;
+    line-height: $input-height-xl;
+    font-size: $input-font-size-xl;
+}
+.form-group-lg .form-control-feedback{
+    width: $input-height-large;
+    height: $input-height-large;
+    line-height: $input-height-large;
+}
+.form-group-lg .form-control-feedback,
+.input-lg + .form-control-feedback {
+    font-size: $input-font-size-lg;
+}
+.form-group-sm .form-control-feedback{
+    width: $input-height-small;
+    height: $input-height-small;
+    line-height: $input-height-small;
+}
+.form-group-sm .form-control-feedback,
+.input-sm + .form-control-feedback {
+    font-size: $input-font-size-sm;
+}
+.form-group-xs .form-control-feedback,
+.input-xs + .form-control-feedback {
+    width: $input-height-xs;
+    height: $input-height-xs;
+    line-height: $input-height-xs;
+    font-size: $input-font-size-xs;
+}
+//set padding right for input controls with feedback
+
+.has-feedback{
+    .form-control{
+            padding-right: $input-height-base;
+        }
+    &.form-group-xl{
+        .form-control{
+            padding-right: $input-height-xl;
+        }
+    }
+    &.form-group-lg{
+        .form-control{
+            padding-right: $input-height-large;
+        }
+    }
+    &.form-group-sm{
+        .form-control{
+            padding-right: $input-height-small;
+        }
+    }
+    &.form-group-xs{
+        .form-control{
+            padding-right: $input-height-xs;
+        }
+    }
+}
+
+//------------------------------------------------------------------------------
+.input-group{
+    >.input-group-btn{
+        &:not(:first-child){
+            >.btn{
+                @include border-left-radius(0);
+            }
+        }
+        &:not(:last-child){
+            >.btn{
+                @include border-right-radius(0);
+            }
+        }
+    }
+}

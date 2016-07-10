@@ -1,0 +1,11 @@
+/*Author      : @arboshiki*/
+@mixin lobi-form-input-validation($color, $border){
+    label{
+        color: $color;
+    }
+    select,
+    input,
+    textarea{
+        border-color: $border;
+    }
+}

@@ -1,0 +1,11 @@
+/*Author      : @arboshiki*/
+
+.dropzone .dz-preview .dz-error-mark,
+.dropzone-previews .dz-preview .dz-error-mark,
+.dropzone .dz-preview .dz-success-mark,
+.dropzone-previews .dz-preview .dz-success-mark,
+.dropzone .dz-preview .dz-progress .dz-upload,
+.dropzone-previews .dz-preview .dz-progress .dz-upload,
+.dropzone .dz-default.dz-message{
+    background-image: url(@dropzone-spritemap-path);
+}

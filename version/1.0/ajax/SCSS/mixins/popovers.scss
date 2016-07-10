@@ -1,0 +1,31 @@
+/*Author      : @arboshiki*/
+
+@mixin popover-variant($title-color, $title-bg, $border){
+    &+.popover{
+        border-color: $border;
+        .popover-title{
+            background-color: $title-bg;
+            color: $title-color;
+        }
+        &.right{
+            .arrow{
+                border-right-color: $border;
+            }
+        }
+        &.left{
+            .arrow{
+                border-left-color: $border;
+            }
+        }
+        &.top{
+            .arrow{
+                border-top-color: $border;
+            }
+        }
+        &.bottom{
+            .arrow{
+                border-bottom-color: $border;
+            }
+        }
+    }
+}

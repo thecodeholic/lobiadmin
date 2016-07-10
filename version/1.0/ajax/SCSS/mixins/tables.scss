@@ -1,0 +1,15 @@
+/*Author      : $arboshiki*/
+@mixin table-row-color-variant($state, $color){
+    // Exact selectors below required to override `.table-striped` and prevent
+    // inheritance to nested tables.
+    .table > thead > tr,
+    .table > tbody > tr,
+    .table > tfoot > tr {
+        > td.#{$state},
+        > th.#{$state},
+        &.#{$state} > td,
+        &.#{$state} > th {
+            color: $color;
+        }
+    }
+}

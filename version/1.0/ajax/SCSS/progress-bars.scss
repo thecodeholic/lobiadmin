@@ -1,0 +1,22 @@
+/* 
+    Created on : Jan 10, 2015, 12:43:47 AM
+    Author     : @arboshiki
+*/
+
+.progress{
+    &.progress-xxs{
+        height: 4px;
+    }
+    &.progress-xs{
+        height: 9px;
+    }
+    &.progress-sm{
+        height: 13px;
+    }
+    &.progress-lg{
+        height: 23px;
+    }
+    &.progress-xl{
+        height: 30px;
+    }
+}

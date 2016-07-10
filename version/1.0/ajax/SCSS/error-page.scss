@@ -1,0 +1,28 @@
+/* 
+    Created on : Jan 9, 2015, 10:58:42 PM
+    Author     : $arboshiki
+*/
+
+.error-page{
+    text-align: center;
+    .error-page-code{
+        color: $error-page-error-code-color;
+        font-size: $error-page-error-code-font-size;
+        text-shadow: $error-page-error-code-text-shadow; 
+    }
+    .error-page-text{
+        text-shadow: $error-page-error-text-shadow;
+    }
+    .error-page-subtext{
+        font-size: $error-page-error-subtext-font-size;
+    }
+    .error-page-actions{
+        list-style: none;
+        font-weight: bold;
+        li{
+            margin-bottom: $error-page-page-actions-li-margin-bottom;
+            padding: 0 $error-page-page-actions-li-padding-horizontal;
+            display: inline-block;
+        }
+    }
+}

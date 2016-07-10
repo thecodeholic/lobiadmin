@@ -1,0 +1,27 @@
+{
+  "name": "jquery-mockjax",
+  "version": "1.6.1",
+  "main": "jquery.mockjax.js",
+  "description": "Mockjax. The jQuery Mockjax Plugin provides a simple and extremely flexible interface for mocking or simulating ajax requests and responses.",
+  "url": "https://github.com/jakerella/jquery-mockjax",
+  "keywords": [ "ajax", "mock", "unit", "testing" ],
+  "author": "Jonathan Sharp (http://jdsharp.com/)",
+  "homepage": "https://github.com/jakerella/jquery-mockjax",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakerella/jquery-mockjax.git"
+  },
+  "bugs": {
+     "web": "http://github.com/jakerella/jquery-mockjax/issues"
+  },
+  "licenses": [
+     {
+         "type": "MIT",
+         "url": "http://opensource.org/licenses/MIT"
+     },
+     {
+         "type": "GPLv2",
+         "url": "http://www.gnu.org/licenses/gpl-2.0.html"
+     }
+  ]
+}

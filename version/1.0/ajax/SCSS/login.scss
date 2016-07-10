@@ -1,0 +1,74 @@
+/*Author      : @arboshiki*/
+
+@import "../../LIBRARY/bootstrap-3.3.2/scss/_variables.scss";
+@import "../../LIBRARY/bootstrap-3.3.2/scss/_mixins.scss";
+@import "../../LIBRARY/font-awesome-4.3.0/scss/_variables.scss";
+@import "variables.scss";
+
+body, html{
+    display: table;
+    width: 100%;
+    height: 100%;
+    background: url('../../DEMO/img/lake.jpg') fixed !important;
+}
+
+.login-wrapper{
+    display: table-cell;
+    vertical-align: middle;
+    form{
+        @include box-shadow($login-box-shadow);
+        
+        visibility: hidden;
+        position: fixed;
+        z-index: -5;
+        border-bottom: none;
+        box-shadow: none;
+        padding: 6px;
+        background-color: #394557;
+        -moz-transform: scale(0,1) translate(-150px);
+        -webkit-transform: scale(0,1) translate(-150px);
+        -o-transform: scale(0,1) translate(-150px);
+        -ms-transform: scale(0,1) translate(-150px);
+        transform: scale(0,1) translate(-150px);
+        
+        margin: 0 auto;
+        max-width: $login-max-width;
+        background-color: $login-background;
+        border-radius: $login-border-radius;
+        .login-header{
+            font-weight: 400;
+            font-size: $login-header-font-size;
+            border-top-left-radius: $login-border-radius;
+            border-top-right-radius: $login-border-radius;
+            padding: $login-header-padding-vertical $login-header-padding-horizontal;
+            background-color: $login-header-background;
+            border-bottom: $login-header-border-width solid $login-header-border;
+            a{
+                color: $login-header-link;
+            }
+        }
+        .login-body{
+            padding: $login-body-padding;
+        }
+        .login-footer{
+            background-color: $login-footer-background;
+            border-top: $login-footer-border-width solid $login-footer-border;
+            padding: $login-footer-padding-vertical $login-footer-padding-horizontal;
+            @include clearfix();
+        }
+        &.visible{
+            visibility: visible;
+            position: relative;
+            z-index: auto;
+            -moz-transform: scale(1,1) translate(0);
+            -webkit-transform: scale(1,1) translate(0);
+            -o-transform: scale(1,1) translate(0);
+            -ms-transform: scale(1,1) translate(0);
+            transform: scale(1,1) translate(0);
+            transition: transform .3s ease;
+            -moz-transition: -moz-transform .3s ease;
+            -webkit-transition: -webkit-transform .3s ease;
+            -o-transition: -o-transform .2s ease;
+        }
+    }
+}
